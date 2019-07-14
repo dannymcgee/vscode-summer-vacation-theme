@@ -106,6 +106,14 @@ function SyntaxFactory(tokens) {
 			}
 		},
 		{
+			name: 'Control',
+			scope: [ 'keyword.control' ],
+			settings: {
+				foreground: tokens.control,
+				fontStyle: 'italic'
+			}
+		},
+		{
 			name: 'Named entity punctuation',
 			scope: [ 'constant.character.entity.named punctuation.definition.entity' ],
 			settings: {
