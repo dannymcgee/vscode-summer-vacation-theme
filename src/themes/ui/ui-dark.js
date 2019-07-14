@@ -9,10 +9,10 @@ const uiColors = {
 	// Base colors
 	focusBorder: colors.blueDark,
 	foreground: grays.gray100,
-	'widget.shadow': fade(grays.gray800, 0.4),
+	'widget.shadow': grays.gray800,
 	'selection.background': fade(colors.blueDark, 0.75),
 	descriptionForeground: colors.gray100,
-	errorForeground: lighten(colors.red, 10),
+	errorForeground: colors.red,
 
 	// Text colors
 	'textBlockQuote.background': grays.gray800,
@@ -23,14 +23,15 @@ const uiColors = {
 	'textSeparator.foreground': grays.gray500,
 
 	// Button control
-	'button.background': colors.blueDark,
+	'button.background': darken(colors.blueDark, 15),
 	'button.foreground': '#FFF',
-	'button.hoverBackground': darken(colors.blueDark, 10),
+	'button.hoverBackground': darken(colors.blueDark, 25),
 
 	// Dropdown control
-	'dropdown.background': grays.gray700,
-	'dropdown.listBackground': grays.gray700,
+	'dropdown.background': grays.gray800,
+	'dropdown.foreground': grays.gray100,
 	'dropdown.border': transparent,
+	'dropdown.listBackground': grays.gray600,
 
 	// Input control
 	// 'input.background': fade('#000', 0.125),
@@ -50,7 +51,7 @@ const uiColors = {
 	'scrollbarSlider.activeBackground': grays.gray400,
 
 	// Badge
-	'badge.background': colors.blueDark,
+	'badge.background': darken(colors.blueDark, 15),
 	'badge.foreground': '#FFF',
 
 	// Lists and trees
@@ -64,8 +65,8 @@ const uiColors = {
 	'list.hoverForeground': grays.gray100,
 	'list.dropBackground': fade(colors.blueDark, 0.333),
 	'list.highlightForeground': colors.blueLight,
-	'list.invalidItemForeground': colors.red,
-	'list.errorForeground': colors.red,
+	'list.invalidItemForeground': lighten(colors.red, 5),
+	'list.errorForeground': lighten(colors.red, 5),
 	'list.warningForeground': colors.yellow,
 	'tree.indentGuidesStroke': grays.gray400,
 
@@ -75,7 +76,7 @@ const uiColors = {
 	'activityBar.foreground': '#FFF',
 	'activityBar.inactiveForeground': grays.gray200,
 	'activityBar.border': transparent,
-	'activityBarBadge.background': colors.blueDark,
+	'activityBarBadge.background': darken(colors.blueDark, 15),
 	'activityBarBadge.foreground': '#FFF',
 
 	// Side Bar
@@ -108,11 +109,8 @@ const uiColors = {
 	'tab.unfocusedActiveBorderTop': fade(colors.blueDark, 0.5),
 	// -- Inactive
 	'tab.inactiveBackground': grays.gray500,
-	'tab.inactiveForeground': grays.gray100,
+	'tab.inactiveForeground': grays.gray200,
 	'tab.unfocusedInactiveForeground': grays.gray200,
-	// -- Hover
-	'tab.hoverBackground': grays.gray600,
-	'tab.unfocusedHoverBackground': grays.gray600,
 	// -- Modified
 	'tab.activeModifiedBorder': colors.green,
 	'tab.inactiveModifiedBorder': fade(colors.green, 0.5),
@@ -170,11 +168,10 @@ const uiColors = {
 	'editorGutter.deletedBackground': colors.red,
 
 	// Diff editor colors
-	'diffEditor.insertedTextBackground': fade(colors.teal, 0.25),
-	'diffEditor.insertedTextBorder': colors.teal,
-	'diffEditor.removedTextBackground': fade(colors.red, 0.25),
-	'diffEditor.removedTextBorder': colors.red,
-	'diffEditor.border': colors.gray400,
+	'diffEditor.insertedTextBackground': fade(colors.teal, 0.15),
+	// 'diffEditor.insertedTextBorder': colors.teal,
+	'diffEditor.removedTextBackground': fade(colors.red, 0.15),
+	// 'diffEditor.removedTextBorder': colors.red,
 
 	// Editor widget colors
 	'editorWidget.background': grays.gray600,
@@ -222,7 +219,7 @@ const uiColors = {
 	'panel.dropBackground': fade(colors.blueDark, 0.4),
 	'panelTitle.activeBorder': colors.blueDark,
 	'panelTitle.activeForeground': grays.gray100,
-	'panelTitle.inactiveForeground': grays.gray300,
+	'panelTitle.inactiveForeground': grays.gray200,
 
 	// Status Bar colors
 	'statusBar.background': grays.gray700,
@@ -242,21 +239,21 @@ const uiColors = {
 
 	// Title Bar colors
 	'titleBar.activeBackground': grays.gray800,
-	'titleBar.activeForeground': grays.gray100,
+	'titleBar.activeForeground': grays.gray200,
 	'titleBar.inactiveBackground': grays.gray800,
 	'titleBar.inactiveForeground': grays.gray300,
 	'titleBar.border': transparent,
 
 	// Menu Bar colors
 	'menubar.selectionForeground': '#FFF',
-	'menubar.selectionBackground': grays.gray700,
+	'menubar.selectionBackground': grays.gray600,
 	'menubar.selectionBorder': transparent,
 	'menu.foreground': grays.gray100,
-	'menu.background': grays.gray700,
+	'menu.background': grays.gray600,
 	'menu.selectionForeground': '#FFF',
-	'menu.selectionBackground': grays.gray600,
+	'menu.selectionBackground': fade(grays.gray800, 0.5),
 	'menu.selectionBorder': transparent,
-	'menu.separatorBackground': grays.gray500,
+	'menu.separatorBackground': grays.gray400,
 
 	// Notification colors
 	'notificationCenter.border': transparent,
@@ -321,7 +318,7 @@ const uiColors = {
 	// Settings Editor colors
 	'settings.headerForeground': '#FFF',
 	'settings.modifiedItemIndicator': colors.blueDark,
-	'settings.dropdownBackground': grays.gray500,
+	'settings.dropdownBackground': grays.gray800,
 	'settings.dropdownForeground': grays.gray100,
 	'settings.dropdownBorder': transparent,
 	'settings.dropdownListBorder': transparent,
