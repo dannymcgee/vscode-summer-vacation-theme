@@ -297,11 +297,18 @@ function SyntaxFactory(tokens) {
 			}
 		},
 		{
-			name: 'Tag name italicized',
+			name: 'Component',
 			scope: [
-				'entity.other.attribute-name.pseudo-element.css',
 				'meta.tag.custom entity.name.tag',
+				'entity.name.tag support.class.component'
 			],
+			settings: {
+				foreground: tokens.component
+			}
+		},
+		{
+			name: 'Pseudo-element',
+			scope: [ 'entity.other.attribute-name.pseudo-element.css' ],
 			settings: {
 				foreground: tokens.tag,
 				fontStyle: 'italic'

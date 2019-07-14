@@ -22,7 +22,7 @@ tokens = {
 	comment: colors.green,
 	tag: colors.blueDark,
 	attribute: colors.blueLight,
-	component: lighten(colors.blueDark, 5),
+	component: colors.teal,
 }
 
 module.exports = tokens
