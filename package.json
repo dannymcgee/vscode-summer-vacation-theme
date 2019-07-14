@@ -18,7 +18,7 @@
 				"id": "Summer Vacation (VS Code Dark+)",
 				"label": "Dark (VS Code)",
 				"uiTheme": "vs-dark",
-				"path": "./themes/SummerVacation-vscode.json"
+				"path": "./themes/SummerVacation-vscdark.json"
 			},
 			{
 				"id": "Summer Vacation (One Dark)",
