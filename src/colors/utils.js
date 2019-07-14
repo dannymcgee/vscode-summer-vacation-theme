@@ -39,7 +39,6 @@ function fade(color, opacity) {
 		throw new Error(`Invalid value given for param color: ${color}
 (must be a hex color string in format #XXX or #XXXXXX)`)
 	
-	console.log(`returning '${color}${hex}'`)
 	return color + hex
 }
 
@@ -230,4 +229,4 @@ function _hueCycle(deg) {
 	return deg
 }
 
-module.exports = fade
+module.exports = { fade, lighten, darken }
