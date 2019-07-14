@@ -108,6 +108,16 @@
 			}
 		},
 		{
+			"name": "Control",
+			"scope": [
+				"keyword.control"
+			],
+			"settings": {
+				"foreground": "#B89FF7",
+				"fontStyle": "italic"
+			}
+		},
+		{
 			"name": "Named entity punctuation",
 			"scope": [
 				"constant.character.entity.named punctuation.definition.entity"
@@ -187,7 +197,7 @@
 				"variable.language.this"
 			],
 			"settings": {
-				"foreground": "#FFC83F",
+				"foreground": "#2C98EC",
 				"fontStyle": "italic"
 			}
 		},
