@@ -27,5 +27,8 @@
 				"path": "./themes/SummerVacation-onedark.json"
 			}
 		]
+	},
+	"scripts": {
+		"generate": "node ./src/generate.js"
 	}
 }
