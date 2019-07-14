@@ -1,6 +1,6 @@
 {
 	"$schema": "vscode://schemas/color-theme",
-	"name": "Dark",
+	"name": "Dark (VS Code)",
 	"type": "dark",
 	"tokenColors": [
 		{
@@ -17,7 +17,7 @@
 				"meta.attribute-selector.scss"
 			],
 			"settings": {
-				"foreground": "#16C98D"
+				"foreground": "#FF953F"
 			}
 		},
 		{
@@ -26,7 +26,7 @@
 				"punctuation.definition.string"
 			],
 			"settings": {
-				"foreground": "#16C98D80"
+				"foreground": "#FF953F80"
 			}
 		},
 		{
@@ -35,7 +35,7 @@
 				"constant.language.boolean"
 			],
 			"settings": {
-				"foreground": "#0FDEBD",
+				"foreground": "#FF953F",
 				"fontStyle": "italic"
 			}
 		},
@@ -45,7 +45,7 @@
 				"constant.language.null"
 			],
 			"settings": {
-				"foreground": "#0FDEBD",
+				"foreground": "#FF953F",
 				"fontStyle": "italic"
 			}
 		},
@@ -55,7 +55,7 @@
 				"constant.numeric"
 			],
 			"settings": {
-				"foreground": "#0FDEBD"
+				"foreground": "#FF953F"
 			}
 		},
 		{
@@ -64,7 +64,7 @@
 				"constant.other.php"
 			],
 			"settings": {
-				"foreground": "#0FDEBD"
+				"foreground": "#FF953F"
 			}
 		},
 		{
@@ -74,7 +74,7 @@
 				"keyword.other.unit"
 			],
 			"settings": {
-				"foreground": "#AEC1CC",
+				"foreground": "#B89FF7",
 				"fontStyle": ""
 			}
 		},
@@ -103,7 +103,7 @@
 				"entity.other.attribute-name.pseudo-element"
 			],
 			"settings": {
-				"foreground": "#B89FF7",
+				"foreground": "#2C98EC",
 				"fontStyle": "italic"
 			}
 		},
@@ -113,7 +113,7 @@
 				"constant.character.entity.named punctuation.definition.entity"
 			],
 			"settings": {
-				"foreground": "#B89FF780"
+				"foreground": "#2C98EC80"
 			}
 		},
 		{
@@ -122,7 +122,7 @@
 				"comment"
 			],
 			"settings": {
-				"foreground": "#2C98EC",
+				"foreground": "#16C98D",
 				"fontStyle": "italic"
 			}
 		},
@@ -178,7 +178,7 @@
 				"meta.control.substitute.target"
 			],
 			"settings": {
-				"foreground": "#FFA4B6"
+				"foreground": "#70C2FF"
 			}
 		},
 		{
@@ -187,7 +187,7 @@
 				"variable.language.this"
 			],
 			"settings": {
-				"foreground": "#FFA4B6",
+				"foreground": "#FFC83F",
 				"fontStyle": "italic"
 			}
 		},
@@ -210,7 +210,7 @@
 				"string.key.json5"
 			],
 			"settings": {
-				"foreground": "#FF708E"
+				"foreground": "#70C2FF"
 			}
 		},
 		{
@@ -220,7 +220,7 @@
 				"meta.object-literal.key punctuation.definition.string"
 			],
 			"settings": {
-				"foreground": "#FF708E80"
+				"foreground": "#70C2FF80"
 			}
 		},
 		{
@@ -241,7 +241,7 @@
 				"storage.type.class.AFDKO"
 			],
 			"settings": {
-				"foreground": "#FFC83F"
+				"foreground": "#0FDEBD"
 			}
 		},
 		{
@@ -256,7 +256,7 @@
 				"entity.other.attribute-name.pseudo-class"
 			],
 			"settings": {
-				"foreground": "#FFC83F",
+				"foreground": "#0FDEBD",
 				"fontStyle": "italic"
 			}
 		},
@@ -270,7 +270,7 @@
 				"meta.function-call.generic"
 			],
 			"settings": {
-				"foreground": "#70C2FF"
+				"foreground": "#FFC83F"
 			}
 		},
 		{
@@ -279,7 +279,7 @@
 				"entity.name.tag"
 			],
 			"settings": {
-				"foreground": "#FF953F"
+				"foreground": "#2C98EC"
 			}
 		},
 		{
@@ -289,7 +289,7 @@
 				"meta.tag.custom entity.name.tag"
 			],
 			"settings": {
-				"foreground": "#FF953F",
+				"foreground": "#2C98EC",
 				"fontStyle": "italic"
 			}
 		},
@@ -299,7 +299,7 @@
 				"entity.other.attribute-name"
 			],
 			"settings": {
-				"foreground": "#FF708E",
+				"foreground": "#70C2FF",
 				"fontStyle": "italic"
 			}
 		},
@@ -320,7 +320,7 @@
 				"entity.other.keyframe-offset.percentage.css"
 			],
 			"settings": {
-				"foreground": "#0FDEBD"
+				"foreground": "#FF953F"
 			}
 		},
 		{
@@ -352,7 +352,7 @@
 				"punctuation.section.embedded.end.php"
 			],
 			"settings": {
-				"foreground": "#B89FF780",
+				"foreground": "#2C98EC80",
 				"fontStyle": "italic"
 			}
 		},
@@ -363,7 +363,7 @@
 				"meta.return.type.ts entity.name.type"
 			],
 			"settings": {
-				"foreground": "#FFC83F99",
+				"foreground": "#0FDEBD99",
 				"fontStyle": "italic"
 			}
 		},
@@ -376,7 +376,7 @@
 				"meta.return.type.ts support.type.builtin"
 			],
 			"settings": {
-				"foreground": "#B89FF799",
+				"foreground": "#2C98EC99",
 				"fontStyle": "italic"
 			}
 		},
@@ -459,7 +459,7 @@
 				"keyword.other.definition.ini"
 			],
 			"settings": {
-				"foreground": "#FF708E"
+				"foreground": "#70C2FF"
 			}
 		},
 		{
@@ -468,7 +468,7 @@
 				"entity.name.section.group-title.ini"
 			],
 			"settings": {
-				"foreground": "#FFC83F"
+				"foreground": "#0FDEBD"
 			}
 		},
 		{
@@ -509,7 +509,7 @@
 				"support.type.property-name.patterns.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#0FDEBD"
+				"foreground": "#FF953F"
 			}
 		},
 		{
@@ -518,7 +518,7 @@
 				"support.type.property-name.include.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#B89FF7",
+				"foreground": "#2C98EC",
 				"fontStyle": "italic"
 			}
 		},
@@ -528,7 +528,7 @@
 				"support.type.property-name.repository.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#FFC83F"
+				"foreground": "#0FDEBD"
 			}
 		},
 		{
@@ -537,7 +537,7 @@
 				"support.type.property-name.comment.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#2C98EC",
+				"foreground": "#16C98D",
 				"fontStyle": "italic"
 			}
 		},
@@ -548,7 +548,7 @@
 				"support.type.scope-name.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#FFA4B6"
+				"foreground": "#70C2FF"
 			}
 		},
 		{
@@ -557,7 +557,7 @@
 				"support.type.scope-lang.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#0FDEBD"
+				"foreground": "#FF953F"
 			}
 		},
 		{
@@ -566,7 +566,7 @@
 				"regex.character.literal.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#16C98D"
+				"foreground": "#FF953F"
 			}
 		},
 		{
@@ -575,7 +575,7 @@
 				"regex.wildcard.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#0FDEBD"
+				"foreground": "#FF953F"
 			}
 		},
 		{
@@ -605,7 +605,7 @@
 				"regex.character.or.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#FFC83F"
+				"foreground": "#0FDEBD"
 			}
 		},
 		{
@@ -623,7 +623,7 @@
 				"regex.escape-regex.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#16C98D1a"
+				"foreground": "#FF953F1a"
 			}
 		},
 		{
