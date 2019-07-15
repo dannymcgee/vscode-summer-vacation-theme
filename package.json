@@ -2,8 +2,10 @@
 	"name": "summer-vacation-theme",
 	"displayName": "Summer Vacation",
 	"description": "A vivid palette that's bright and colorful without being overbearing.",
-	"categories": [ "Themes" ],
-	"version": "1.0.0",
+	"categories": [
+		"Themes"
+	],
+	"version": "1.0.1",
 	"publisher": "dannymcgee",
 	"license": "MIT",
 	"author": "Danny McGee",
