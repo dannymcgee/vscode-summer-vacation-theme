@@ -41,3 +41,7 @@ While the theme has been optimized for web development, most of the syntax token
 ### Angular HTML
 [Custom grammar extension](https://marketplace.visualstudio.com/items?itemName=dannymcgee.ng-html)
 ![Angular HTML](examples/img/ng-html.png)
+
+### UI
+[View full size](examples/img/ui.png)
+![UI](examples/img/ui.png)
