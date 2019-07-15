@@ -640,7 +640,7 @@ function SyntaxFactory(tokens) {
 			name: 'tmLanguage regex escape',
 			scope: [ 'regex.escape-regex.tmLanguage' ],
 			settings: {
-				foreground: fade(tokens.string, 0.1)
+				foreground: fade(tokens.string, 0.5)
 			}
 		},
 		{
