@@ -246,7 +246,6 @@ function SyntaxFactory(tokens) {
 				'entity.name.type.instance',
 				'meta.var.expr meta.function-call entity.name.class',
 				'meta.var.expr new.expr entity.name.type',
-				'meta.attribute.class.html entity.other.attribute-name.html',
 				'entity.other.attribute-name.class.css',
 				'entity.other.inherited-class',
 				'entity.name.type.namespace.cs',
@@ -267,6 +266,7 @@ function SyntaxFactory(tokens) {
 				'meta.var.expr entity.name.type',
 				'meta.type.parameters entity.name.type',
 				'entity.other.attribute-name.pseudo-class',
+				'meta.attribute.class.html entity.other.attribute-name.html',
 			],
 			settings: {
 				foreground: tokens.class,
