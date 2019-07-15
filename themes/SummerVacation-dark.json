@@ -251,7 +251,8 @@
 				"storage.type.class.AFDKO"
 			],
 			"settings": {
-				"foreground": "#FFC83F"
+				"foreground": "#FFC83F",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -293,10 +294,19 @@
 			}
 		},
 		{
-			"name": "Tag name italicized",
+			"name": "Component",
 			"scope": [
-				"entity.other.attribute-name.pseudo-element.css",
-				"meta.tag.custom entity.name.tag"
+				"meta.tag.custom entity.name.tag",
+				"entity.name.tag support.class.component"
+			],
+			"settings": {
+				"foreground": "#FFC83F"
+			}
+		},
+		{
+			"name": "Pseudo-element",
+			"scope": [
+				"entity.other.attribute-name.pseudo-element.css"
 			],
 			"settings": {
 				"foreground": "#FF953F",
@@ -411,7 +421,7 @@
 				"markup.heading"
 			],
 			"settings": {
-				"foreground": "#2C98EC"
+				"foreground": "#FFC83F"
 			}
 		},
 		{
@@ -420,16 +430,7 @@
 				"text.html.markdown markup.quote"
 			],
 			"settings": {
-				"foreground": "#79858D"
-			}
-		},
-		{
-			"name": "Markdown list item",
-			"scope": [
-				"text.html.markdown beginning.punctuation.definition.list"
-			],
-			"settings": {
-				"foreground": "#2C98EC"
+				"foreground": "#AEC1CC"
 			}
 		},
 		{
@@ -438,7 +439,7 @@
 				"markup.italic"
 			],
 			"settings": {
-				"foreground": "#70C2FF",
+				"foreground": "#DBE6EC",
 				"fontStyle": "italic"
 			}
 		},
@@ -448,7 +449,7 @@
 				"markup.bold"
 			],
 			"settings": {
-				"foreground": "#70C2FF",
+				"foreground": "#DBE6EC",
 				"fontStyle": "bold"
 			}
 		},
@@ -459,8 +460,43 @@
 				"markup.italic markup.bold"
 			],
 			"settings": {
-				"foreground": "#70C2FF",
+				"foreground": "#DBE6EC",
 				"fontStyle": "italic bold"
+			}
+		},
+		{
+			"name": "Markdown link",
+			"scope": [
+				"markup.underline.link.markdown",
+				"markup.underline.link.image.markdown"
+			],
+			"settings": {
+				"foreground": "#FF708E"
+			}
+		},
+		{
+			"name": "Markdown code",
+			"scope": [
+				"markup.inline.raw.string.markdown"
+			],
+			"settings": {
+				"foreground": "#AEC1CC"
+			}
+		},
+		{
+			"name": "Markdown punctuation",
+			"scope": [
+				"punctuation.definition.markdown",
+				"punctuation.definition.string.begin.markdown",
+				"punctuation.definition.string.end.markdown",
+				"punctuation.definition.metadata.markdown",
+				"punctuation.definition.raw.markdown",
+				"punctuation.definition.list.begin.markdown",
+				"punctuation.definition.bold.markdown",
+				"punctuation.definition.italic.markdown"
+			],
+			"settings": {
+				"foreground": "#79858D"
 			}
 		},
 		{
@@ -633,7 +669,7 @@
 				"regex.escape-regex.tmLanguage"
 			],
 			"settings": {
-				"foreground": "#16C98D1a"
+				"foreground": "#16C98D80"
 			}
 		},
 		{
