@@ -1,2 +1,7 @@
 node_modules
 *.vsix
+examples/html
+examples/vanilla-js
+examples/react
+examples/angular
+examples/scss

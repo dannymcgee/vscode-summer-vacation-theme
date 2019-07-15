@@ -1,5 +1,10 @@
 .vscode/**
 .vscode-test/**
 src/**
+examples/html/**
+examples/vanilla-js/**
+examples/react/**
+examples/angular/**
+examples/scss/**
 .gitignore
 vsc-extension-quickstart.md
