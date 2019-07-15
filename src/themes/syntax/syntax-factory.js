@@ -424,28 +424,21 @@ function SyntaxFactory(tokens) {
 			name: 'Markdown heading',
 			scope: [ 'markup.heading' ],
 			settings: {
-				foreground: colors.blueDark
+				foreground: tokens.class
 			}
 		},
 		{
 			name: 'Markdown blockquote',
 			scope: [ 'text.html.markdown markup.quote' ],
 			settings: {
-				foreground: grays.gray300
-			}
-		},
-		{
-			name: 'Markdown list item',
-			scope: [ 'text.html.markdown beginning.punctuation.definition.list' ],
-			settings: {
-				foreground: colors.blueDark
+				foreground: tokens.punctuation
 			}
 		},
 		{
 			name: 'Markdown italic',
 			scope: [ 'markup.italic' ],
 			settings: {
-				foreground: colors.blueLight,
+				foreground: tokens.foreground,
 				fontStyle: 'italic'
 			}
 		},
@@ -453,7 +446,7 @@ function SyntaxFactory(tokens) {
 			name: 'Markdown bold',
 			scope: [ 'markup.bold' ],
 			settings: {
-				foreground: colors.blueLight,
+				foreground: tokens.foreground,
 				fontStyle: 'bold'
 			}
 		},
@@ -464,8 +457,41 @@ function SyntaxFactory(tokens) {
 				'markup.italic markup.bold'
 			],
 			settings: {
-				foreground: colors.blueLight,
+				foreground: tokens.foreground,
 				fontStyle: 'italic bold'
+			}
+		},
+		{
+			name: 'Markdown link',
+			scope: [
+				'markup.underline.link.markdown',
+				'markup.underline.link.image.markdown'
+			],
+			settings: {
+				foreground: tokens.property
+			}
+		},
+		{
+			name: 'Markdown code',
+			scope: [ 'markup.inline.raw.string.markdown' ],
+			settings: {
+				foreground: tokens.punctuation
+			}
+		},
+		{
+			name: 'Markdown punctuation',
+			scope: [
+				'punctuation.definition.markdown',
+				'punctuation.definition.string.begin.markdown',
+				'punctuation.definition.string.end.markdown',
+				'punctuation.definition.metadata.markdown',
+				'punctuation.definition.raw.markdown',
+				'punctuation.definition.list.begin.markdown',
+				'punctuation.definition.bold.markdown',
+				'punctuation.definition.italic.markdown',
+			],
+			settings: {
+				foreground: grays.gray300
 			}
 		},
 	
