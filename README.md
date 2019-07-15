@@ -6,9 +6,14 @@ I've been using this theme for years in VS Code (and even used its color palette
 
 It features a color palette that spans the full rainbow spectrum to allow for extremely granular syntax highlighting.
 
+![Color Palette](palette.png)
+
 It also features extensive use of *italics* for extra differentiation of tokens such as keywords, `this`, comments, and HTML attributes. This was done primarily with [Operator Mono](https://www.typography.com/fonts/operator/styles/operatormonoscreensmart) in mind, but it should work nicely with any font family that includes an italicized style (including the VS Code defaults, Consolas and Courier-New).
 
-![Color Palette](palette.png)
+
+## Alternate Schemes
+
+In addition to the default 'Dark' scheme (light version coming soon!), also included are two alternate schemes which mimic the syntax colors of VS Code's default Dark theme and Atom One Dark. While I personally think that the Summer Vacation default provides the best experience (I may be biased), if you're migrating from one of these other popular themes, using the corresponding alternate may make it a bit easier to get accustomed to the new color palette.
 
 
 ## Tokens
