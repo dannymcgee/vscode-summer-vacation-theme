@@ -253,7 +253,8 @@ function SyntaxFactory(tokens) {
 				'storage.type.class.AFDKO',
 			],
 			settings: {
-				foreground: tokens.class
+				foreground: tokens.class,
+				fontStyle: ''
 			}
 		},
 		{
