@@ -5,7 +5,19 @@
 	"categories": [ "Themes" ],
 	"version": "1.0.0",
 	"publisher": "dannymcgee",
-	"engines": { "vscode": "^1.22.0" },
+	"license": "MIT",
+	"author": "Danny McGee",
+	"icon": "icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dannymcgee/vscode-summer-vacation-theme.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dannymcgee/vscode-summer-vacation-theme/issues"
+	},
+	"engines": {
+		"vscode": "^1.22.0"
+	},
 	"contributes": {
 		"themes": [
 			{
