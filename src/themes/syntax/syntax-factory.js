@@ -487,12 +487,29 @@ function SyntaxFactory(tokens) {
 				'punctuation.definition.string.end.markdown',
 				'punctuation.definition.metadata.markdown',
 				'punctuation.definition.raw.markdown',
-				'punctuation.definition.list.begin.markdown',
 				'punctuation.definition.bold.markdown',
 				'punctuation.definition.italic.markdown',
 			],
 			settings: {
 				foreground: grays.gray300
+			}
+		},
+		{
+			name: 'Markdown list item bullet',
+			scope: [ 'punctuation.definition.list.begin.markdown' ],
+			settings: {
+				foreground: '#FFF',
+				fontStyle: 'bold'
+			}
+		},
+		{
+			name: 'Markdown list item bullet (comment block)',
+			scope: [
+				'comment.block.documentation.ts markup.list.unnumbered.markdown punctuation.definition.list.begin.markdown',
+				'comment.block.documentation.js markup.list.unnumbered.markdown punctuation.definition.list.begin.markdown',
+			],
+			settings: {
+				foreground: tokens.punctuation
 			}
 		},
 	
