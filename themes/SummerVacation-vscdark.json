@@ -380,10 +380,12 @@
 			"name": "TypeScript type annotations (class)",
 			"scope": [
 				"meta.type.annotation.ts entity.name.type",
-				"meta.return.type.ts entity.name.type"
+				"meta.type.parameters.ts entity.name.type",
+				"meta.return.type.ts entity.name.type",
+				"meta.var.expr.ts entity.name.type"
 			],
 			"settings": {
-				"foreground": "#0FDEBD99",
+				"foreground": "#16C98D",
 				"fontStyle": "italic"
 			}
 		},
@@ -396,22 +398,26 @@
 				"meta.return.type.ts support.type.builtin"
 			],
 			"settings": {
-				"foreground": "#2C98EC99",
+				"foreground": "#2C98EC",
 				"fontStyle": "italic"
 			}
 		},
 		{
-			"name": "TypeScript type annotation punctuation",
+			"name": "C# class variable",
 			"scope": [
-				"meta.type.annotation.ts meta.brace",
-				"meta.type.annotation.ts punctuation.definition",
-				"meta.type.annotation.ts punctuation.accessor",
-				"meta.return.type.ts meta.brace",
-				"meta.return.type.ts punctuation.definition",
-				"meta.return.type.ts punctuation.accessor"
+				"variable.other.object.cs"
 			],
 			"settings": {
-				"foreground": "#AEC1CC99",
+				"foreground": "#0FDEBD"
+			}
+		},
+		{
+			"name": "C# storage type",
+			"scope": [
+				"storage.type.cs"
+			],
+			"settings": {
+				"foreground": "#16C98D",
 				"fontStyle": "italic"
 			}
 		},
@@ -824,7 +830,7 @@
 		"editorIndentGuide.background": "#323F55",
 		"editorIndentGuide.activeBackground": "#3C4B65",
 		"editorRuler.foreground": "#2B3649",
-		"editorCodeLens.foreground": "#2C98EC",
+		"editorCodeLens.foreground": "#79858D",
 		"editorBracketMatch.background": "#323F55",
 		"editorBracketMatch.border": "#323F554d",
 		"editorOverviewRuler.border": "#0000",
