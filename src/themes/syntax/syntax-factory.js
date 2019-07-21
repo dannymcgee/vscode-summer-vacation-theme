@@ -384,10 +384,12 @@ function SyntaxFactory(tokens) {
 			name: 'TypeScript type annotations (class)',
 			scope: [
 				'meta.type.annotation.ts entity.name.type',
-				'meta.return.type.ts entity.name.type'
+				'meta.type.parameters.ts entity.name.type',
+				'meta.return.type.ts entity.name.type',
+				'meta.var.expr.ts entity.name.type'
 			],
 			settings: {
-				foreground: fade(tokens.class, 0.6),
+				foreground: tokens.type,
 				fontStyle: 'italic'
 			}
 		},
@@ -400,22 +402,39 @@ function SyntaxFactory(tokens) {
 				'meta.return.type.ts support.type.builtin',
 			],
 			settings: {
-				foreground: fade(tokens.keyword, 0.6),
+				foreground: tokens.keyword,
 				fontStyle: 'italic'
 			}
 		},
+		// {
+		// 	name: 'TypeScript type annotation punctuation',
+		// 	scope: [
+		// 		'meta.type.annotation.ts meta.brace',
+		// 		'meta.type.annotation.ts punctuation.definition',
+		// 		'meta.type.annotation.ts punctuation.accessor',
+		// 		'meta.return.type.ts meta.brace',
+		// 		'meta.return.type.ts punctuation.definition',
+		// 		'meta.return.type.ts punctuation.accessor',
+		// 	],
+		// 	settings: {
+		// 		foreground: fade(tokens.punctuation, 0.6),
+		// 		fontStyle: 'italic'
+		// 	}
+		// },
+		
+		// C#
 		{
-			name: 'TypeScript type annotation punctuation',
-			scope: [
-				'meta.type.annotation.ts meta.brace',
-				'meta.type.annotation.ts punctuation.definition',
-				'meta.type.annotation.ts punctuation.accessor',
-				'meta.return.type.ts meta.brace',
-				'meta.return.type.ts punctuation.definition',
-				'meta.return.type.ts punctuation.accessor',
-			],
+			name: 'C# class variable',
+			scope: [ 'variable.other.object.cs' ],
 			settings: {
-				foreground: fade(tokens.punctuation, 0.6),
+				foreground: tokens.class
+			}
+		},
+		{
+			name: 'C# storage type',
+			scope: [ 'storage.type.cs' ],
+			settings: {
+				foreground: tokens.type,
 				fontStyle: 'italic'
 			}
 		},
