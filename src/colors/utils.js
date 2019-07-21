@@ -58,6 +58,36 @@ function lighten(color, amount) {
 }
 
 /**
+ * Saturates the given color by the given amount
+ * @param {string} color in format #XXXXXX 
+ * @param {number} amount as a percentage, unitless
+ * @return {string} hex color in format #XXXXXX
+ */
+function saturate(color, amount) {
+	let rgb = _hexToRGB(color)
+	const hsl = _RGBToHSL(rgb)
+	hsl[1] = (hsl[1] + amount).clamp(0, 100)
+	rgb = _HSLToRGB(hsl)
+	
+	return _RGBToHex(rgb)
+}
+
+/**
+ * Desaturates the given color by the given amount
+ * @param {string} color in format #XXXXXX 
+ * @param {number} amount as a percentage, unitless
+ * @return {string} hex color in format #XXXXXX
+ */
+function desaturate(color, amount) {
+	let rgb = _hexToRGB(color)
+	const hsl = _RGBToHSL(rgb)
+	hsl[1] = (hsl[1] - amount).clamp(0, 100)
+	rgb = _HSLToRGB(hsl)
+	
+	return _RGBToHex(rgb)
+}
+
+/**
  * Darkens the given color by the given amount
  * @param {string} color in format #XXXXXX
  * @param {number} amount as a percentage, unitless
@@ -229,4 +259,4 @@ function _hueCycle(deg) {
 	return deg
 }
 
-module.exports = { fade, lighten, darken }
+module.exports = { fade, lighten, darken, saturate, desaturate }
