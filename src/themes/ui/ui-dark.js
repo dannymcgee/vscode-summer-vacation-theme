@@ -137,7 +137,7 @@ const uiColors = {
 	'editorIndentGuide.background': grays.gray500,
 	'editorIndentGuide.activeBackground': lighten(grays.gray500, 5),
 	'editorRuler.foreground': grays.gray600,
-	'editorCodeLens.foreground': colors.blueDark,
+	'editorCodeLens.foreground': grays.gray300,
 	'editorBracketMatch.background': grays.gray500,
 	'editorBracketMatch.border': fade(grays.gray500, 0.3),
 	// -- Overvuew ruler
