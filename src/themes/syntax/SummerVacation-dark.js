@@ -1,6 +1,5 @@
 const grays = require('../../colors/grays')
 const colors = require('../../colors/dark-palette')
-const { lighten } = require('../../colors/utils')
 
 tokens = {
 	background: grays.gray700,
@@ -18,6 +17,7 @@ tokens = {
 	control: colors.purple,
 	this: colors.pinkLight,
 	class: colors.yellow,
+	type: colors.orange,
 	function: colors.blueLight,
 	comment: colors.blueDark,
 	tag: colors.orange,

@@ -17,6 +17,7 @@ tokens = {
 	control: colors.purple,
 	this: colors.yellow,
 	class: colors.yellow,
+	type: colors.orange,
 	function: colors.blueLight,
 	comment: grays.gray300,
 	tag: colors.pinkDark,
