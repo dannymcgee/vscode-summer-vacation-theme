@@ -23,7 +23,11 @@ While the theme has been optimized for web development, most of the syntax token
 ![Base Tokens](base-tokens.png)
 
 ## Screenshots
-> **Important Note:** Many of these screenshots make use of custom grammars for syntax highlighting which I hope to release soon. Once they're released, this readme will be updated with the relevant links.
+> **Important Note:** Many of these screenshots make use of custom extended grammars for some syntax highlighting features. These extensions aren't necessary — the theme will work fine without them — but your results may vary a little (or a lot) from the screenshots below unless you install them.
+>
+> * [SCSS Grammar Extended](https://marketplace.visualstudio.com/items?itemName=dannymcgee.scss-grammar-extended)
+> * [TypeScript Grammar Extended](https://marketplace.visualstudio.com/items?itemName=dannymcgee.ts-grammar-extended)
+> * [Angular HTML Syntax](https://marketplace.visualstudio.com/items?itemName=dannymcgee.ng-html)
 
 ### HTML
 ![HTML](examples/img/html.png)
@@ -44,8 +48,10 @@ While the theme has been optimized for web development, most of the syntax token
 ![TypeScript](examples/img/ng-typescript.png)
 
 ### Angular HTML
-[Custom grammar extension](https://marketplace.visualstudio.com/items?itemName=dannymcgee.ng-html)
 ![Angular HTML](examples/img/ng-html.png)
+
+### C#
+![C#](examples/img/csharp.png)
 
 ### UI
 [View full size](examples/img/ui.png)

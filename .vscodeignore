@@ -8,3 +8,5 @@ examples/angular/**
 examples/scss/**
 .gitignore
 vsc-extension-quickstart.md
+*.psd
+*.vsix
