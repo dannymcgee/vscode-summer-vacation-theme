@@ -406,21 +406,6 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
-		// {
-		// 	name: 'TypeScript type annotation punctuation',
-		// 	scope: [
-		// 		'meta.type.annotation.ts meta.brace',
-		// 		'meta.type.annotation.ts punctuation.definition',
-		// 		'meta.type.annotation.ts punctuation.accessor',
-		// 		'meta.return.type.ts meta.brace',
-		// 		'meta.return.type.ts punctuation.definition',
-		// 		'meta.return.type.ts punctuation.accessor',
-		// 	],
-		// 	settings: {
-		// 		foreground: fade(tokens.punctuation, 0.6),
-		// 		fontStyle: 'italic'
-		// 	}
-		// },
 		
 		// C#
 		{
