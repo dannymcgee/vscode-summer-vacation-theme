@@ -30,6 +30,122 @@
 			}
 		},
 		{
+			"name": "String character escape",
+			"scope": [
+				"string constant.character.escape"
+			],
+			"settings": {
+				"foreground": "#6FEFC5"
+			}
+		},
+		{
+			"name": "RegExp Group punctuation",
+			"scope": [
+				"punctuation.definition.group.regexp"
+			],
+			"settings": {
+				"foreground": "#AEC1CC"
+			}
+		},
+		{
+			"name": "RegExp Character Class punctuation",
+			"scope": [
+				"punctuation.definition.character-class.regexp"
+			],
+			"settings": {
+				"foreground": "#AEC1CC"
+			}
+		},
+		{
+			"name": "RegExp Character Class",
+			"scope": [
+				"constant.other.character-class.regexp"
+			],
+			"settings": {
+				"foreground": "#FFC83F"
+			}
+		},
+		{
+			"name": "RegExp Character Class set",
+			"scope": [
+				"constant.other.character-class.range.regexp",
+				"constant.other.character-class.set.regexp",
+				"constant.other.character-class.set.regexp constant.other.character-class.regexp"
+			],
+			"settings": {
+				"foreground": "#879299"
+			}
+		},
+		{
+			"name": "RegExp Escaped Character in Character Class set",
+			"scope": [
+				"constant.other.character-class.set.regexp constant.character.escape"
+			],
+			"settings": {
+				"foreground": "#B0B7BC"
+			}
+		},
+		{
+			"name": "RegExp Quantifier",
+			"scope": [
+				"keyword.operator.quantifier.regexp"
+			],
+			"settings": {
+				"foreground": "#70C2FF"
+			}
+		},
+		{
+			"name": "RegExp Lookarounds, Non-Capturing Group",
+			"scope": [
+				"meta.assertion.look-ahead.regexp",
+				"meta.assertion.look-behind.regexp",
+				"punctuation.definition.group.no-capture.regexp"
+			],
+			"settings": {
+				"foreground": "#879299"
+			}
+		},
+		{
+			"name": "RegExp Negations / Negatives",
+			"scope": [
+				"keyword.operator.negation.regexp",
+				"meta.assertion.negative-look-ahead.regexp",
+				"meta.assertion.negative-look-behind.regexp"
+			],
+			"settings": {
+				"foreground": "#FA5E5B"
+			}
+		},
+		{
+			"name": "RegExp Control Character",
+			"scope": [
+				"constant.character.control.regexp"
+			],
+			"settings": {
+				"foreground": "#B89FF7"
+			}
+		},
+		{
+			"name": "RegExp Back-Reference",
+			"scope": [
+				"keyword.other.back-reference.regexp"
+			],
+			"settings": {
+				"foreground": "#FF98AD",
+				"fontStyle": ""
+			}
+		},
+		{
+			"name": "RegExp Anchors",
+			"scope": [
+				"keyword.control.anchor.regexp"
+			],
+			"settings": {
+				"foreground": "#B89FF7",
+				"fontStyle": ""
+			}
+		},
+		{
 			"name": "Boolean",
 			"scope": [
 				"constant.language.boolean"
@@ -855,8 +971,8 @@
 		"editorGutter.modifiedBackground": "#16C98D",
 		"editorGutter.addedBackground": "#0FDEBD",
 		"editorGutter.deletedBackground": "#FA5E5B",
-		"diffEditor.insertedTextBackground": "#0FDEBD26",
-		"diffEditor.removedTextBackground": "#FA5E5B26",
+		"diffEditor.insertedTextBackground": "#0FDEBD0d",
+		"diffEditor.removedTextBackground": "#FA5E5B13",
 		"editorWidget.background": "#2B3649",
 		"editorWidget.border": "#0000",
 		"editorWidget.resizeBorder": "#0000",
@@ -939,9 +1055,9 @@
 		"terminal.border": "#2B3649",
 		"terminal.foreground": "#DBE6EC",
 		"terminal.ansiBlack": "#1C2430",
-		"terminal.ansiBlue": "#2C98EC",
+		"terminal.ansiBlue": "#70C2FF",
 		"terminal.ansiBrightBlack": "#FFF",
-		"terminal.ansiBrightBlue": "#2C98EC",
+		"terminal.ansiBrightBlue": "#70C2FF",
 		"terminal.ansiBrightCyan": "#0FDEBD",
 		"terminal.ansiBrightGreen": "#16C98D",
 		"terminal.ansiBrightMagenta": "#FF708E",
