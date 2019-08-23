@@ -45,8 +45,13 @@
 	"scripts": {
 		"generate": "node ./src/generate.js",
 		"package": "vsce package",
+		"install": "node ./src/install-package.js",
+		"test-run": "npm run generate && npm run package && npm run install",
 		"publish:patch": "vsce publish patch",
 		"publish:minor": "vsce publish minor",
 		"publish:major": "vsce publish major"
+	},
+	"devDependencies": {
+		"shelljs": "^0.8.3"
 	}
 }
