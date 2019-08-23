@@ -31,6 +31,108 @@ function SyntaxFactory(tokens) {
 				foreground: fade(tokens.string, 0.5)
 			}
 		},
+		{
+			name: 'String character escape',
+			scope: [ 'string constant.character.escape' ],
+			settings: {
+				foreground: lighten(tokens.string, 25) // tokens.constant
+			}
+		},
+
+		// RegExp
+		{
+			name: 'RegExp Group punctuation',
+			scope: [ 'punctuation.definition.group.regexp' ],
+			settings: {
+				foreground: grays.gray200
+			}
+		},
+		{
+			name: 'RegExp Character Class punctuation',
+			scope: [ 'punctuation.definition.character-class.regexp' ],
+			settings: {
+				foreground: grays.gray200
+			}
+		},
+		{
+			name: 'RegExp Character Class',
+			scope: [ 'constant.other.character-class.regexp' ],
+			settings: {
+				foreground: tokens.class
+			}
+		},
+		{
+			name: 'RegExp Character Class set',
+			scope: [
+				'constant.other.character-class.range.regexp',
+				'constant.other.character-class.set.regexp',
+				'constant.other.character-class.set.regexp constant.other.character-class.regexp',
+			],
+			settings: {
+				foreground: lighten(grays.gray300, 5)
+			}
+		},
+		{
+			name: 'RegExp Escaped Character in Character Class set',
+			scope: [
+				'constant.other.character-class.set.regexp constant.character.escape'
+			],
+			settings: {
+				foreground: lighten(grays.gray300, 20)
+			}
+		},
+		{
+			name: 'RegExp Quantifier',
+			scope: [ 'keyword.operator.quantifier.regexp' ],
+			settings: {
+				foreground: tokens.function
+			}
+		},
+		{
+			name: 'RegExp Lookarounds, Non-Capturing Group',
+			scope: [
+				'meta.assertion.look-ahead.regexp',
+				'meta.assertion.look-behind.regexp',
+				'punctuation.definition.group.no-capture.regexp',
+			],
+			settings: {
+				foreground: lighten(grays.gray300, 5)
+			}
+		},
+		{
+			name: 'RegExp Negations / Negatives',
+			scope: [
+				'keyword.operator.negation.regexp',
+				'meta.assertion.negative-look-ahead.regexp',
+				'meta.assertion.negative-look-behind.regexp',
+			],
+			settings: {
+				foreground: colors.red
+			}
+		},
+		{
+			name: 'RegExp Control Character',
+			scope: [ 'constant.character.control.regexp' ],
+			settings: {
+				foreground: tokens.control
+			}
+		},
+		{
+			name: 'RegExp Back-Reference',
+			scope: [ 'keyword.other.back-reference.regexp' ],
+			settings: {
+				foreground: tokens.variable,
+				fontStyle: ''
+			}
+		},
+		{
+			name: 'RegExp Anchors',
+			scope: [ 'keyword.control.anchor.regexp' ],
+			settings: {
+				foreground: tokens.control,
+				fontStyle: ''
+			}
+		},
 	
 		// Language constants
 		{
