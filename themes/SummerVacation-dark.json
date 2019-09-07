@@ -313,7 +313,7 @@
 				"variable.language.this"
 			],
 			"settings": {
-				"foreground": "#FF98AD",
+				"foreground": "#FF953F",
 				"fontStyle": "italic"
 			}
 		},
@@ -384,6 +384,35 @@
 			],
 			"settings": {
 				"foreground": "#FFC83F",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Type (custom)",
+			"scope": [
+				"meta.type.annotation.ts entity.name.type",
+				"meta.type.parameters.ts entity.name.type",
+				"meta.return.type.ts entity.name.type",
+				"meta.var.expr.ts entity.name.type",
+				"support.type.graphql",
+				"storage.type.cs"
+			],
+			"settings": {
+				"foreground": "#FF953F",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Type (primitive/built-in)",
+			"scope": [
+				"meta.type.annotation.ts support.type.primitive",
+				"meta.type.annotation.ts support.type.builtin",
+				"meta.return.type.ts support.type.primitive",
+				"meta.return.type.ts support.type.builtin",
+				"support.type.builtin.graphql"
+			],
+			"settings": {
+				"foreground": "#B89FF7",
 				"fontStyle": "italic"
 			}
 		},
@@ -489,51 +518,6 @@
 			],
 			"settings": {
 				"foreground": "#B89FF780",
-				"fontStyle": "italic"
-			}
-		},
-		{
-			"name": "TypeScript type annotations (class)",
-			"scope": [
-				"meta.type.annotation.ts entity.name.type",
-				"meta.type.parameters.ts entity.name.type",
-				"meta.return.type.ts entity.name.type",
-				"meta.var.expr.ts entity.name.type"
-			],
-			"settings": {
-				"foreground": "#FF953F",
-				"fontStyle": "italic"
-			}
-		},
-		{
-			"name": "TypeScript type annotations (primitive)",
-			"scope": [
-				"meta.type.annotation.ts support.type.primitive",
-				"meta.type.annotation.ts support.type.builtin",
-				"meta.return.type.ts support.type.primitive",
-				"meta.return.type.ts support.type.builtin"
-			],
-			"settings": {
-				"foreground": "#B89FF7",
-				"fontStyle": "italic"
-			}
-		},
-		{
-			"name": "C# class variable",
-			"scope": [
-				"variable.other.object.cs"
-			],
-			"settings": {
-				"foreground": "#FFC83F"
-			}
-		},
-		{
-			"name": "C# storage type",
-			"scope": [
-				"storage.type.cs"
-			],
-			"settings": {
-				"foreground": "#FF953F",
 				"fontStyle": "italic"
 			}
 		},
