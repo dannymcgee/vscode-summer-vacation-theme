@@ -15,7 +15,7 @@ tokens = {
 	property: colors.pinkDark,
 	keyword: colors.purple,
 	control: colors.purple,
-	this: colors.pinkLight,
+	this: colors.orange,
 	class: colors.yellow,
 	type: colors.orange,
 	function: colors.blueLight,
