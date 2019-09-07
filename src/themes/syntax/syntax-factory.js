@@ -375,6 +375,37 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
+
+		// Type
+		{
+			name: 'Type (custom)',
+			scope: [
+				'meta.type.annotation.ts entity.name.type',
+				'meta.type.parameters.ts entity.name.type',
+				'meta.return.type.ts entity.name.type',
+				'meta.var.expr.ts entity.name.type',
+				'support.type.graphql',
+				'storage.type.cs',
+			],
+			settings: {
+				foreground: tokens.type,
+				fontStyle: 'italic'
+			}
+		},
+		{
+			name: 'Type (primitive/built-in)',
+			scope: [
+				'meta.type.annotation.ts support.type.primitive',
+				'meta.type.annotation.ts support.type.builtin',
+				'meta.return.type.ts support.type.primitive',
+				'meta.return.type.ts support.type.builtin',
+				'support.type.builtin.graphql',
+			],
+			settings: {
+				foreground: tokens.keyword,
+				fontStyle: 'italic'
+			}
+		},
 	
 		// Function
 		{
@@ -477,51 +508,6 @@ function SyntaxFactory(tokens) {
 			],
 			settings: {
 				foreground: fade(tokens.keyword, 0.5),
-				fontStyle: 'italic'
-			}
-		},
-	
-		// TypeScript
-		{
-			name: 'TypeScript type annotations (class)',
-			scope: [
-				'meta.type.annotation.ts entity.name.type',
-				'meta.type.parameters.ts entity.name.type',
-				'meta.return.type.ts entity.name.type',
-				'meta.var.expr.ts entity.name.type'
-			],
-			settings: {
-				foreground: tokens.type,
-				fontStyle: 'italic'
-			}
-		},
-		{
-			name: 'TypeScript type annotations (primitive)',
-			scope: [
-				'meta.type.annotation.ts support.type.primitive',
-				'meta.type.annotation.ts support.type.builtin',
-				'meta.return.type.ts support.type.primitive',
-				'meta.return.type.ts support.type.builtin',
-			],
-			settings: {
-				foreground: tokens.keyword,
-				fontStyle: 'italic'
-			}
-		},
-		
-		// C#
-		{
-			name: 'C# class variable',
-			scope: [ 'variable.other.object.cs' ],
-			settings: {
-				foreground: tokens.class
-			}
-		},
-		{
-			name: 'C# storage type',
-			scope: [ 'storage.type.cs' ],
-			settings: {
-				foreground: tokens.type,
 				fontStyle: 'italic'
 			}
 		},
