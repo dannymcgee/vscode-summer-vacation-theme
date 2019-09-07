@@ -27,6 +27,7 @@ While the theme has been optimized for web development, most of the syntax token
 >
 > * [SCSS Grammar Extended](https://marketplace.visualstudio.com/items?itemName=dannymcgee.scss-grammar-extended)
 > * [TypeScript Grammar Extended](https://marketplace.visualstudio.com/items?itemName=dannymcgee.ts-grammar-extended)
+> * [C# Grammar Extended](https://marketplace.visualstudio.com/items?itemName=dannymcgee.csharp-grammar-extended)
 > * [Angular HTML Syntax](https://marketplace.visualstudio.com/items?itemName=dannymcgee.ng-html)
 
 ### HTML
