@@ -311,6 +311,7 @@ function SyntaxFactory(tokens) {
 				'variable.other.constant.property',
 				'variable.other.object.property',
 				'variable.other.property',
+				'variable.other.enummember',
 				'entity.name.label',
 				'meta.object-literal.key',
 				'meta.object-literal.key string',
