@@ -1,5 +1,6 @@
 const grays = require('../../colors/grays')
 const colors = require('../../colors/dark-palette')
+const tokens = require('../syntax/SummerVacation-dark');
 const { fade, lighten, darken } = require('../../colors/utils')
 
 const transparent = fade('#000', 0)
@@ -338,6 +339,41 @@ const uiColors = {
 	'breadcrumb.focusForeground': grays.gray100,
 	'breadcrumb.activeSelectionForeground': '#FFF',
 	'breadcrumbPicker.background': grays.gray700,
+
+	// Symbol icons
+	'symbolIcon.arrayForeground': tokens.class,
+	'symbolIcon.booleanForeground': tokens.constant,
+	'symbolIcon.classForeground': tokens.class,
+	'symbolIcon.colorForeground': tokens.variable,
+	'symbolIcon.constructorForeground': tokens.keyword,
+	'symbolIcon.constantForeground': tokens.constant,
+	'symbolIcon.enumeratorForeground': tokens.class,
+	'symbolIcon.enumeratorMemberForeground': tokens.property,
+	'symbolIcon.eventForeground': tokens.variable,
+	'symbolIcon.fieldForeground': tokens.property,
+	'symbolIcon.fileForeground': tokens.foreground,
+	'symbolIcon.folderForeground': tokens.foreground,
+	'symbolIcon.functionForeground': tokens.function,
+	'symbolIcon.interfaceForeground': tokens.type,
+	'symbolIcon.keyForeground': tokens.property,
+	'symbolIcon.keywordForeground': tokens.keyword,
+	'symbolIcon.methodForeground': tokens.function,
+	'symbolIcon.moduleForeground': tokens.keyword,
+	'symbolIcon.namespaceForeground': tokens.class,
+	'symbolIcon.nullForeground': tokens.constant,
+	'symbolIcon.numberForeground': tokens.constant,
+	'symbolIcon.objectForeground': tokens.class,
+	'symbolIcon.operatorForeground': tokens.punctuation,
+	'symbolIcon.packageForeground': tokens.keyword,
+	'symbolIcon.propertyForeground': tokens.property,
+	'symbolIcon.referenceForeground': tokens.foreground,
+	'symbolIcon.snippetForeground': tokens.foreground,
+	'symbolIcon.stringForeground': tokens.string,
+	'symbolIcon.structForeground': tokens.class,
+	'symbolIcon.textForeground': tokens.foreground,
+	'symbolIcon.typeParameterForeground': tokens.type,
+	'symbolIcon.unitForeground': tokens.constant,
+	'symbolIcon.variableForeground': tokens.variable,
 }
 
 module.exports = uiColors
