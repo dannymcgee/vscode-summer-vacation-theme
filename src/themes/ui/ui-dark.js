@@ -272,28 +272,28 @@ const uiColors = {
 	'extensionButton.prominentHoverBackground': darken(colors.green, 20),
 
 	// Integrated Terminal colors
-	'terminal.background': grays.gray800,
-	'terminal.border': grays.gray600,
-	'terminal.foreground': grays.gray100,
-	'terminal.ansiBlack': grays.gray800,
-	'terminal.ansiBlue': colors.blueLight,
-	'terminal.ansiBrightBlack': colors.blueDark,
-	'terminal.ansiBrightBlue': colors.blueLight,
-	'terminal.ansiBrightCyan': colors.teal,
-	'terminal.ansiBrightGreen': colors.green,
-	'terminal.ansiBrightMagenta': colors.pinkLight,
-	'terminal.ansiBrightRed': colors.pinkDark,
-	'terminal.ansiBrightWhite': '#FFF',
-	'terminal.ansiBrightYellow': colors.yellow,
-	'terminal.ansiCyan': colors.teal,
-	'terminal.ansiGreen': colors.green,
-	'terminal.ansiMagenta': colors.purple,
-	'terminal.ansiRed': colors.red,
-	'terminal.ansiWhite': grays.gray100,
-	'terminal.ansiYellow': colors.yellow,
+	'terminal.background':         grays.gray800,
+	'terminal.border':             grays.gray600,
+	'terminal.foreground':         grays.gray100,
+	'terminal.ansiBlack':          grays.gray800,     // PowerShell: ConsoleColor.Black
+	'terminal.ansiBrightBlack':    grays.gray200,     // PowerShell: ConsoleColor.DarkGray
+	'terminal.ansiRed':            colors.red,        // PowerShell: ConsoleColor.DarkRed
+	'terminal.ansiBrightRed':      colors.pinkDark,   // PowerShell: ConsoleColor.Red
+	'terminal.ansiGreen':          colors.green,      // PowerShell: ConsoleColor.DarkGreen
+	'terminal.ansiBrightGreen':    colors.green,      // PowerShell: ConsoleColor.Green
+	'terminal.ansiYellow':         colors.orange,     // PowerShell: ConsoleColor.DarkYellow
+	'terminal.ansiBrightYellow':   colors.yellow,     // PowerShell: ConsoleColor.Yellow
+	'terminal.ansiBlue':           colors.blueDark,   // PowerShell: ConsoleColor.DarkBlue
+	'terminal.ansiBrightBlue':     colors.blueLight,  // PowerShell: ConsoleColor.Blue
+	'terminal.ansiMagenta':        colors.purple,     // PowerShell: ConsoleColor.DarkMagenta
+	'terminal.ansiBrightMagenta':  colors.pinkLight,  // PowerShell: ConsoleColor.Magenta
+	'terminal.ansiCyan':           colors.teal,       // PowerShell: ConsoleColor.DarkCyan
+	'terminal.ansiBrightCyan':     colors.teal,       // PowerShell: ConsoleColor.Cyan
+	'terminal.ansiWhite':          grays.gray100,     // PowerShell: ConsoleColor.Gray
+	'terminal.ansiBrightWhite':    '#FFF',            // PowerShell: ConsoleColor.White
 	'terminal.selectionBackground': fade(grays.gray400, 0.5),
-	'terminalCursor.background': grays.gray700,
-	'terminalCursor.foreground': grays.gray200,
+	'terminalCursor.background':   grays.gray700,
+	'terminalCursor.foreground':   grays.gray200,
 
 	// Debug
 	'debugToolBar.background': grays.gray600,
