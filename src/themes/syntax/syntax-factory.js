@@ -258,6 +258,7 @@ function SyntaxFactory(tokens) {
 				'punctuation.definition.interpolation',
 				'punctuation.definition.template-expression',
 				'punctuation.definition.ng-attribute-name',
+				'punctuation.definition.ng-binding-name',
 				'punctuation.section.embedded',
 				'support.function.construct.begin.blade',
 				'support.function.construct.end.blade',
