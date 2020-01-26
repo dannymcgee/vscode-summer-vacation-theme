@@ -12,7 +12,7 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.foreground
 			}
 		},
-	
+
 		// String
 		{
 			name: 'String',
@@ -133,7 +133,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: ''
 			}
 		},
-	
+
 		// Language constants
 		{
 			name: 'Boolean',
@@ -176,7 +176,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: ''
 			}
 		},
-	
+
 		// Keyword
 		{
 			name: 'Keyword',
@@ -222,7 +222,7 @@ function SyntaxFactory(tokens) {
 				foreground: fade(tokens.keyword, 0.5)
 			}
 		},
-	
+
 		// Comment
 		{
 			name: 'Comment',
@@ -232,7 +232,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
-	
+
 		// Punctuation
 		{
 			name: 'Punctuation (general)',
@@ -276,7 +276,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: ''
 			}
 		},
-	
+
 		// Variable
 		{
 			name: 'Variable',
@@ -292,7 +292,7 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.variable
 			}
 		},
-	
+
 		// This
 		{
 			name: 'This',
@@ -302,7 +302,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
-	
+
 		// Property
 		{
 			name: 'Property',
@@ -337,7 +337,7 @@ function SyntaxFactory(tokens) {
 				foreground: fade(tokens.property, 0.5)
 			}
 		},
-	
+
 		// Class
 		{
 			name: 'Class',
@@ -408,7 +408,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
-	
+
 		// Function
 		{
 			name: 'Function',
@@ -423,7 +423,7 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.function
 			}
 		},
-	
+
 		// Tag
 		{
 			name: 'Tag name',
@@ -450,7 +450,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
-	
+
 		// Attribute
 		{
 			name: 'Attribute',
@@ -460,7 +460,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
-	
+
 		// CSS/HTML
 		{
 			name: 'CSS property value',
@@ -513,7 +513,7 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
-	
+
 		// Markdown
 		{
 			name: 'Markdown heading',
@@ -606,7 +606,7 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.punctuation
 			}
 		},
-	
+
 		// INI
 		{
 			name: 'INI property name',
@@ -642,7 +642,7 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.punctuation
 			}
 		},
-	
+
 		// tmLanguage
 		{
 			name: 'tmLanguage quotes',
