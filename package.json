@@ -23,20 +23,20 @@
 	"contributes": {
 		"themes": [
 			{
-				"id": "Summer Vacation Dark",
-				"label": "Dark",
+				"id": "Summer Vacation (Dark)",
+				"label": "Summer Vacation (Dark)",
 				"uiTheme": "vs-dark",
 				"path": "./themes/SummerVacation-dark.json"
 			},
 			{
 				"id": "Summer Vacation (VS Code Dark+)",
-				"label": "Dark (VS Code)",
+				"label": "Summer Vacation (VS Code Dark+)",
 				"uiTheme": "vs-dark",
 				"path": "./themes/SummerVacation-vscdark.json"
 			},
 			{
 				"id": "Summer Vacation (One Dark)",
-				"label": "Dark (One Dark)",
+				"label": "Summer Vacation (One Dark)",
 				"uiTheme": "vs-dark",
 				"path": "./themes/SummerVacation-onedark.json"
 			}
