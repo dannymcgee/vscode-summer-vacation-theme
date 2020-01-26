@@ -200,7 +200,6 @@ function SyntaxFactory(tokens) {
 				'punctuation.definition.decorator.python',
 				'meta.function.decorator.python support.type.python',
 				'support.variable.property.prototype',
-				'entity.other.attribute-name.pseudo-element'
 			],
 			settings: {
 				foreground: tokens.keyword,
@@ -345,7 +344,7 @@ function SyntaxFactory(tokens) {
 				'support.class',
 				'support.constant',
 				'entity.name.class',
-				'entity.name.type',
+				'new.expr entity.name.type',
 				'entity.name.type.class',
 				'entity.name.type.instance',
 				'meta.var.expr meta.function-call entity.name.class',
@@ -360,32 +359,14 @@ function SyntaxFactory(tokens) {
 				fontStyle: ''
 			}
 		},
-		{
-			name: 'Class italicized',
-			scope: [
-				'entity.name.class.inherited',
-				'entity.other.inherited-class',
-				'meta.type.annotation entity.name.type',
-				'meta.return.type entity.name.type',
-				'meta.var.expr entity.name.type',
-				'meta.type.parameters entity.name.type',
-				'entity.other.attribute-name.pseudo-class',
-				'meta.attribute.class.html entity.other.attribute-name.html',
-			],
-			settings: {
-				foreground: tokens.class,
-				fontStyle: 'italic'
-			}
-		},
 
 		// Type
 		{
 			name: 'Type (custom)',
 			scope: [
-				'meta.type.annotation.ts entity.name.type',
-				'meta.type.parameters.ts entity.name.type',
-				'meta.return.type.ts entity.name.type',
-				'meta.var.expr.ts entity.name.type',
+				'entity.name.type',
+				'entity.name.class.inherited',
+				'entity.other.inherited-class',
 				'support.type.graphql',
 				'storage.type.cs',
 			],
@@ -460,6 +441,14 @@ function SyntaxFactory(tokens) {
 				fontStyle: 'italic'
 			}
 		},
+		{
+			name: "Attribute (class)",
+			scope: [ 'meta.attribute.class.html entity.other.attribute-name.html' ],
+			settings: {
+				foreground: tokens.class,
+				fontStyle: 'italic'
+			}
+		},
 
 		// CSS/HTML
 		{
@@ -488,6 +477,22 @@ function SyntaxFactory(tokens) {
 			],
 			settings: {
 				foreground: tokens.foreground
+			}
+		},
+		{
+			name: 'CSS pseudo-class selector',
+			scope: ['entity.other.attribute-name.pseudo-class'],
+			settings: {
+				foreground: tokens.class,
+				fontStyle: 'italic'
+			}
+		},
+		{
+			name: 'CSS pseudo-element selector',
+			scope: ['entity.other.attribute-name.pseudo-element'],
+			settings: {
+				foreground: tokens.tag,
+				fontStyle: 'italic'
 			}
 		},
 		{
