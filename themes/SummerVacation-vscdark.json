@@ -225,7 +225,12 @@
 		{
 			"name": "Control",
 			"scope": [
-				"keyword.control"
+				"keyword.control",
+				"entity.other.ng-binding-name.template",
+				"entity.other.ng-binding-name.ngFor",
+				"entity.other.ng-binding-name.ngIf",
+				"entity.other.ng-binding-name.ngSwitch",
+				"entity.other.ng-binding-name.ngSwitchCase"
 			],
 			"settings": {
 				"foreground": "#B89FF7",
@@ -455,7 +460,8 @@
 		{
 			"name": "Attribute (class)",
 			"scope": [
-				"meta.attribute.class.html entity.other.attribute-name.html"
+				"meta.attribute.class.html entity.other.attribute-name.html",
+				"entity.other.ng-binding-name.ngClass"
 			],
 			"settings": {
 				"foreground": "#0FDEBD",

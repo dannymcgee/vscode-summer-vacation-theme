@@ -208,7 +208,14 @@ function SyntaxFactory(tokens) {
 		},
 		{
 			name: 'Control',
-			scope: [ 'keyword.control' ],
+			scope: [
+				'keyword.control',
+				'entity.other.ng-binding-name.template',
+				'entity.other.ng-binding-name.ngFor',
+				'entity.other.ng-binding-name.ngIf',
+				'entity.other.ng-binding-name.ngSwitch',
+				'entity.other.ng-binding-name.ngSwitchCase',
+			],
 			settings: {
 				foreground: tokens.control,
 				fontStyle: 'italic'
@@ -445,8 +452,11 @@ function SyntaxFactory(tokens) {
 			}
 		},
 		{
-			name: "Attribute (class)",
-			scope: [ 'meta.attribute.class.html entity.other.attribute-name.html' ],
+			name: 'Attribute (class)',
+			scope: [
+				'meta.attribute.class.html entity.other.attribute-name.html',
+				'entity.other.ng-binding-name.ngClass',
+			],
 			settings: {
 				foreground: tokens.class,
 				fontStyle: 'italic'
