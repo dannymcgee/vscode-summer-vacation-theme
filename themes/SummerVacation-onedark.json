@@ -310,7 +310,8 @@
 		{
 			"name": "This",
 			"scope": [
-				"variable.language.this"
+				"variable.language.this",
+				"keyword.other.this"
 			],
 			"settings": {
 				"foreground": "#FFC83F",

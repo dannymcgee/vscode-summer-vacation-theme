@@ -295,7 +295,10 @@ function SyntaxFactory(tokens) {
 		// This
 		{
 			name: 'This',
-			scope: [ 'variable.language.this' ],
+			scope: [
+				'variable.language.this',
+				'keyword.other.this',
+			],
 			settings: {
 				foreground: tokens.this,
 				fontStyle: 'italic'
