@@ -379,6 +379,7 @@ function SyntaxFactory(tokens) {
 				'entity.other.inherited-class',
 				'support.type.graphql',
 				'storage.type.cs',
+				'new.expr meta.type.parameters entity.name.type',
 			],
 			settings: {
 				foreground: tokens.type,

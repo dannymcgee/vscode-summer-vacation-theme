@@ -384,7 +384,8 @@
 				"entity.name.class.inherited",
 				"entity.other.inherited-class",
 				"support.type.graphql",
-				"storage.type.cs"
+				"storage.type.cs",
+				"new.expr meta.type.parameters entity.name.type"
 			],
 			"settings": {
 				"foreground": "#FF953F",
