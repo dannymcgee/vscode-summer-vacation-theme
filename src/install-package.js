@@ -6,4 +6,4 @@ const absPath = path.resolve('./')
 const version = package.version
 const name = package.name
 
-shell.exec(`code --install-extension "${absPath}\\${name}-${version}.vsix"`)
+shell.exec(`code-insiders --install-extension "${absPath}\\${name}-${version}.vsix"`)
