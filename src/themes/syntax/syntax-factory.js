@@ -275,7 +275,10 @@ function SyntaxFactory(tokens) {
 				'punctuation.terminator',
 				'entity.name.tag.wildcard',
 				'entity.name.tag.reference.scss',
-				'punctuation.decorator.ts'
+				'punctuation.decorator.ts',
+				'storage.modifier.pointer',
+				'storage.modifier.reference',
+				'entity.name.function.operator',
 			],
 			settings: {
 				foreground: tokens.punctuation,
@@ -361,7 +364,6 @@ function SyntaxFactory(tokens) {
 				'meta.var.expr new.expr entity.name.type',
 				'entity.other.attribute-name.class.css',
 				'entity.other.inherited-class',
-				'entity.name.type.namespace.cs',
 				'storage.type.class.AFDKO',
 			],
 			settings: {
@@ -380,6 +382,9 @@ function SyntaxFactory(tokens) {
 				'support.type.graphql',
 				'storage.type.cs',
 				'new.expr meta.type.parameters entity.name.type',
+				'entity.name.scope-resolution',
+				'entity.name.type.namespace.cs',
+				'entity.name.namespace',
 			],
 			settings: {
 				foreground: tokens.type,
