@@ -291,7 +291,10 @@
 				"punctuation.terminator",
 				"entity.name.tag.wildcard",
 				"entity.name.tag.reference.scss",
-				"punctuation.decorator.ts"
+				"punctuation.decorator.ts",
+				"storage.modifier.pointer",
+				"storage.modifier.reference",
+				"entity.name.function.operator"
 			],
 			"settings": {
 				"foreground": "#AEC1CC",
@@ -369,7 +372,6 @@
 				"meta.var.expr new.expr entity.name.type",
 				"entity.other.attribute-name.class.css",
 				"entity.other.inherited-class",
-				"entity.name.type.namespace.cs",
 				"storage.type.class.AFDKO"
 			],
 			"settings": {
@@ -385,7 +387,10 @@
 				"entity.other.inherited-class",
 				"support.type.graphql",
 				"storage.type.cs",
-				"new.expr meta.type.parameters entity.name.type"
+				"new.expr meta.type.parameters entity.name.type",
+				"entity.name.scope-resolution",
+				"entity.name.type.namespace.cs",
+				"entity.name.namespace"
 			],
 			"settings": {
 				"foreground": "#16C98D",
@@ -1146,5 +1151,6 @@
 		"symbolIcon.typeParameterForeground": "#FF953F",
 		"symbolIcon.unitForeground": "#0FDEBD",
 		"symbolIcon.variableForeground": "#FF98AD"
-	}
+	},
+	"semanticHighlighting": true
 }
