@@ -26,7 +26,8 @@ for (const { name, id } of themes) {
 		name,
 		type: 'dark',
 		tokenColors,
-		colors: { ...uiColors }
+		colors: { ...uiColors },
+		semanticHighlighting: true,
 	}
 	const themeContent = JSON.stringify(theme, null, '\t')
 
