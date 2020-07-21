@@ -462,6 +462,7 @@ function SyntaxFactory(tokens) {
 			scope: [
 				'meta.attribute.class.html entity.other.attribute-name.html',
 				'entity.other.ng-binding-name.ngClass',
+				'entity.other.ng-binding-name.class',
 			],
 			settings: {
 				foreground: tokens.class,
