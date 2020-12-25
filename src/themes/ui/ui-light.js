@@ -1,50 +1,50 @@
-const neutrals = require('../../colors/dark-neutrals')
-const colors = require('../../colors/dark-palette')
-const tokens = require('../syntax/SummerVacation-dark')
-const { fade, lighten, darken } = require('../../colors/utils')
+const neutrals = require('../../colors/light-neutrals');
+const colors = require('../../colors/light-palette');
+const tokens = require('../syntax/SummerVacation-light');
+const { fade, lighten, darken } = require('../../colors/utils');
 
-const transparent = fade('#000', 0)
+const transparent = fade('#000', 0);
 
 const uiColors = {
 
 	// Base colors
 	focusBorder: colors.blueDark,
 	foreground: neutrals.gray100,
-	'widget.shadow': neutrals.gray800,
-	'selection.background': fade(colors.blueDark, 0.75),
+	'widget.shadow': fade(neutrals.gray400, 0.4),
+	'selection.background': fade(colors.blueDark, 0.333),
 	descriptionForeground: colors.gray100,
 	errorForeground: colors.red,
+	'icon.background': colors.blueDark,
 
 	// Text colors
 	'textBlockQuote.background': neutrals.gray800,
 	'textBlockQuote.border': transparent,
 	'textCodeBlock.background': neutrals.gray800,
-	'textLink.foreground': colors.blueLight,
-	'textLink.activeForeground': '#FFF',
+	'textLink.foreground': colors.blueDark,
+	'textLink.activeForeground': '#000',
 	'textSeparator.foreground': neutrals.gray500,
 
 	// Button control
-	'button.background': darken(colors.blueDark, 15),
+	'button.background': colors.blueDark,
 	'button.foreground': '#FFF',
-	'button.hoverBackground': darken(colors.blueDark, 25),
+	'button.hoverBackground': darken(colors.blueDark, 10),
 
 	// Dropdown control
-	'dropdown.background': neutrals.gray800,
+	'dropdown.background': neutrals.gray700,
 	'dropdown.foreground': neutrals.gray100,
-	'dropdown.border': transparent,
+	'dropdown.border': neutrals.gray500,
 	'dropdown.listBackground': neutrals.gray600,
 
 	// Input control
-	// 'input.background': fade('#000', 0.125),
-	'input.background': neutrals.gray800,
+	'input.background': neutrals.gray700,
 	'input.foreground': neutrals.gray100,
-	'input.placeholderForeground': neutrals.gray300,
-	'inputValidation.errorBackground': darken(colors.red, 20),
+	'input.placeholderForeground': neutrals.gray400,
+	'inputValidation.errorBackground': lighten(colors.red, 20),
 	'inputValidation.errorBorder': colors.red,
-	'inputValidation.infoBackground': darken(colors.blueDark, 20),
+	'inputValidation.infoBackground': lighten(colors.blueDark, 20),
 	'inputValidation.infoBorder': colors.blueDark,
-	'inputValidation.warningBackground': darken(colors.orange, 20),
-	'inputValidation.warningBorder': colors.yellow,
+	'inputValidation.warningBackground': lighten(colors.yellow, 20),
+	'inputValidation.warningBorder': colors.orange,
 
 	// Scrollbar control
 	'scrollbarSlider.background': fade(neutrals.gray400, 0.4),
@@ -52,31 +52,33 @@ const uiColors = {
 	'scrollbarSlider.activeBackground': neutrals.gray400,
 
 	// Badge
-	'badge.background': darken(colors.blueDark, 15),
+	'badge.background': colors.blueDark,
 	'badge.foreground': '#FFF',
 
 	// Lists and trees
-	'list.activeSelectionBackground': fade(colors.blueDark, 0.5),
+	'list.activeSelectionBackground': colors.blueDark,
 	'list.activeSelectionForeground': '#FFF',
 	'list.inactiveSelectionBackground': neutrals.gray500,
 	'list.inactiveSelectionForeground': neutrals.gray100,
-	'list.focusBackground': fade(neutrals.gray800, 0.5),
-	'list.focusForeground': '#FFF',
-	'list.hoverBackground': fade(neutrals.gray500, 0.5),
+	'list.focusBackground': neutrals.gray700,
+	'list.focusForeground': '#000',
+	'list.hoverBackground': neutrals.gray500,
 	'list.hoverForeground': neutrals.gray100,
 	'list.dropBackground': fade(colors.blueDark, 0.333),
-	'list.highlightForeground': colors.blueLight,
-	'list.invalidItemForeground': lighten(colors.red, 5),
-	'list.errorForeground': lighten(colors.red, 5),
+	'list.highlightForeground': colors.blueDark,
+	'list.invalidItemForeground': colors.red,
+	'list.errorForeground': colors.red,
 	'list.warningForeground': colors.yellow,
 	'tree.indentGuidesStroke': neutrals.gray400,
 
 	// Activity Bar
-	'activityBar.background': neutrals.gray500,
-	'activityBar.foreground': '#FFF',
-	'activityBar.inactiveForeground': neutrals.gray200,
+	'activityBar.background': colors.blueDark,
+	'activityBar.inactiveForeground': lighten(colors.blueLight, 10),
 	'activityBar.border': transparent,
-	'activityBarBadge.background': darken(colors.blueDark, 15),
+	'activityBar.activeBackground': darken(colors.blueDark, 7.5),
+	'activityBar.foreground': '#FFF',
+	'activityBar.activeBorder': transparent,
+	'activityBarBadge.background': colors.pinkLight,
 	'activityBarBadge.foreground': '#FFF',
 
 	// Side Bar
@@ -90,58 +92,64 @@ const uiColors = {
 	'sideBarSectionHeader.border': transparent,
 
 	// Editor Groups & Tabs
-	'editorGroup.border': neutrals.gray400,
-	'editorGroup.dropBackground': fade(colors.blueDark, 0.5),
+	'editorGroup.border': neutrals.gray500,
+	'editorGroup.dropBackground': fade(colors.blueDark, 0.333),
 	'editorGroupHeader.noTabsBackground': neutrals.gray700,
-	'editorGroupHeader.tabsBackground': neutrals.gray600,
+	'editorGroupHeader.tabsBackground': neutrals.gray500,
 	'editorGroupHeader.tabsBorder': transparent,
+	'editorGroupHeader.border': neutrals.gray800,
 	'editorGroup.emptyBackground': neutrals.gray700,
 	'editorGroup.focusedEmptyBorder': transparent,
-	'tab.border': neutrals.gray600,
+	'tab.border': neutrals.gray500,
 	// -- Active
 	'tab.activeBackground': neutrals.gray700,
 	'tab.unfocusedActiveBackground': neutrals.gray700,
-	'tab.activeForeground': '#FFF',
+	'tab.activeForeground': colors.blueDark,
 	'tab.unfocusedActiveForeground': neutrals.gray100,
 	'tab.activeBorder': transparent,
 	'tab.unfocusedActiveBorder': transparent,
 	'tab.activeBorderTop': colors.blueDark,
 	'tab.unfocusedActiveBorderTop': fade(colors.blueDark, 0.5),
 	// -- Inactive
-	'tab.inactiveBackground': neutrals.gray500,
+	'tab.inactiveBackground': neutrals.gray600,
 	'tab.inactiveForeground': neutrals.gray200,
 	'tab.unfocusedInactiveForeground': neutrals.gray200,
 	// -- Modified
 	'tab.activeModifiedBorder': colors.green,
 	'tab.inactiveModifiedBorder': fade(colors.green, 0.5),
 	'tab.unfocusedActiveModifiedBorder': fade(colors.green, 0.5),
-	'tab.unfocusedInactiveModifiedBorder': fade(colors.green, 0.25),
+	'tab.unfocusedInactiveModifiedBorder': fade(colors.green, 0.5),
 
 	// Editor colors
 	'editor.background': neutrals.gray700,
 	'editor.foreground': neutrals.gray100,
-	'editorLineNumber.foreground': neutrals.gray300,
+	'editorLineNumber.foreground': neutrals.gray400,
 	'editorLineNumber.activeForeground': neutrals.gray100,
 	'editorCursor.background': neutrals.gray800,
 	'editorCursor.foreground': neutrals.gray200,
-	'editor.selectionBackground': neutrals.gray500,
+	'editor.selectionBackground': fade(neutrals.gray500, 0.6),
 	'editor.selectionHighlightBackground': fade(neutrals.gray500, 0.4),
 	'editor.wordHighlightBackground': fade(colors.blueDark, 0.1),
-	'editor.wordHighlightStrongBackground': fade(colors.blueDark, 0.2),
-	'editor.findMatchBackground': fade(colors.green, 0.2),
+	'editor.wordHighlightStrongBackground': fade(colors.blueDark, 0.15),
+	'editor.findMatchBackground': fade(colors.green, 0.15),
 	'editor.findMatchHighlightBackground': fade(colors.green, 0.1),
-	'editor.hoverHighlightBackground': neutrals.gray800,
+	'editor.hoverHighlightBackground': fade(neutrals.gray600, 0.5),
 	'editor.lineHighlightBackground': fade(neutrals.gray800, 0.75),
-	'editor.rangeHighlightBackground': fade('#FFFFFF', 0.05),
+	'editor.rangeHighlightBackground': fade('#000000', 0.05),
 	'editorLink.activeForeground': colors.blueDark,
-	'editorWhitespace.foreground': lighten(neutrals.gray700, 10),
+	'editorWhitespace.foreground': darken(neutrals.gray700, 2),
 	'editorIndentGuide.background': neutrals.gray500,
-	'editorIndentGuide.activeBackground': lighten(neutrals.gray500, 5),
+	'editorIndentGuide.activeBackground': darken(neutrals.gray500, 3),
 	'editorRuler.foreground': neutrals.gray600,
-	'editorCodeLens.foreground': neutrals.gray300,
+	'editorCodeLens.foreground': neutrals.gray400,
 	'editorBracketMatch.background': neutrals.gray500,
 	'editorBracketMatch.border': fade(neutrals.gray500, 0.3),
-	// -- Overvuew ruler
+	'editorLightBulb.foreground': lighten(colors.yellow, 5),
+	'editorLightBulbAutoFix.foreground': colors.teal,
+	'problemsErrorIcon.foreground': colors.red,
+	'problemsWarningIcon.foreground': colors.yellow,
+	'problemsInfoIcon.foreground': colors.blueDark,
+	// -- Overview ruler
 	'editorOverviewRuler.border': transparent,
 	'editorOverviewRuler.findMatchForeground': fade(neutrals.gray400, 0.25),
 	'editorOverviewRuler.rangeHighlightForeground': fade(neutrals.gray400, 0.25),
@@ -158,7 +166,7 @@ const uiColors = {
 	// -- Errors and warnings
 	'editorError.foreground': colors.red,
 	'editorWarning.foreground': colors.yellow,
-	'editorInfo.foreground': colors.blueDark,
+	'editorInfo.foreground': colors.blueLight,
 	'editorHint.foreground': colors.green,
 	// -- Unused source code
 	'editorUnnecessaryCode.opacity': fade('#000000', 0.6),
@@ -170,37 +178,36 @@ const uiColors = {
 
 	// Diff editor colors
 	'diffEditor.insertedTextBackground': fade(colors.teal, 0.05),
-	// 'diffEditor.insertedTextBorder': colors.teal,
 	'diffEditor.removedTextBackground': fade(colors.red, 0.075),
-	// 'diffEditor.removedTextBorder': colors.red,
 
 	// Editor widget colors
-	'editorWidget.background': neutrals.gray600,
-	'editorWidget.border': transparent,
-	'editorWidget.resizeBorder': transparent,
-	'editorSuggestWidget.background': neutrals.gray600,
-	'editorSuggestWidget.border': transparent,
+	'editorWidget.background': neutrals.gray800,
+	'editorWidget.border': neutrals.gray500,
+	'editorWidget.resizeBorder': neutrals.gray500,
+	'editorSuggestWidget.background': neutrals.gray800,
+	'editorSuggestWidget.border': neutrals.gray500,
 	'editorSuggestWidget.foreground': neutrals.gray100,
-	// 'editorSuggestWidget.highlightForeground': colors.blueLight,
-	'editorSuggestWidget.highlightForeground': '#FFF',
-	'editorSuggestWidget.selectedBackground': neutrals.gray800,
+	'editorSuggestWidget.highlightForeground': colors.blueDark,
+	'editorSuggestWidget.selectedBackground': neutrals.gray700,
 	'editorHoverWidget.background': neutrals.gray800,
-	'editorHoverWidget.border': transparent,
+	'editorHoverWidget.border': neutrals.gray500,
 	'debugExceptionWidget.background': fade(colors.red, 0.25),
 	'debugExceptionWidget.border': colors.red,
 	'editorMarkerNavigation.background': neutrals.gray600,
 
 	// Peek view colors
-	'peekView.border': colors.blueDark,
+	'peekView.border': neutrals.gray500,
 	'peekViewEditor.background': neutrals.gray700,
-	'peekViewResult.background': neutrals.gray600,
-	'peekViewTitle.background': neutrals.gray800,
-	'peekViewTitleLabel.foreground': '#FFF',
-	'peekViewTitleDescription.foreground': neutrals.gray200,
-	'peekViewResult.lineForeground': '#FFF',
-	'peekViewResult.fileForeground': neutrals.gray200,
-	'peekViewEditor.matchHighlightBackground': lighten(neutrals.gray500, 5),
-	'peekViewResult.matchHighlightBackground': neutrals.gray800,
+	'peekViewEditor.matchHighlightBackground': fade(colors.green, 0.1),
+	'peekViewTitle.background': neutrals.gray600,
+	'peekViewTitleLabel.foreground': '#000',
+	'peekViewTitleDescription.foreground': neutrals.gray300,
+	'peekViewResult.background': neutrals.gray800,
+	'peekViewResult.lineForeground': neutrals.gray200,
+	'peekViewResult.fileForeground': '#000',
+	'peekViewResult.matchHighlightBackground': fade(colors.green, 0.1),
+	'peekViewResult.selectionBackground': colors.darkBlue,
+	'peekViewResult.selectionForeground': '#FFF',
 
 	// Merge conflicts
 	'merge.border': transparent,
@@ -215,27 +222,31 @@ const uiColors = {
 	'editorOverviewRuler.commonContentForeground': transparent,
 
 	// Panel colors
-	'panel.background': neutrals.gray600,
-	'panel.border': transparent,
+	'panel.background': neutrals.gray800,
+	'panel.border': neutrals.gray500,
+	'panelSection.border': neutrals.gray500,
+	'panelSection.dropBackground': fade(colors.blueDark, 0.333),
 	'panelTitle.activeBorder': colors.blueDark,
-	'panelTitle.activeForeground': neutrals.gray100,
-	'panelTitle.inactiveForeground': neutrals.gray200,
+	'panelTitle.activeForeground': '#000',
+	'panelTitle.inactiveForeground': neutrals.gray300,
+	'panelSectionHeader.background': neutrals.gray500,
+	'panelSectionHeader.border': neutrals.gray500,
 
 	// Status Bar colors
 	'statusBar.background': neutrals.gray700,
 	'statusBar.foreground': neutrals.gray100,
-	'statusBar.border': transparent,
+	'statusBar.border': neutrals.gray800,
 	'statusBar.debuggingBackground': neutrals.gray700,
 	'statusBar.debuggingForeground': neutrals.gray100,
-	'statusBar.debuggingBorder': colors.yellow,
+	'statusBar.debuggingBorder': colors.orange,
 	'statusBar.noFolderBackground': neutrals.gray700,
 	'statusBar.noFolderForeground': neutrals.gray100,
 	'statusBar.noFolderBorder': transparent,
 	'statusBarItem.activeBackground': fade(colors.blueDark, 0.5),
-	'statusBarItem.hoverBackground': neutrals.gray500,
+	'statusBarItem.hoverBackground': neutrals.gray800,
 	'statusBarItem.prominentBackground': transparent,
-	'statusBarItem.prominentForeground': '#FFF',
-	'statusBarItem.prominentHoverBackground': neutrals.gray500,
+	'statusBarItem.prominentForeground': '#000',
+	'statusBarItem.prominentHoverBackground': neutrals.gray800,
 
 	// Title Bar colors
 	'titleBar.activeBackground': neutrals.gray800,
@@ -245,52 +256,52 @@ const uiColors = {
 	'titleBar.border': transparent,
 
 	// Menu Bar colors
-	'menubar.selectionForeground': '#FFF',
-	'menubar.selectionBackground': neutrals.gray600,
+	'menubar.selectionForeground': '#000',
+	'menubar.selectionBackground': neutrals.gray700,
 	'menubar.selectionBorder': transparent,
-	'menu.foreground': neutrals.gray100,
-	'menu.background': neutrals.gray600,
-	'menu.selectionForeground': '#FFF',
-	'menu.selectionBackground': fade(neutrals.gray800, 0.5),
+	'menu.foreground': neutrals.gray200,
+	'menu.background': neutrals.gray800,
+	'menu.selectionForeground': '#000',
+	'menu.selectionBackground': neutrals.gray600,
 	'menu.selectionBorder': transparent,
 	'menu.separatorBackground': neutrals.gray400,
 
 	// Notification colors
-	'notificationCenter.border': transparent,
+	'notificationCenter.border': neutrals.gray500,
 	'notificationCenterHeader.background': neutrals.gray600,
 	'notificationCenterHeader.foreground': neutrals.gray100,
-	'notificationToast.border': transparent,
+	'notificationToast.border': neutrals.gray500,
 	'notifications.background': neutrals.gray700,
 	'notifications.foreground': neutrals.gray100,
-	'notifications.border': transparent,
-	'notificationLink.foreground': colors.blueLight,
+	'notifications.border': neutrals.gray500,
+	'notificationLink.foreground': colors.blueDark,
 
 	// Extensions
 	'extensionButton.prominentForeground': '#FFF',
-	'extensionButton.prominentBackground': darken(colors.green, 10),
-	'extensionButton.prominentHoverBackground': darken(colors.green, 20),
+	'extensionButton.prominentBackground': colors.green,
+	'extensionButton.prominentHoverBackground': darken(colors.green, 10),
 
 	// Integrated Terminal colors
 	'terminal.background':          neutrals.gray800,
-	'terminal.border':              neutrals.gray600,
+	'terminal.border':              neutrals.gray500,
 	'terminal.foreground':          neutrals.gray100,
-	'terminal.ansiBlack':           neutrals.gray800,     // PowerShell: ConsoleColor.Black
-	'terminal.ansiBrightBlack':     neutrals.gray200,     // PowerShell: ConsoleColor.DarkGray
-	'terminal.ansiRed':             colors.red,        // PowerShell: ConsoleColor.DarkRed
-	'terminal.ansiBrightRed':       colors.pinkDark,   // PowerShell: ConsoleColor.Red
-	'terminal.ansiGreen':           colors.green,      // PowerShell: ConsoleColor.DarkGreen
-	'terminal.ansiBrightGreen':     colors.green,      // PowerShell: ConsoleColor.Green
-	'terminal.ansiYellow':          colors.orange,     // PowerShell: ConsoleColor.DarkYellow
-	'terminal.ansiBrightYellow':    colors.yellow,     // PowerShell: ConsoleColor.Yellow
-	'terminal.ansiBlue':            colors.blueDark,   // PowerShell: ConsoleColor.DarkBlue
-	'terminal.ansiBrightBlue':      colors.blueLight,  // PowerShell: ConsoleColor.Blue
-	'terminal.ansiMagenta':         colors.purple,     // PowerShell: ConsoleColor.DarkMagenta
-	'terminal.ansiBrightMagenta':   colors.pinkLight,  // PowerShell: ConsoleColor.Magenta
-	'terminal.ansiCyan':            colors.teal,       // PowerShell: ConsoleColor.DarkCyan
-	'terminal.ansiBrightCyan':      colors.teal,       // PowerShell: ConsoleColor.Cyan
-	'terminal.ansiWhite':           neutrals.gray100,     // PowerShell: ConsoleColor.Gray
-	'terminal.ansiBrightWhite':     '#FFF',            // PowerShell: ConsoleColor.White
-	'terminal.selectionBackground': fade(neutrals.gray400, 0.5),
+	'terminal.ansiBlack':           neutrals.gray800,
+	'terminal.ansiBrightBlack':     neutrals.gray200,
+	'terminal.ansiRed':             colors.red,
+	'terminal.ansiBrightRed':       colors.pinkDark,
+	'terminal.ansiGreen':           colors.green,
+	'terminal.ansiBrightGreen':     colors.green,
+	'terminal.ansiYellow':          colors.orange,
+	'terminal.ansiBrightYellow':    colors.yellow,
+	'terminal.ansiBlue':            colors.blueDark,
+	'terminal.ansiBrightBlue':      colors.blueDark,
+	'terminal.ansiMagenta':         colors.purple,
+	'terminal.ansiBrightMagenta':   colors.purple,
+	'terminal.ansiCyan':            colors.teal,
+	'terminal.ansiBrightCyan':      colors.teal,
+	'terminal.ansiWhite':           neutrals.gray100,
+	'terminal.ansiBrightWhite':     '#FFF',
+	'terminal.selectionBackground': fade(neutrals.gray600, 0.5),
 	'terminalCursor.background':    neutrals.gray700,
 	'terminalCursor.foreground':    neutrals.gray200,
 
@@ -315,33 +326,39 @@ const uiColors = {
 	'gitDecoration.modifiedResourceForeground': colors.green,
 	'gitDecoration.deletedResourceForeground': colors.red,
 	'gitDecoration.untrackedResourceForeground': colors.yellow,
-	'gitDecoration.ignoredResourceForeground': neutrals.gray300,
+	'gitDecoration.ignoredResourceForeground': neutrals.gray400,
 	'gitDecoration.conflictingResourceForeground': colors.orange,
-	'gitDecoration.submoduleResourceForeground': colors.blueLight,
+	'gitDecoration.submoduleResourceForeground': colors.blueDark,
 
 	// Settings Editor colors
-	'settings.headerForeground': '#FFF',
+	'settings.headerForeground': neutrals.gray100,
 	'settings.modifiedItemIndicator': colors.blueDark,
-	'settings.dropdownBackground': neutrals.gray800,
+	'settings.dropdownBackground': neutrals.gray700,
 	'settings.dropdownForeground': neutrals.gray100,
-	'settings.dropdownBorder': transparent,
+	'settings.dropdownBorder': neutrals.gray500,
 	'settings.dropdownListBorder': transparent,
-	'settings.checkboxBackground': neutrals.gray800,
-	'settings.checkboxForeground': colors.blueLight,
-	'settings.checkboxBorder': transparent,
-	'settings.textInputBackground': neutrals.gray800,
+	'settings.checkboxBackground': neutrals.gray700,
+	'settings.checkboxForeground': colors.blueDark,
+	'settings.checkboxBorder': neutrals.gray500,
+	'settings.textInputBackground': neutrals.gray700,
 	'settings.textInputForeground': neutrals.gray100,
-	'settings.textInputBorder': transparent,
-	'settings.numberInputBackground': neutrals.gray800,
+	'settings.textInputBorder': neutrals.gray500,
+	'settings.numberInputBackground': neutrals.gray700,
 	'settings.numberInputForeground': neutrals.gray100,
-	'settings.numberInputBorder': transparent,
+	'settings.numberInputBorder': neutrals.gray500,
 
 	// Breadcrumbs
 	'breadcrumb.foreground': neutrals.gray200,
 	'breadcrumb.background': neutrals.gray700,
 	'breadcrumb.focusForeground': neutrals.gray100,
-	'breadcrumb.activeSelectionForeground': '#FFF',
+	'breadcrumb.activeSelectionForeground': '#000',
 	'breadcrumbPicker.background': neutrals.gray700,
+
+	// Snippets colors
+	'editor.snippetTabstopHighlightBackground': fade(neutrals.gray600, 0.5),
+	'editor.snippetTabstopHighlightBorder': fade(neutrals.gray600, 0.5),
+	'editor.snippetFinalTabstopHighlightBackground': fade(colors.blueDark, 0.1),
+	'editor.snippetFinalTabstopHighlightBorder': fade(colors.blueDark, 0.15),
 
 	// Symbol icons
 	'symbolIcon.arrayForeground': tokens.class,
@@ -377,6 +394,6 @@ const uiColors = {
 	'symbolIcon.typeParameterForeground': tokens.type,
 	'symbolIcon.unitForeground': tokens.constant,
 	'symbolIcon.variableForeground': tokens.variable,
-}
+};
 
-module.exports = uiColors
+module.exports = uiColors;

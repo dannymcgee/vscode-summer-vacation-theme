@@ -1,4 +1,4 @@
-const grays = {
+const neutrals = {
 	gray100: '#DBE6EC',
 	gray200: '#AEC1CC',
 	gray300: '#79858D',
@@ -9,4 +9,4 @@ const grays = {
 	gray800: '#1C2430',
 }
 
-module.exports = grays
+module.exports = neutrals

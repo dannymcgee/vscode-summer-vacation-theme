@@ -1,10 +1,11 @@
-const grays = require('../../colors/grays')
+const neutrals = require('../../colors/dark-neutrals')
 const colors = require('../../colors/dark-palette')
 
 tokens = {
-	background: grays.gray700,
-	foreground: grays.gray100,
-	punctuation: grays.gray200,
+	error: colors.red,
+	background: neutrals.gray700,
+	foreground: neutrals.gray100,
+	punctuation: neutrals.gray200,
 	string: colors.green,
 	numeric: colors.orange,
 	units: colors.purple,
@@ -19,7 +20,7 @@ tokens = {
 	class: colors.yellow,
 	type: colors.orange,
 	function: colors.blueLight,
-	comment: grays.gray300,
+	comment: neutrals.gray300,
 	tag: colors.pinkDark,
 	attribute: colors.orange,
 	component: colors.pinkLight,

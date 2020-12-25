@@ -5,7 +5,7 @@
 	"categories": [
 		"Themes"
 	],
-	"version": "1.8.1",
+	"version": "2.0.0",
 	"publisher": "dannymcgee",
 	"license": "MIT",
 	"author": "Danny McGee",
@@ -39,6 +39,12 @@
 				"label": "Summer Vacation (One Dark)",
 				"uiTheme": "vs-dark",
 				"path": "./themes/SummerVacation-onedark.json"
+			},
+			{
+				"id": "Summer Vacation (Light)",
+				"label": "Summer Vacation (Light)",
+				"uiTheme": "vs",
+				"path": "./themes/SummerVacation-light.json"
 			}
 		]
 	},

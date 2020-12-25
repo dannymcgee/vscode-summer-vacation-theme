@@ -1,39 +1,45 @@
 const fs = require('fs')
 
-const uiColors = require('./themes/ui/ui-dark')
+const uiDark = require('./themes/ui/ui-dark')
+const uiLight = require('./themes/ui/ui-light')
 const SyntaxFactory = require('./themes/syntax/syntax-factory')
 
-const themes = [
-	{
-		name: 'Dark',
-		id: 'SummerVacation-dark'
-	},
-	{
-		name: 'Dark (VS Code)',
-		id: 'SummerVacation-vscdark'
-	},
-	{
-		name: 'Dark (One Dark)',
-		id: 'SummerVacation-onedark'
-	}
-]
+const themes = [{
+	name: 'Dark',
+	id: 'SummerVacation-dark',
+	type: 'dark',
+}, {
+	name: 'Dark (VS Code)',
+	id: 'SummerVacation-vscdark',
+	type: 'dark',
+}, {
+	name: 'Dark (One Dark)',
+	id: 'SummerVacation-onedark',
+	type: 'dark',
+}, {
+	name: 'Light',
+	id: 'SummerVacation-light',
+	type: 'light',
+}]
 
-for (const { name, id } of themes) {
-	const tokens = require(`./themes/syntax/${id}`)
-	const tokenColors = SyntaxFactory(tokens)
-	const theme = {
+for (let { name, id, type } of themes) {
+	generateTheme(name, id, type)
+}
+
+function generateTheme(name, id, type) {
+	let tokens = require(`./themes/syntax/${id}`)
+	let theme = {
 		$schema: 'vscode://schemas/color-theme',
 		name,
-		type: 'dark',
-		tokenColors,
-		colors: { ...uiColors },
+		type,
+		...SyntaxFactory(tokens),
+		colors: { ...(type === 'dark' ? uiDark : uiLight) },
 		semanticHighlighting: true,
 	}
-	const themeContent = JSON.stringify(theme, null, '\t')
+	let themeContent = JSON.stringify(theme, null, '\t')
 
 	fs.writeFile(`./themes/${id}.json`, themeContent, error => {
-		if (error)
-			throw error
+		if (error) throw error
 		console.log(`'${name}' theme file written to './themes/${id}.json'`)
 	})
 }
