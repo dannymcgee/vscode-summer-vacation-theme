@@ -17,7 +17,7 @@
 				"meta.attribute-selector.scss"
 			],
 			"settings": {
-				"foreground": "#FFD78B"
+				"foreground": "#FFAB3F"
 			}
 		},
 		{
@@ -26,7 +26,7 @@
 				"punctuation.definition.string"
 			],
 			"settings": {
-				"foreground": "#FFD78B80"
+				"foreground": "#FFAB3F80"
 			}
 		},
 		{
@@ -35,7 +35,7 @@
 				"string constant.character.escape"
 			],
 			"settings": {
-				"foreground": "#FFD78B"
+				"foreground": "#FFAB3F"
 			}
 		},
 		{
@@ -151,7 +151,7 @@
 				"constant.language.boolean"
 			],
 			"settings": {
-				"foreground": "#FFD78B",
+				"foreground": "#FFAB3F",
 				"fontStyle": "italic"
 			}
 		},
@@ -161,7 +161,7 @@
 				"constant.language.null"
 			],
 			"settings": {
-				"foreground": "#FFD78B",
+				"foreground": "#FFAB3F",
 				"fontStyle": "italic"
 			}
 		},
@@ -171,7 +171,7 @@
 				"constant.numeric"
 			],
 			"settings": {
-				"foreground": "#FFD78B"
+				"foreground": "#FFAB3F"
 			}
 		},
 		{
@@ -180,7 +180,7 @@
 				"constant.other.php"
 			],
 			"settings": {
-				"foreground": "#FFD78B"
+				"foreground": "#FFAB3F"
 			}
 		},
 		{
@@ -371,6 +371,7 @@
 				"new.expr entity.name.type",
 				"entity.name.type.class",
 				"entity.name.type.instance",
+				"entity.name.type.enum",
 				"meta.var.expr meta.function-call entity.name.class",
 				"meta.var.expr new.expr entity.name.type",
 				"entity.other.attribute-name.class.css",
@@ -490,16 +491,6 @@
 			}
 		},
 		{
-			"name": "Lit event binding",
-			"scope": [
-				"entity.name.lit-binding.event"
-			],
-			"settings": {
-				"foreground": "#FFC83F",
-				"fontStyle": "italic"
-			}
-		},
-		{
 			"name": "CSS property value",
 			"scope": [
 				"support.constant.property-value.css",
@@ -516,7 +507,7 @@
 				"entity.other.keyframe-offset.percentage.css"
 			],
 			"settings": {
-				"foreground": "#FFD78B"
+				"foreground": "#FFAB3F"
 			}
 		},
 		{
@@ -743,7 +734,7 @@
 			"italic": true
 		},
 		"keywordLiteral": {
-			"foreground": "#FFD78B",
+			"foreground": "#FFAB3F",
 			"italic": true
 		},
 		"type": {
@@ -813,7 +804,7 @@
 		"inputValidation.errorBorder": "#FA5E5B",
 		"inputValidation.infoBackground": "#0F63A3",
 		"inputValidation.infoBorder": "#2C98EC",
-		"inputValidation.warningBackground": "#FFB325",
+		"inputValidation.warningBackground": "#D87B00",
 		"inputValidation.warningBorder": "#FFC83F",
 		"scrollbarSlider.background": "#4E596C66",
 		"scrollbarSlider.hoverBackground": "#4E596C99",
@@ -1004,7 +995,7 @@
 		"terminal.ansiBrightRed": "#FF708E",
 		"terminal.ansiGreen": "#16C98D",
 		"terminal.ansiBrightGreen": "#16C98D",
-		"terminal.ansiYellow": "#FFD78B",
+		"terminal.ansiYellow": "#FFAB3F",
 		"terminal.ansiBrightYellow": "#FFC83F",
 		"terminal.ansiBlue": "#2C98EC",
 		"terminal.ansiBrightBlue": "#70C2FF",
@@ -1034,7 +1025,7 @@
 		"gitDecoration.deletedResourceForeground": "#FA5E5B",
 		"gitDecoration.untrackedResourceForeground": "#FFC83F",
 		"gitDecoration.ignoredResourceForeground": "#79858D",
-		"gitDecoration.conflictingResourceForeground": "#FFD78B",
+		"gitDecoration.conflictingResourceForeground": "#FFAB3F",
 		"gitDecoration.submoduleResourceForeground": "#70C2FF",
 		"settings.headerForeground": "#FFF",
 		"settings.modifiedItemIndicator": "#2C98EC",
@@ -1069,7 +1060,7 @@
 		"symbolIcon.fileForeground": "#DBE6EC",
 		"symbolIcon.folderForeground": "#DBE6EC",
 		"symbolIcon.functionForeground": "#70C2FF",
-		"symbolIcon.interfaceForeground": "#FFD78B",
+		"symbolIcon.interfaceForeground": "#FFAB3F",
 		"symbolIcon.keyForeground": "#FF708E",
 		"symbolIcon.keywordForeground": "#B89FF7",
 		"symbolIcon.methodForeground": "#70C2FF",
@@ -1086,7 +1077,7 @@
 		"symbolIcon.stringForeground": "#16C98D",
 		"symbolIcon.structForeground": "#FFC83F",
 		"symbolIcon.textForeground": "#DBE6EC",
-		"symbolIcon.typeParameterForeground": "#FFD78B",
+		"symbolIcon.typeParameterForeground": "#FFAB3F",
 		"symbolIcon.unitForeground": "#0FDEBD",
 		"symbolIcon.variableForeground": "#FF98AD"
 	},
