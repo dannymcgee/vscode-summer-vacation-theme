@@ -362,6 +362,7 @@ function SyntaxFactory(tokens) {
 					'new.expr entity.name.type',
 					'entity.name.type.class',
 					'entity.name.type.instance',
+					'entity.name.type.enum',
 					'meta.var.expr meta.function-call entity.name.class',
 					'meta.var.expr new.expr entity.name.type',
 					'entity.other.attribute-name.class.css',
@@ -481,14 +482,6 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.class,
 					fontStyle: 'italic'
 				}
-			},
-			{
-				name: 'Lit event binding',
-				scope: ['entity.name.lit-binding.event'],
-				settings: {
-					foreground: tokens.function,
-					fontStyle: 'italic',
-				},
 			},
 
 			// CSS/HTML
