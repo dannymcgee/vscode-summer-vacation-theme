@@ -207,7 +207,7 @@ const uiColors = {
 	'peekViewResult.fileForeground': '#000',
 	'peekViewResult.matchHighlightBackground': fade(colors.green, 0.1),
 	'peekViewResult.selectionBackground': colors.darkBlue,
-	'peekViewResult.selectionForeground': '#FFF',
+	'peekViewResult.selectionForeground': '#000',
 
 	// Merge conflicts
 	'merge.border': transparent,
@@ -300,7 +300,7 @@ const uiColors = {
 	'terminal.ansiCyan':            colors.teal,
 	'terminal.ansiBrightCyan':      colors.teal,
 	'terminal.ansiWhite':           neutrals.gray100,
-	'terminal.ansiBrightWhite':     '#FFF',
+	'terminal.ansiBrightWhite':     '#000',
 	'terminal.selectionBackground': fade(neutrals.gray600, 0.5),
 	'terminalCursor.background':    neutrals.gray700,
 	'terminalCursor.foreground':    neutrals.gray200,
