@@ -1,7 +1,7 @@
 const neutrals = require('../../colors/light-neutrals')
 const colors = require('../../colors/light-palette')
 
-tokens = {
+module.exports = {
 	error: colors.red,
 	background: neutrals.gray700,
 	foreground: neutrals.gray100,
@@ -16,14 +16,12 @@ tokens = {
 	property: colors.pinkDark,
 	keyword: colors.purple,
 	control: colors.purple,
-	this: colors.orange,
-	class: colors.yellow,
-	type: colors.orange,
+	this: colors.yellow,
+	class: colors.orange,
+	type: colors.yellow,
 	function: colors.blueDark,
 	comment: colors.blueLight,
-	tag: colors.orange,
+	tag: colors.yellow,
 	attribute: colors.pinkDark,
-	component: colors.yellow,
+	component: colors.orange,
 }
-
-module.exports = tokens
