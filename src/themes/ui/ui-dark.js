@@ -73,9 +73,11 @@ const uiColors = {
 
 	// Activity Bar
 	'activityBar.background': neutrals.gray500,
+	'activityBar.activeBackground': neutrals.gray600,
 	'activityBar.foreground': '#FFF',
 	'activityBar.inactiveForeground': neutrals.gray200,
 	'activityBar.border': transparent,
+	'activityBar.activeBorder': colors.blueDark,
 	'activityBarBadge.background': darken(colors.blueDark, 15),
 	'activityBarBadge.foreground': '#FFF',
 
