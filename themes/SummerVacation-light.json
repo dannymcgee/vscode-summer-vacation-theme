@@ -146,18 +146,10 @@
 			}
 		},
 		{
-			"name": "Boolean",
+			"name": "Constant",
 			"scope": [
-				"constant.language.boolean"
-			],
-			"settings": {
-				"foreground": "#00A3B2",
-				"fontStyle": "italic"
-			}
-		},
-		{
-			"name": "Null",
-			"scope": [
+				"support.constant",
+				"constant.language.boolean",
 				"constant.language.null"
 			],
 			"settings": {
@@ -175,7 +167,7 @@
 			}
 		},
 		{
-			"name": "PHP",
+			"name": "Other",
 			"scope": [
 				"constant.other.php"
 			],
@@ -213,8 +205,6 @@
 				"keyword.operator.logical.scss",
 				"keyword.operator.logical.css",
 				"constant.character.entity.named",
-				"punctuation.definition.decorator.python",
-				"meta.function.decorator.python support.type.python",
 				"support.variable.property.prototype"
 			],
 			"settings": {
@@ -247,6 +237,17 @@
 			}
 		},
 		{
+			"name": "Decorator",
+			"scope": [
+				"punctuation.definition.decorator.python",
+				"meta.function.decorator.python support.type.python"
+			],
+			"settings": {
+				"foreground": "#744ED3",
+				"fontStyle": "italic"
+			}
+		},
+		{
 			"name": "Comment",
 			"scope": [
 				"comment"
@@ -254,6 +255,28 @@
 			"settings": {
 				"foreground": "#96C5E9",
 				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Doc Comment",
+			"scope": [
+				"comment.line.documentation",
+				"comment.block.documentation"
+			],
+			"settings": {
+				"foreground": "#7B909E",
+				"fontStyle": ""
+			}
+		},
+		{
+			"name": "Doc comment delimiters",
+			"scope": [
+				"comment.line.documentation punctuation.definition.comment",
+				"comment.block.documentation punctuation.definition.comment"
+			],
+			"settings": {
+				"foreground": "#96C5E9",
+				"fontStyle": ""
 			}
 		},
 		{
@@ -266,7 +289,8 @@
 				"punctuation.definition.entity",
 				"punctuation.definition.parameters",
 				"punctuation.definition.attribute-selector",
-				"punctuation.definition.sub-target"
+				"punctuation.definition.sub-target",
+				"punctuation.brackets.round"
 			],
 			"settings": {
 				"foreground": "#222526",
@@ -290,13 +314,18 @@
 				"punctuation.separator",
 				"punctuation.accessor",
 				"punctuation.terminator",
+				"punctuation.comma",
+				"punctuation.semi",
+				"punctuation.brackets.attribute",
+				"punctuation.definition.attribute",
 				"entity.name.tag.wildcard",
 				"entity.name.tag.reference.scss",
 				"punctuation.decorator.ts",
 				"storage.modifier.pointer",
 				"storage.modifier.reference",
 				"entity.name.function.operator",
-				"punctuation.builtin-function.zig"
+				"punctuation.builtin-function.zig",
+				"meta.interpolation.go"
 			],
 			"settings": {
 				"foreground": "#7B909E",
@@ -311,7 +340,8 @@
 				"entity.name.variable",
 				"constant.language.import-export-all",
 				"punctuation.definition.variable",
-				"meta.control.substitute.target"
+				"meta.control.substitute.target",
+				"source.rust meta.attribute"
 			],
 			"settings": {
 				"foreground": "#FA5F71"
@@ -329,14 +359,17 @@
 			}
 		},
 		{
-			"name": "Property",
+			"name": "Property / Field",
 			"scope": [
+				"property",
+				"variable.property",
 				"variable.object.property",
 				"support.variable.property",
 				"variable.other.constant.property",
 				"variable.other.object.property",
 				"variable.other.property",
-				"variable.other.enummember",
+				"field",
+				"variable.field",
 				"entity.name.label",
 				"meta.object-literal.key",
 				"meta.object-literal.key string",
@@ -345,8 +378,7 @@
 				"entity.name.variable.enum-member",
 				"entity.name.variable.field",
 				"meta.control.substitute",
-				"string.key.json5",
-				"field"
+				"string.key.json5"
 			],
 			"settings": {
 				"foreground": "#FF2070"
@@ -366,12 +398,12 @@
 			"name": "Class",
 			"scope": [
 				"support.class",
-				"support.constant",
 				"entity.name.class",
 				"new.expr entity.name.type",
 				"entity.name.type.class",
 				"entity.name.type.instance",
 				"entity.name.type.enum",
+				"entity.name.type.struct",
 				"meta.var.expr meta.function-call entity.name.class",
 				"meta.var.expr new.expr entity.name.type",
 				"entity.other.attribute-name.class.css",
@@ -394,7 +426,8 @@
 				"new.expr meta.type.parameters entity.name.type",
 				"entity.name.scope-resolution",
 				"entity.name.type.namespace.cs",
-				"entity.name.namespace"
+				"entity.name.namespace",
+				"variable.other.enummember"
 			],
 			"settings": {
 				"foreground": "#FF8C00",
@@ -433,7 +466,8 @@
 				"support.function",
 				"meta.function entity.name.function",
 				"meta.definition.method entity.name.function",
-				"meta.function-call.generic"
+				"meta.function-call.generic",
+				"support.annotation"
 			],
 			"settings": {
 				"foreground": "#008AF5"
@@ -661,8 +695,7 @@
 				"punctuation.definition.list.begin.markdown"
 			],
 			"settings": {
-				"foreground": "#FFF",
-				"fontStyle": "bold"
+				"foreground": "#FFF"
 			}
 		},
 		{
@@ -717,17 +750,37 @@
 		}
 	],
 	"semanticTokenColors": {
+		"comment.documentation": {
+			"foreground": "#7B909E",
+			"italic": false
+		},
 		"field": {
 			"foreground": "#FF2070",
 			"italic": false
+		},
+		"property": {
+			"foreground": "#FF2070",
+			"italic": false
+		},
+		"parameter": {
+			"foreground": "#FA5F71",
+			"italic": true
+		},
+		"type.defaultLibrary": {
+			"foreground": "#8E62FF",
+			"italic": true
+		},
+		"variable.readonly.defaultLibrary": {
+			"foreground": "#00A3B2",
+			"italic": true
 		},
 		"tagField": {
 			"foreground": "#FF2070",
 			"italic": false
 		},
 		"errorTag:zig": {
-			"foreground": "#FF2070",
-			"italic": false
+			"foreground": "#FF8C00",
+			"italic": true
 		},
 		"builtin:zig": {
 			"foreground": "#008AF5",
@@ -762,19 +815,20 @@
 			"italic": false
 		},
 		"enumMember:rust": {
-			"foreground": "#FF2070",
-			"italic": false
+			"foreground": "#FF8C00",
+			"italic": true
 		},
 		"macro:rust": {
-			"foreground": "#008AF5",
+			"foreground": "#744ED3",
 			"italic": true
 		},
 		"function.attribute:rust": {
-			"foreground": "#8E62FF",
-			"bold": true
+			"foreground": "#744ED3",
+			"bold": false,
+			"italic": true
 		},
 		"lifetime:rust": {
-			"foreground": "#FF5C00",
+			"foreground": "#00A3B2",
 			"italic": true
 		}
 	},
