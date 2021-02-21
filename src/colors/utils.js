@@ -10,7 +10,7 @@ Array.prototype.cycle = function(index) {
 
 	if (index < 0)
 		index += length
-	
+
 	return _cycle()
 }
 
@@ -38,7 +38,7 @@ function fade(color, opacity) {
 	else
 		throw new Error(`Invalid value given for param color: ${color}
 (must be a hex color string in format #XXX or #XXXXXX)`)
-	
+
 	return color + hex
 }
 
@@ -59,7 +59,7 @@ function lighten(color, amount) {
 
 /**
  * Saturates the given color by the given amount
- * @param {string} color in format #XXXXXX 
+ * @param {string} color in format #XXXXXX
  * @param {number} amount as a percentage, unitless
  * @return {string} hex color in format #XXXXXX
  */
@@ -68,13 +68,13 @@ function saturate(color, amount) {
 	const hsl = _RGBToHSL(rgb)
 	hsl[1] = (hsl[1] + amount).clamp(0, 100)
 	rgb = _HSLToRGB(hsl)
-	
+
 	return _RGBToHex(rgb)
 }
 
 /**
  * Desaturates the given color by the given amount
- * @param {string} color in format #XXXXXX 
+ * @param {string} color in format #XXXXXX
  * @param {number} amount as a percentage, unitless
  * @return {string} hex color in format #XXXXXX
  */
@@ -83,7 +83,7 @@ function desaturate(color, amount) {
 	const hsl = _RGBToHSL(rgb)
 	hsl[1] = (hsl[1] - amount).clamp(0, 100)
 	rgb = _HSLToRGB(hsl)
-	
+
 	return _RGBToHex(rgb)
 }
 
@@ -175,7 +175,7 @@ function _RGBToHSL(rgb) {
 		h = 0,
 		s = 0,
 		l = 0
-	
+
 	// Calculate hue
 	if (cDelta === 0)
 		h = 0
@@ -191,12 +191,12 @@ function _RGBToHSL(rgb) {
 
 	// Calculate lightness
 	l = (cMax + cMin) / 2
-	
+
 	// Calculate saturation
 	s = cDelta === 0
 		? 0
 		: cDelta / (1 - Math.abs(2 * l - 1))
-	
+
 	s = +(s * 100).toFixed(1)
 	l = +(l * 100).toFixed(1)
 
@@ -212,7 +212,7 @@ function _HSLToRGB(hsl) {
 		chroma = (1 - Math.abs(2 * l - 1)) * s,
 		second = chroma * (1 - Math.abs((h / 60) % 2 - 1)),
 		match = l - chroma / 2
-	
+
 	for (
 		let
 			i = 0,
@@ -249,13 +249,13 @@ function _checkHueSlice(target, hue, reverse) {
 function _hueCycle(deg) {
 	if (deg === 0)
 		return 360
-	
+
 	if (deg < 0)
 		return deg + 360
-	
+
 	if (deg > 360)
 		return 360 - deg
-	
+
 	return deg
 }
 

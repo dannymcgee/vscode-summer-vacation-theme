@@ -1,6 +1,34 @@
-const { fade } = require('../../colors/utils')
+const { darken, desaturate, fade } = require('../../colors/utils')
 
+/**
+ * @param {{
+ * 	foreground: string;
+ * 	string: string;
+ * 	constant: string;
+ * 	punctuation: string;
+ * 	class: string;
+ * 	function: string;
+ * 	error: string;
+ * 	control: string;
+ * 	variable: string;
+ * 	boolean: string;
+ * 	null: string;
+ * 	numeric: string;
+ * 	units: string;
+ * 	keyword: string;
+ * 	comment: string;
+ * 	docComment: string;
+ * 	this: string;
+ * 	property: string;
+ * 	type: string;
+ * 	tag: string;
+ * 	component: string;
+ * 	attribute: string;
+ * }} tokens
+ */
 function SyntaxFactory(tokens) {
+	const macro = desaturate(darken(tokens.keyword, 12.5), 40)
+
 	return {
 		tokenColors: [
 			// Global
@@ -135,20 +163,16 @@ function SyntaxFactory(tokens) {
 
 			// Language constants
 			{
-				name: 'Boolean',
-				scope: [ 'constant.language.boolean' ],
+				name: 'Constant',
+				scope: [
+					'support.constant',
+					'constant.language.boolean',
+					'constant.language.null',
+				],
 				settings: {
-					foreground: tokens.boolean,
-					fontStyle: 'italic'
-				}
-			},
-			{
-				name: 'Null',
-				scope: [ 'constant.language.null' ],
-				settings: {
-					foreground: tokens.null,
-					fontStyle: 'italic'
-				}
+					foreground: tokens.constant,
+					fontStyle: 'italic',
+				},
 			},
 			{
 				name: 'Numeric',
@@ -158,8 +182,10 @@ function SyntaxFactory(tokens) {
 				}
 			},
 			{
-				name: 'PHP',
-				scope: [ 'constant.other.php' ],
+				name: 'Other',
+				scope: [
+					'constant.other.php',
+				],
 				settings: {
 					foreground: tokens.constant
 				}
@@ -196,8 +222,6 @@ function SyntaxFactory(tokens) {
 					'keyword.operator.logical.scss',
 					'keyword.operator.logical.css',
 					'constant.character.entity.named',
-					'punctuation.definition.decorator.python',
-					'meta.function.decorator.python support.type.python',
 					'support.variable.property.prototype',
 				],
 				settings: {
@@ -228,6 +252,19 @@ function SyntaxFactory(tokens) {
 				}
 			},
 
+			// Decorator / Macro
+			{
+				name: 'Decorator',
+				scope: [
+					'punctuation.definition.decorator.python',
+					'meta.function.decorator.python support.type.python',
+				],
+				settings: {
+					foreground: macro,
+					fontStyle: 'italic',
+				},
+			},
+
 			// Comment
 			{
 				name: 'Comment',
@@ -235,6 +272,28 @@ function SyntaxFactory(tokens) {
 				settings: {
 					foreground: tokens.comment,
 					fontStyle: 'italic'
+				}
+			},
+			{
+				name: 'Doc Comment',
+				scope: [
+					'comment.line.documentation',
+					'comment.block.documentation',
+				],
+				settings: {
+					foreground: tokens.docComment,
+					fontStyle: '',
+				}
+			},
+			{
+				name: 'Doc comment delimiters',
+				scope: [
+					'comment.line.documentation punctuation.definition.comment',
+					'comment.block.documentation punctuation.definition.comment',
+				],
+				settings: {
+					foreground: tokens.comment,
+					fontStyle: '',
 				}
 			},
 
@@ -249,7 +308,8 @@ function SyntaxFactory(tokens) {
 					'punctuation.definition.entity',
 					'punctuation.definition.parameters',
 					'punctuation.definition.attribute-selector',
-					'punctuation.definition.sub-target'
+					'punctuation.definition.sub-target',
+					'punctuation.brackets.round',
 				],
 				settings: {
 					foreground: tokens.foreground,
@@ -273,6 +333,10 @@ function SyntaxFactory(tokens) {
 					'punctuation.separator',
 					'punctuation.accessor',
 					'punctuation.terminator',
+					'punctuation.comma',
+					'punctuation.semi',
+					'punctuation.brackets.attribute',
+					'punctuation.definition.attribute',
 					'entity.name.tag.wildcard',
 					'entity.name.tag.reference.scss',
 					'punctuation.decorator.ts',
@@ -280,6 +344,7 @@ function SyntaxFactory(tokens) {
 					'storage.modifier.reference',
 					'entity.name.function.operator',
 					'punctuation.builtin-function.zig',
+					'meta.interpolation.go',
 				],
 				settings: {
 					foreground: tokens.punctuation,
@@ -296,7 +361,8 @@ function SyntaxFactory(tokens) {
 					'entity.name.variable',
 					'constant.language.import-export-all',
 					'punctuation.definition.variable',
-					'meta.control.substitute.target'
+					'meta.control.substitute.target',
+					'source.rust meta.attribute',
 				],
 				settings: {
 					foreground: tokens.variable
@@ -312,20 +378,24 @@ function SyntaxFactory(tokens) {
 				],
 				settings: {
 					foreground: tokens.this,
-					fontStyle: 'italic'
+					fontStyle: 'italic',
 				}
 			},
 
 			// Property
 			{
-				name: 'Property',
+				name: 'Property / Field',
 				scope: [
+					'property',
+					'variable.property',
 					'variable.object.property',
 					'support.variable.property',
 					'variable.other.constant.property',
 					'variable.other.object.property',
 					'variable.other.property',
-					'variable.other.enummember',
+					'field',
+					'variable.field',
+					// 'variable.other.enummember',
 					'entity.name.label',
 					'meta.object-literal.key',
 					'meta.object-literal.key string',
@@ -335,12 +405,12 @@ function SyntaxFactory(tokens) {
 					'entity.name.variable.field',
 					'meta.control.substitute',
 					'string.key.json5',
-					'field',
 				],
 				settings: {
 					foreground: tokens.property
 				}
 			},
+
 			{
 				name: 'Property quotes',
 				scope: [
@@ -357,12 +427,13 @@ function SyntaxFactory(tokens) {
 				name: 'Class',
 				scope: [
 					'support.class',
-					'support.constant',
+					// 'support.constant',
 					'entity.name.class',
 					'new.expr entity.name.type',
 					'entity.name.type.class',
 					'entity.name.type.instance',
 					'entity.name.type.enum',
+					'entity.name.type.struct',
 					'meta.var.expr meta.function-call entity.name.class',
 					'meta.var.expr new.expr entity.name.type',
 					'entity.other.attribute-name.class.css',
@@ -388,6 +459,8 @@ function SyntaxFactory(tokens) {
 					'entity.name.scope-resolution',
 					'entity.name.type.namespace.cs',
 					'entity.name.namespace',
+					'variable.other.enummember',
+					// 'entity.name.type.enum',
 				],
 				settings: {
 					foreground: tokens.type,
@@ -413,7 +486,10 @@ function SyntaxFactory(tokens) {
 			// Builtin Function
 			{
 				name: 'Function (builtin)',
-				scope: ['entity.name.function.builtin'],
+				scope: [
+					'entity.name.function.builtin',
+					// 'support.annotation',
+				],
 				settings: {
 					foreground: tokens.function,
 					fontStyle: 'italic',
@@ -429,6 +505,7 @@ function SyntaxFactory(tokens) {
 					'meta.function entity.name.function',
 					'meta.definition.method entity.name.function',
 					'meta.function-call.generic',
+					'support.annotation',
 				],
 				settings: {
 					foreground: tokens.function
@@ -639,7 +716,7 @@ function SyntaxFactory(tokens) {
 				scope: [ 'punctuation.definition.list.begin.markdown' ],
 				settings: {
 					foreground: '#FFF',
-					fontStyle: 'bold'
+					// fontStyle: 'bold'
 				}
 			},
 			{
@@ -690,17 +767,37 @@ function SyntaxFactory(tokens) {
 			},
 		],
 		semanticTokenColors: {
+			'comment.documentation': {
+				foreground: tokens.docComment,
+				italic: false,
+			},
 			field: {
 				foreground: tokens.property,
 				italic: false,
+			},
+			property: {
+				foreground: tokens.property,
+				italic: false,
+			},
+			parameter: {
+				foreground: tokens.variable,
+				italic: true,
+			},
+			'type.defaultLibrary': {
+				foreground: tokens.keyword,
+				italic: true,
+			},
+			'variable.readonly.defaultLibrary': {
+				foreground: tokens.constant,
+				italic: true,
 			},
 			tagField: {
 				foreground: tokens.property,
 				italic: false,
 			},
 			'errorTag:zig': {
-				foreground: tokens.property,
-				italic: false,
+				foreground: tokens.type,
+				italic: true,
 			},
 			'builtin:zig': {
 				foreground: tokens.function,
@@ -723,7 +820,7 @@ function SyntaxFactory(tokens) {
 				italic: false,
 			},
 			'selfKeyword:rust': {
-				foreground: tokens.type,
+				foreground: tokens.this,
 				italic: true,
 			},
 			'builtinType:rust': {
@@ -735,19 +832,20 @@ function SyntaxFactory(tokens) {
 				italic: false,
 			},
 			'enumMember:rust': {
-				foreground: tokens.property,
-				italic: false,
+				foreground: tokens.type,
+				italic: true,
 			},
 			'macro:rust': {
-				foreground: tokens.function,
+				foreground: macro,
 				italic: true,
 			},
 			'function.attribute:rust': {
-				foreground: tokens.keyword,
-				bold: true,
+				foreground: macro,
+				bold: false,
+				italic: true,
 			},
 			'lifetime:rust': {
-				foreground: tokens.class,
+				foreground: tokens.constant,
 				italic: true,
 			},
 		},

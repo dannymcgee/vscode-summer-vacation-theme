@@ -21,6 +21,7 @@ module.exports = {
 	type: colors.orange,
 	function: colors.blueLight,
 	comment: neutrals.gray300,
+	docComment: neutrals.gray300,
 	tag: colors.pinkDark,
 	attribute: colors.orange,
 	component: colors.pinkLight,
