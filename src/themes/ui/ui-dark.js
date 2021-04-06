@@ -141,6 +141,7 @@ const uiColors = {
 	'editorIndentGuide.activeBackground': lighten(neutrals.gray500, 5),
 	'editorRuler.foreground': neutrals.gray600,
 	'editorCodeLens.foreground': neutrals.gray300,
+	'rust_analyzer.inlayHint': neutrals.gray400,
 	'editorBracketMatch.background': neutrals.gray500,
 	'editorBracketMatch.border': fade(neutrals.gray500, 0.3),
 	// -- Overvuew ruler
@@ -277,21 +278,21 @@ const uiColors = {
 	'terminal.border':              neutrals.gray600,
 	'terminal.foreground':          neutrals.gray100,
 	'terminal.ansiBlack':           neutrals.gray800,     // PowerShell: ConsoleColor.Black
-	'terminal.ansiBrightBlack':     neutrals.gray200,     // PowerShell: ConsoleColor.DarkGray
-	'terminal.ansiRed':             colors.red,        // PowerShell: ConsoleColor.DarkRed
-	'terminal.ansiBrightRed':       colors.pinkDark,   // PowerShell: ConsoleColor.Red
-	'terminal.ansiGreen':           colors.green,      // PowerShell: ConsoleColor.DarkGreen
-	'terminal.ansiBrightGreen':     colors.green,      // PowerShell: ConsoleColor.Green
-	'terminal.ansiYellow':          colors.orange,     // PowerShell: ConsoleColor.DarkYellow
-	'terminal.ansiBrightYellow':    colors.yellow,     // PowerShell: ConsoleColor.Yellow
-	'terminal.ansiBlue':            colors.blueDark,   // PowerShell: ConsoleColor.DarkBlue
-	'terminal.ansiBrightBlue':      colors.blueLight,  // PowerShell: ConsoleColor.Blue
-	'terminal.ansiMagenta':         colors.purple,     // PowerShell: ConsoleColor.DarkMagenta
-	'terminal.ansiBrightMagenta':   colors.pinkLight,  // PowerShell: ConsoleColor.Magenta
-	'terminal.ansiCyan':            colors.teal,       // PowerShell: ConsoleColor.DarkCyan
-	'terminal.ansiBrightCyan':      colors.teal,       // PowerShell: ConsoleColor.Cyan
-	'terminal.ansiWhite':           neutrals.gray100,     // PowerShell: ConsoleColor.Gray
-	'terminal.ansiBrightWhite':     '#FFF',            // PowerShell: ConsoleColor.White
+	'terminal.ansiBrightBlack':     neutrals.gray300,     // PowerShell: ConsoleColor.DarkGray
+	'terminal.ansiRed':             colors.red,           // PowerShell: ConsoleColor.DarkRed
+	'terminal.ansiBrightRed':       colors.pinkDark,      // PowerShell: ConsoleColor.Red
+	'terminal.ansiGreen':           colors.green,         // PowerShell: ConsoleColor.DarkGreen
+	'terminal.ansiBrightGreen':     colors.green,         // PowerShell: ConsoleColor.Green
+	'terminal.ansiYellow':          colors.orange,        // PowerShell: ConsoleColor.DarkYellow
+	'terminal.ansiBrightYellow':    colors.yellow,        // PowerShell: ConsoleColor.Yellow
+	'terminal.ansiBlue':            colors.blueDark,      // PowerShell: ConsoleColor.DarkBlue
+	'terminal.ansiBrightBlue':      colors.blueLight,     // PowerShell: ConsoleColor.Blue
+	'terminal.ansiMagenta':         colors.purple,        // PowerShell: ConsoleColor.DarkMagenta
+	'terminal.ansiBrightMagenta':   colors.pinkLight,     // PowerShell: ConsoleColor.Magenta
+	'terminal.ansiCyan':            colors.teal,          // PowerShell: ConsoleColor.DarkCyan
+	'terminal.ansiBrightCyan':      colors.teal,          // PowerShell: ConsoleColor.Cyan
+	'terminal.ansiWhite':           neutrals.gray200,     // PowerShell: ConsoleColor.Gray
+	'terminal.ansiBrightWhite':     neutrals.gray100,     // PowerShell: ConsoleColor.White
 	'terminal.selectionBackground': fade(neutrals.gray400, 0.5),
 	'terminalCursor.background':    neutrals.gray700,
 	'terminalCursor.foreground':    neutrals.gray200,
