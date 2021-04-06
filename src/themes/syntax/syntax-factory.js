@@ -2,36 +2,34 @@ const { darken, desaturate, fade } = require('../../colors/utils')
 
 /**
  * @param {{
- * 	foreground: string;
- * 	string: string;
- * 	constant: string;
- * 	punctuation: string;
- * 	class: string;
- * 	function: string;
- * 	error: string;
- * 	control: string;
- * 	variable: string;
- * 	boolean: string;
- * 	null: string;
- * 	numeric: string;
- * 	units: string;
- * 	keyword: string;
- * 	comment: string;
- * 	docComment: string;
- * 	this: string;
- * 	property: string;
- * 	type: string;
- * 	tag: string;
- * 	component: string;
- * 	attribute: string;
+ *    foreground: string;
+ *    string: string;
+ *    constant: string;
+ *    punctuation: string;
+ *    class: string;
+ *    function: string;
+ *    error: string;
+ *    control: string;
+ *    variable: string;
+ *    boolean: string;
+ *    null: string;
+ *    numeric: string;
+ *    units: string;
+ *    keyword: string;
+ *    comment: string;
+ *    docComment: string;
+ *    this: string;
+ *    property: string;
+ *    type: string;
+ *    tag: string;
+ *    component: string;
+ *    attribute: string;
  * }} tokens
  */
 function SyntaxFactory(tokens) {
-	const macro = desaturate(darken(tokens.keyword, 12.5), 40)
-
 	return {
 		tokenColors: [
-			// Global
+			// #region Global
 			{
 				name: 'Global Settings',
 				scope: '',
@@ -39,8 +37,9 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.foreground
 				}
 			},
+			// #endregion
 
-			// String
+			// #region String
 			{
 				name: 'String',
 				scope: [
@@ -65,8 +64,9 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.constant,
 				}
 			},
+			// #endregion
 
-			// RegExp
+			// #region RegExp
 			{
 				name: 'RegExp Group punctuation',
 				scope: [ 'punctuation.definition.group.regexp' ],
@@ -160,14 +160,18 @@ function SyntaxFactory(tokens) {
 					fontStyle: ''
 				}
 			},
+			// #endregion
 
-			// Language constants
+			// #region Language constants
 			{
 				name: 'Constant',
 				scope: [
 					'support.constant',
 					'constant.language.boolean',
 					'constant.language.null',
+					'constant.language.php',
+					'constant.other.boolean.toml',
+					'entity.helper.apacheconf',
 				],
 				settings: {
 					foreground: tokens.constant,
@@ -176,18 +180,12 @@ function SyntaxFactory(tokens) {
 			},
 			{
 				name: 'Numeric',
-				scope: [ 'constant.numeric' ],
-				settings: {
-					foreground: tokens.numeric,
-				}
-			},
-			{
-				name: 'Other',
 				scope: [
-					'constant.other.php',
+					'constant.numeric',
+					'constant.integer',
 				],
 				settings: {
-					foreground: tokens.constant
+					foreground: tokens.numeric,
 				}
 			},
 			{
@@ -201,8 +199,16 @@ function SyntaxFactory(tokens) {
 					fontStyle: ''
 				}
 			},
+			{
+				name: 'Numeric type annotations',
+				scope: ['constant.numeric.type-annotation'],
+				settings: {
+					foreground: tokens.keyword,
+				},
+			},
+			// #endregion
 
-			// Keyword
+			// #region Keyword
 			{
 				name: 'Keyword',
 				scope: [
@@ -223,6 +229,7 @@ function SyntaxFactory(tokens) {
 					'keyword.operator.logical.css',
 					'constant.character.entity.named',
 					'support.variable.property.prototype',
+					'support.function.construct.php',
 				],
 				settings: {
 					foreground: tokens.keyword,
@@ -251,21 +258,34 @@ function SyntaxFactory(tokens) {
 					foreground: fade(tokens.keyword, 0.5)
 				}
 			},
+			// #endregion
 
-			// Decorator / Macro
+			// #region Decorator / Macro
 			{
-				name: 'Decorator',
+				name: 'Decorator / Attribute / Macro',
 				scope: [
 					'punctuation.definition.decorator.python',
 					'meta.function.decorator.python support.type.python',
+					'support.other.attribute.cpp',
+					'support.annotation',
+					'entity.name.pragma',
 				],
 				settings: {
-					foreground: macro,
-					fontStyle: 'italic',
+					foreground: tokens.attribute,
+					fontStyle: 'bold',
 				},
 			},
+			{
+				name: 'Attribute parameter',
+				scope: ['entity.other.attribute'],
+				settings: {
+					foreground: tokens.type,
+					fontStyle: 'italic',
+				}
+			},
+			// #endregion
 
-			// Comment
+			// #region Comment
 			{
 				name: 'Comment',
 				scope: [ 'comment' ],
@@ -296,8 +316,9 @@ function SyntaxFactory(tokens) {
 					fontStyle: '',
 				}
 			},
+			// #endregion
 
-			// Punctuation
+			// #region Punctuation
 			{
 				name: 'Punctuation (general)',
 				scope: [
@@ -345,14 +366,16 @@ function SyntaxFactory(tokens) {
 					'entity.name.function.operator',
 					'punctuation.builtin-function.zig',
 					'meta.interpolation.go',
+					'punctuation.definition.pragma',
 				],
 				settings: {
 					foreground: tokens.punctuation,
 					fontStyle: ''
 				}
 			},
+			// #endregion
 
-			// Variable
+			// #region Variable
 			{
 				name: 'Variable',
 				scope: [
@@ -368,21 +391,51 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.variable
 				}
 			},
+			{
+				name: 'Function Parameter',
+				scope: [
+					'meta.function.parameters variable',
+					'variable.parameter',
+				],
+				settings: {
+					foreground: tokens.variable,
+					fontStyle: 'italic',
+				},
+			},
+			{
+				name: 'Variable delimiters',
+				scope: ['punctuation.definition.ident.variable'],
+				settings: {
+					foreground: fade(tokens.variable, 0.5),
+				}
+			},
+			// #endregion
 
-			// This
+			// #region This
 			{
 				name: 'This',
 				scope: [
 					'variable.language.this',
 					'keyword.other.this',
+					'variable.language.this.php punctuation.definition.variable.php',
+					'variable.language.result',
 				],
 				settings: {
 					foreground: tokens.this,
 					fontStyle: 'italic',
 				}
 			},
+			{
+				name: 'Self (GDScript)',
+				scope: ['variable.language.this.gdscript'],
+				settings: {
+					foreground: tokens.keyword,
+					fontStyle: 'italic',
+				},
+			},
+			// #endregion
 
-			// Property
+			// #region Property
 			{
 				name: 'Property / Field',
 				scope: [
@@ -401,7 +454,6 @@ function SyntaxFactory(tokens) {
 					'meta.object-literal.key string',
 					'meta.property-name',
 					'support.type.property-name',
-					'entity.name.variable.enum-member',
 					'entity.name.variable.field',
 					'meta.control.substitute',
 					'string.key.json5',
@@ -410,19 +462,20 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.property
 				}
 			},
-
 			{
 				name: 'Property quotes',
 				scope: [
 					'punctuation.support.type.property-name',
-					'meta.object-literal.key punctuation.definition.string'
+					'meta.object-literal.key punctuation.definition.string',
+					'punctuation.definition.ident.property',
 				],
 				settings: {
 					foreground: fade(tokens.property, 0.5)
 				}
 			},
+			// #endregion
 
-			// Class
+			// #region Class / Enum / Struct
 			{
 				name: 'Class',
 				scope: [
@@ -445,14 +498,13 @@ function SyntaxFactory(tokens) {
 					fontStyle: ''
 				}
 			},
+			// #endregion
 
-			// Type
+			// #region Type / Enum Member
 			{
 				name: 'Type (custom)',
 				scope: [
 					'entity.name.type',
-					'entity.name.class.inherited',
-					'entity.other.inherited-class',
 					'support.type.graphql',
 					'storage.type.cs',
 					'new.expr meta.type.parameters entity.name.type',
@@ -460,12 +512,25 @@ function SyntaxFactory(tokens) {
 					'entity.name.type.namespace.cs',
 					'entity.name.namespace',
 					'variable.other.enummember',
-					// 'entity.name.type.enum',
+					'entity.name.variable.enum-member',
+					'constant.other.class.php',
+					'constant.other.php',
+					'support.other.namespace',
 				],
 				settings: {
 					foreground: tokens.type,
 					fontStyle: 'italic'
 				}
+			},
+			{
+				name: 'Type delimiters',
+				scope: [
+					'punctuation.definition.ident.type',
+					'punctuation.definition.ident.enummember',
+				],
+				settings: {
+					foreground: fade(tokens.type, 0.5),
+				},
 			},
 			{
 				name: 'Type (primitive/built-in)',
@@ -482,21 +547,22 @@ function SyntaxFactory(tokens) {
 					fontStyle: 'italic'
 				}
 			},
+			// #endregion
 
-			// Builtin Function
+			// #region Builtin Function
 			{
 				name: 'Function (builtin)',
 				scope: [
 					'entity.name.function.builtin',
-					// 'support.annotation',
 				],
 				settings: {
 					foreground: tokens.function,
 					fontStyle: 'italic',
 				},
 			},
+			// #endregion
 
-			// Function
+			// #region Function
 			{
 				name: 'Function',
 				scope: [
@@ -505,17 +571,35 @@ function SyntaxFactory(tokens) {
 					'meta.function entity.name.function',
 					'meta.definition.method entity.name.function',
 					'meta.function-call.generic',
-					'support.annotation',
 				],
 				settings: {
 					foreground: tokens.function
 				}
 			},
+			{
+				name: 'Function identifer delimiters (Nim is weird)',
+				scope: [
+					'punctuation.definition.ident.proc',
+					'punctuation.definition.ident.method',
+					'punctuation.definition.ident.template',
+					'punctuation.definition.ident.macro',
+					'punctuation.definition.ident.iterator',
+					'punctuation.definition.ident.converter',
+					'punctuation.definition.ident.func',
+				],
+				settings: {
+					foreground: fade(tokens.function, 0.5)
+				},
+			},
+			// #endregion
 
-			// Tag
+			// #region Tag
 			{
 				name: 'Tag name',
-				scope: [ 'entity.name.tag' ],
+				scope: [
+					'entity.name.tag',
+					'entity.tag.apacheconf',
+				],
 				settings: {
 					foreground: tokens.tag
 				}
@@ -538,18 +622,19 @@ function SyntaxFactory(tokens) {
 					fontStyle: 'italic'
 				}
 			},
+			// #endregion
 
-			// Attribute
+			// #region HTML Attribute
 			{
-				name: 'Attribute',
+				name: 'HTML Attribute',
 				scope: [ 'entity.other.attribute-name' ],
 				settings: {
-					foreground: tokens.attribute,
+					foreground: tokens.property,
 					fontStyle: 'italic'
 				}
 			},
 			{
-				name: 'Attribute (class)',
+				name: 'HTML Attribute (class)',
 				scope: [
 					'meta.attribute.class.html entity.other.attribute-name.html',
 					'entity.other.ng-binding-name.ngClass',
@@ -560,8 +645,9 @@ function SyntaxFactory(tokens) {
 					fontStyle: 'italic'
 				}
 			},
+			// #endregion
 
-			// CSS/HTML
+			// #region CSS/HTML
 			{
 				name: 'CSS property value',
 				scope: [
@@ -625,8 +711,8 @@ function SyntaxFactory(tokens) {
 					'punctuation.section.embedded.end.php'
 				],
 				settings: {
-					foreground: fade(tokens.keyword, 0.5),
-					fontStyle: 'italic'
+					foreground: tokens.attribute,
+					fontStyle: 'bold',
 				}
 			},
 			{
@@ -636,8 +722,9 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.foreground,
 				},
 			},
+			// #endregion
 
-			// Markdown
+			// #region Markdown
 			{
 				name: 'Markdown heading',
 				scope: [ 'markup.heading' ],
@@ -729,18 +816,26 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.punctuation
 				}
 			},
+			// #endregion
 
-			// INI
+			// #region INI
 			{
 				name: 'INI property name',
-				scope: [ 'keyword.other.definition.ini' ],
+				scope: [
+					'keyword.other.definition.ini',
+					'entity.name.tag.toml'
+				],
 				settings: {
 					foreground: tokens.property
 				}
 			},
 			{
 				name: 'INI section title',
-				scope: [ 'entity.name.section.group-title.ini' ],
+				scope: [
+					'entity.name.section.group-title.ini',
+					'entity.other.attribute-name.table.toml',
+					'entity.other.attribute-name.table.array.toml',
+				],
 				settings: {
 					foreground: tokens.class
 				}
@@ -765,6 +860,7 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.punctuation
 				}
 			},
+			// #endregion
 		],
 		semanticTokenColors: {
 			'comment.documentation': {
@@ -783,6 +879,12 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.variable,
 				italic: true,
 			},
+			brace:       { foreground: tokens.foreground },
+			bracket:     { foreground: tokens.foreground },
+			parenthesis: { foreground: tokens.foreground },
+			comma:       { foreground: tokens.punctuation },
+			semicolon:   { foreground: tokens.punctuation },
+			colon:       { foreground: tokens.punctuation },
 			'type.defaultLibrary': {
 				foreground: tokens.keyword,
 				italic: true,
@@ -791,9 +893,26 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.constant,
 				italic: true,
 			},
-			tagField: {
-				foreground: tokens.property,
+			// Zig
+			'type:zig': {
+				foreground: tokens.keyword,
+				italic: true,
+			},
+			'type.struct:zig': {
+				foreground: tokens.class,
 				italic: false,
+			},
+			'type.enum:zig': {
+				foreground: tokens.class,
+				italic: false,
+			},
+			'type.namespace:zig': {
+				foreground: tokens.type,
+				italic: true,
+			},
+			'tagField:zig': {
+				foreground: tokens.type,
+				italic: true,
 			},
 			'errorTag:zig': {
 				foreground: tokens.type,
@@ -811,10 +930,7 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.type,
 				italic: true,
 			},
-			'type.struct:zig': {
-				foreground: tokens.class,
-				italic: false,
-			},
+			// Rust
 			'struct:rust': {
 				foreground: tokens.class,
 				italic: false,
@@ -836,17 +952,27 @@ function SyntaxFactory(tokens) {
 				italic: true,
 			},
 			'macro:rust': {
-				foreground: macro,
-				italic: true,
+				foreground: tokens.attribute,
+				italic: false,
+				bold: true,
 			},
 			'function.attribute:rust': {
-				foreground: macro,
-				bold: false,
-				italic: true,
+				foreground: tokens.attribute,
+				bold: true,
+				italic: false,
 			},
 			'lifetime:rust': {
 				foreground: tokens.constant,
 				italic: true,
+			},
+			'label:rust': {
+				foreground: tokens.constant,
+				italic: true,
+			},
+			'generic:rust': {
+				foreground: tokens.variable,
+				italic: false,
+				bold: false,
 			},
 		},
 	}

@@ -1,6 +1,5 @@
 const neutrals = require('../../colors/dark-neutrals')
 const colors = require('../../colors/dark-palette')
-const { lighten } = require('../../colors/utils')
 
 module.exports = {
 	error: colors.red,
@@ -17,14 +16,13 @@ module.exports = {
 	property: colors.pinkDark,
 	keyword: colors.purple,
 	control: colors.purple,
-	this: colors.keyword,
+	this: colors.orange,
 	class: colors.yellow,
 	type: colors.orange,
 	function: colors.blueLight,
-	// comment: desaturate(darken(colors.blueDark, 10), 20),
-	comment: lighten(neutrals.gray400, 10),
+	comment: neutrals.gray350,
 	docComment: colors.blueDark,
 	tag: colors.orange,
-	attribute: colors.pinkDark,
+	attribute: colors.purpleDark,
 	component: colors.yellow,
 }

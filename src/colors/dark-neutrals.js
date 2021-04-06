@@ -2,6 +2,7 @@ const neutrals = {
 	gray100: '#DBE6EC',
 	gray200: '#AEC1CC',
 	gray300: '#79858D',
+	gray350: '#64728C',
 	gray400: '#4E596C',
 	gray500: '#323F55',
 	gray600: '#2B3649',
