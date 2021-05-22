@@ -203,7 +203,6 @@
 				"support.type.function",
 				"support.type.primitive",
 				"constant.language",
-				"variable.language",
 				"keyword.operator.expression",
 				"keyword.operator.new",
 				"keyword.operator.logical.scss",
@@ -246,9 +245,14 @@
 			"scope": [
 				"punctuation.definition.decorator.python",
 				"meta.function.decorator.python support.type.python",
+				"meta.decorator.ts meta.function-call.ts entity.name.function.ts",
+				"meta.decorator.ts variable.other.readwrite.ts",
 				"support.other.attribute.cpp",
 				"support.annotation",
-				"entity.name.pragma"
+				"entity.name.pragma",
+				"entity.name.annotation",
+				"punctuation.annotation",
+				"punctuation.decorator.ts"
 			],
 			"settings": {
 				"foreground": "#70C2FF",
@@ -263,6 +267,16 @@
 			"settings": {
 				"foreground": "#0FDEBD",
 				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "C Preprocessor function",
+			"scope": [
+				"entity.name.function.preprocessor"
+			],
+			"settings": {
+				"foreground": "#70C2FF",
+				"fontStyle": "bold"
 			}
 		},
 		{
@@ -308,7 +322,8 @@
 				"punctuation.definition.parameters",
 				"punctuation.definition.attribute-selector",
 				"punctuation.definition.sub-target",
-				"punctuation.brackets.round"
+				"punctuation.brackets.round",
+				"punctuation.brace"
 			],
 			"settings": {
 				"foreground": "#DBE6EC",
@@ -338,7 +353,6 @@
 				"punctuation.definition.attribute",
 				"entity.name.tag.wildcard",
 				"entity.name.tag.reference.scss",
-				"punctuation.decorator.ts",
 				"storage.modifier.pointer",
 				"storage.modifier.reference",
 				"entity.name.function.operator",
@@ -349,6 +363,15 @@
 			"settings": {
 				"foreground": "#AEC1CC",
 				"fontStyle": ""
+			}
+		},
+		{
+			"name": "Whitespace",
+			"scope": [
+				"punctuation.whitespace"
+			],
+			"settings": {
+				"foreground": "#4E596C"
 			}
 		},
 		{
@@ -390,9 +413,8 @@
 			"name": "This",
 			"scope": [
 				"variable.language.this",
-				"keyword.other.this",
 				"variable.language.this.php punctuation.definition.variable.php",
-				"variable.language.result"
+				"keyword.other.this"
 			],
 			"settings": {
 				"foreground": "#2C98EC",
@@ -403,6 +425,16 @@
 			"name": "Self (GDScript)",
 			"scope": [
 				"variable.language.this.gdscript"
+			],
+			"settings": {
+				"foreground": "#2C98EC",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Other language-reserved variable names",
+			"scope": [
+				"variable.language"
 			],
 			"settings": {
 				"foreground": "#2C98EC",
@@ -813,7 +845,8 @@
 				"puncutation.definition.group.value",
 				"punctuation.definition.section.group-title.begin.ini",
 				"punctuation.definition.section.group-title.end.ini",
-				"keyword.operator.assignment.ini"
+				"keyword.operator.assignment.ini",
+				"keyword.operator.assignment.grammar"
 			],
 			"settings": {
 				"foreground": "#DBE6EC",
@@ -1055,7 +1088,7 @@
 		"editor.lineHighlightBackground": "#1C2430bf",
 		"editor.rangeHighlightBackground": "#FFFFFF0d",
 		"editorLink.activeForeground": "#2C98EC",
-		"editorWhitespace.foreground": "#37455D",
+		"editorWhitespace.foreground": "#313D52",
 		"editorIndentGuide.background": "#323F55",
 		"editorIndentGuide.activeBackground": "#3C4B65",
 		"editorRuler.foreground": "#2B3649",
@@ -1095,8 +1128,8 @@
 		"editorSuggestWidget.foreground": "#DBE6EC",
 		"editorSuggestWidget.highlightForeground": "#FFF",
 		"editorSuggestWidget.selectedBackground": "#1C2430",
-		"editorHoverWidget.background": "#1C2430",
-		"editorHoverWidget.border": "#0000",
+		"editorHoverWidget.background": "#212A38",
+		"editorHoverWidget.border": "#4E596C",
 		"debugExceptionWidget.background": "#FA5E5B40",
 		"debugExceptionWidget.border": "#FA5E5B",
 		"editorMarkerNavigation.background": "#2B3649",

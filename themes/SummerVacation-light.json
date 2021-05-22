@@ -203,7 +203,6 @@
 				"support.type.function",
 				"support.type.primitive",
 				"constant.language",
-				"variable.language",
 				"keyword.operator.expression",
 				"keyword.operator.new",
 				"keyword.operator.logical.scss",
@@ -246,9 +245,14 @@
 			"scope": [
 				"punctuation.definition.decorator.python",
 				"meta.function.decorator.python support.type.python",
+				"meta.decorator.ts meta.function-call.ts entity.name.function.ts",
+				"meta.decorator.ts variable.other.readwrite.ts",
 				"support.other.attribute.cpp",
 				"support.annotation",
-				"entity.name.pragma"
+				"entity.name.pragma",
+				"entity.name.annotation",
+				"punctuation.annotation",
+				"punctuation.decorator.ts"
 			],
 			"settings": {
 				"foreground": "#FF2070",
@@ -263,6 +267,16 @@
 			"settings": {
 				"foreground": "#FF8C00",
 				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "C Preprocessor function",
+			"scope": [
+				"entity.name.function.preprocessor"
+			],
+			"settings": {
+				"foreground": "#FF2070",
+				"fontStyle": "bold"
 			}
 		},
 		{
@@ -308,7 +322,8 @@
 				"punctuation.definition.parameters",
 				"punctuation.definition.attribute-selector",
 				"punctuation.definition.sub-target",
-				"punctuation.brackets.round"
+				"punctuation.brackets.round",
+				"punctuation.brace"
 			],
 			"settings": {
 				"foreground": "#222526",
@@ -338,7 +353,6 @@
 				"punctuation.definition.attribute",
 				"entity.name.tag.wildcard",
 				"entity.name.tag.reference.scss",
-				"punctuation.decorator.ts",
 				"storage.modifier.pointer",
 				"storage.modifier.reference",
 				"entity.name.function.operator",
@@ -349,6 +363,15 @@
 			"settings": {
 				"foreground": "#7B909E",
 				"fontStyle": ""
+			}
+		},
+		{
+			"name": "Whitespace",
+			"scope": [
+				"punctuation.whitespace"
+			],
+			"settings": {
+				"foreground": "#BFC5CF"
 			}
 		},
 		{
@@ -390,9 +413,8 @@
 			"name": "This",
 			"scope": [
 				"variable.language.this",
-				"keyword.other.this",
 				"variable.language.this.php punctuation.definition.variable.php",
-				"variable.language.result"
+				"keyword.other.this"
 			],
 			"settings": {
 				"foreground": "#FF8C00",
@@ -406,6 +428,16 @@
 			],
 			"settings": {
 				"foreground": "#8E62FF",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "Other language-reserved variable names",
+			"scope": [
+				"variable.language"
+			],
+			"settings": {
+				"foreground": "#FF8C00",
 				"fontStyle": "italic"
 			}
 		},
@@ -813,7 +845,8 @@
 				"puncutation.definition.group.value",
 				"punctuation.definition.section.group-title.begin.ini",
 				"punctuation.definition.section.group-title.end.ini",
-				"keyword.operator.assignment.ini"
+				"keyword.operator.assignment.ini",
+				"keyword.operator.assignment.grammar"
 			],
 			"settings": {
 				"foreground": "#222526",

@@ -27,4 +27,5 @@ module.exports = {
 	tag: colors.blueDark,
 	attribute: colors.blueLight,
 	component: colors.teal,
+	whitespace: neutrals.gray400,
 }

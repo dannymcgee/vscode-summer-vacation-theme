@@ -25,4 +25,5 @@ module.exports = {
 	tag: colors.pinkDark,
 	attribute: colors.orange,
 	component: colors.pinkLight,
+	whitespace: neutrals.gray400,
 }
