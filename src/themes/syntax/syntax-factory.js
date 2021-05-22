@@ -24,6 +24,7 @@ const { darken, desaturate, fade } = require('../../colors/utils')
  *    tag: string;
  *    component: string;
  *    attribute: string;
+ *    whitespace: string;
  * }} tokens
  */
 function SyntaxFactory(tokens) {
@@ -222,7 +223,6 @@ function SyntaxFactory(tokens) {
 					'support.type.function',
 					'support.type.primitive',
 					'constant.language',
-					'variable.language',
 					'keyword.operator.expression',
 					'keyword.operator.new',
 					'keyword.operator.logical.scss',
@@ -266,9 +266,14 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'punctuation.definition.decorator.python',
 					'meta.function.decorator.python support.type.python',
+					'meta.decorator.ts meta.function-call.ts entity.name.function.ts',
+					'meta.decorator.ts variable.other.readwrite.ts',
 					'support.other.attribute.cpp',
 					'support.annotation',
 					'entity.name.pragma',
+					'entity.name.annotation',
+					'punctuation.annotation',
+					'punctuation.decorator.ts',
 				],
 				settings: {
 					foreground: tokens.attribute,
@@ -282,6 +287,14 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.type,
 					fontStyle: 'italic',
 				}
+			},
+			{
+				name: 'C Preprocessor function',
+				scope: ['entity.name.function.preprocessor'],
+				settings: {
+					foreground: tokens.attribute,
+					fontStyle: 'bold',
+				},
 			},
 			// #endregion
 
@@ -331,6 +344,7 @@ function SyntaxFactory(tokens) {
 					'punctuation.definition.attribute-selector',
 					'punctuation.definition.sub-target',
 					'punctuation.brackets.round',
+					'punctuation.brace',
 				],
 				settings: {
 					foreground: tokens.foreground,
@@ -360,7 +374,6 @@ function SyntaxFactory(tokens) {
 					'punctuation.definition.attribute',
 					'entity.name.tag.wildcard',
 					'entity.name.tag.reference.scss',
-					'punctuation.decorator.ts',
 					'storage.modifier.pointer',
 					'storage.modifier.reference',
 					'entity.name.function.operator',
@@ -372,6 +385,13 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.punctuation,
 					fontStyle: ''
 				}
+			},
+			{
+				name: 'Whitespace',
+				scope: ['punctuation.whitespace'],
+				settings: {
+					foreground: tokens.whitespace,
+				},
 			},
 			// #endregion
 
@@ -416,9 +436,8 @@ function SyntaxFactory(tokens) {
 				name: 'This',
 				scope: [
 					'variable.language.this',
-					'keyword.other.this',
 					'variable.language.this.php punctuation.definition.variable.php',
-					'variable.language.result',
+					'keyword.other.this',
 				],
 				settings: {
 					foreground: tokens.this,
@@ -430,6 +449,14 @@ function SyntaxFactory(tokens) {
 				scope: ['variable.language.this.gdscript'],
 				settings: {
 					foreground: tokens.keyword,
+					fontStyle: 'italic',
+				},
+			},
+			{
+				name: 'Other language-reserved variable names',
+				scope: ['variable.language'],
+				settings: {
+					foreground: tokens.this,
 					fontStyle: 'italic',
 				},
 			},
@@ -847,6 +874,7 @@ function SyntaxFactory(tokens) {
 					'punctuation.definition.section.group-title.begin.ini',
 					'punctuation.definition.section.group-title.end.ini',
 					'keyword.operator.assignment.ini',
+					'keyword.operator.assignment.grammar',
 				],
 				settings: {
 					foreground: tokens.foreground,
