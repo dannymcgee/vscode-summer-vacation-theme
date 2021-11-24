@@ -1,4 +1,4 @@
-const { darken, desaturate, fade } = require('../../colors/utils')
+const { darken, desaturate, fade, lighten } = require('../../colors/utils')
 
 /**
  * @param {{
@@ -53,7 +53,10 @@ function SyntaxFactory(tokens) {
 			},
 			{
 				name: 'String quotes',
-				scope: [ 'punctuation.definition.string' ],
+				scope: [
+					'punctuation.definition.string',
+					'punctuation.definition.char',
+				],
 				settings: {
 					foreground: fade(tokens.string, 0.5)
 				}
@@ -169,10 +172,16 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'support.constant',
 					'constant.language.boolean',
+					'constant.language.true',
+					'constant.language.false',
 					'constant.language.null',
+					'constant.language.nullptr',
 					'constant.language.php',
 					'constant.other.boolean.toml',
 					'entity.helper.apacheconf',
+					'lifetime',
+					'punctuation.definition.lifetime',
+					'entity.name.type.lifetime',
 				],
 				settings: {
 					foreground: tokens.constant,
@@ -224,6 +233,8 @@ function SyntaxFactory(tokens) {
 					'support.type.primitive',
 					'constant.language',
 					'keyword.operator.expression',
+					'keyword.operator.wordlike.cpp',
+					'keyword.operator.cast',
 					'keyword.operator.new',
 					'keyword.operator.logical.scss',
 					'keyword.operator.logical.css',
@@ -266,9 +277,8 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'punctuation.definition.decorator.python',
 					'meta.function.decorator.python support.type.python',
-					'meta.decorator.ts meta.function-call.ts entity.name.function.ts',
-					'meta.decorator.ts variable.other.readwrite.ts',
 					'support.other.attribute.cpp',
+					'annotation',
 					'support.annotation',
 					'entity.name.pragma',
 					'entity.name.annotation',
@@ -281,16 +291,46 @@ function SyntaxFactory(tokens) {
 				},
 			},
 			{
+				name: 'Attribute delimiters',
+				scope: [
+					'meta.attribute punctuation.definition.attribute',
+					'meta.attribute punctuation.brackets.attribute',
+					'meta.attribute punctuation.brackets.round',
+					'meta.attribute punctuation.brackets',
+					'meta.attribute punctuation.brace',
+					'punctuation.brackets.attribute.rust',
+				],
+				settings: {
+					foreground: tokens.punctuation,
+					fontStyle: "",
+				},
+			},
+			{
 				name: 'Attribute parameter',
-				scope: ['entity.other.attribute'],
+				scope: [
+					'entity.other.attribute',
+					'meta.attribute entity.name.type',
+				],
 				settings: {
 					foreground: tokens.type,
 					fontStyle: 'italic',
 				}
 			},
 			{
-				name: 'C Preprocessor function',
-				scope: ['entity.name.function.preprocessor'],
+				name: 'Attribute literals',
+				scope: [
+					'meta.attribute.rust string',
+				],
+				settings: {
+					fontStyle: '',
+				},
+			},
+			{
+				name: 'Preprocessor function / directive',
+				scope: [
+					'entity.name.function.preprocessor',
+					'preprocessor.directive',
+				],
 				settings: {
 					foreground: tokens.attribute,
 					fontStyle: 'bold',
@@ -355,6 +395,7 @@ function SyntaxFactory(tokens) {
 				name: 'Punctuation (special)',
 				scope: [
 					'punctuation.definition.tag',
+					'punctuation.section.tag',
 					'punctuation.definition.interpolation',
 					'punctuation.definition.template-expression',
 					'punctuation.definition.ng-attribute-name',
@@ -367,6 +408,7 @@ function SyntaxFactory(tokens) {
 					'storage.type.function.arrow',
 					'punctuation.separator',
 					'punctuation.accessor',
+					'punctuation.dot',
 					'punctuation.terminator',
 					'punctuation.comma',
 					'punctuation.semi',
@@ -416,6 +458,7 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'meta.function.parameters variable',
 					'variable.parameter',
+					'variable.other.parameter',
 				],
 				settings: {
 					foreground: tokens.variable,
@@ -475,7 +518,7 @@ function SyntaxFactory(tokens) {
 					'variable.other.property',
 					'field',
 					'variable.field',
-					// 'variable.other.enummember',
+					'entity.name.tag.yaml',
 					'entity.name.label',
 					'meta.object-literal.key',
 					'meta.object-literal.key string',
@@ -519,6 +562,7 @@ function SyntaxFactory(tokens) {
 					'entity.other.attribute-name.class.css',
 					'entity.other.inherited-class',
 					'storage.type.class.AFDKO',
+					'variable.other.class.imba',
 				],
 				settings: {
 					foreground: tokens.class,
@@ -538,6 +582,7 @@ function SyntaxFactory(tokens) {
 					'entity.name.scope-resolution',
 					'entity.name.type.namespace.cs',
 					'entity.name.namespace',
+					'entity.name.module',
 					'variable.other.enummember',
 					'entity.name.variable.enum-member',
 					'constant.other.class.php',
@@ -562,17 +607,24 @@ function SyntaxFactory(tokens) {
 			{
 				name: 'Type (primitive/built-in)',
 				scope: [
-					'meta.type.annotation.ts support.type.primitive',
-					'meta.type.annotation.ts support.type.builtin',
-					'meta.return.type.ts support.type.primitive',
-					'meta.return.type.ts support.type.builtin',
+					'support.type.builtin.ts',
+					'support.type.builtin.tsx',
 					'support.type.builtin.graphql',
 					'builtin',
+					'meta.type.annotation.imba'
 				],
 				settings: {
 					foreground: tokens.keyword,
 					fontStyle: 'italic'
 				}
+			},
+			{
+				name: 'Imba type annotation delimiter',
+				scope: ['meta.type.annotation.open.imba'],
+				settings: {
+					foreground: tokens.whitespace,
+					fontStyle: '',
+				},
 			},
 			// #endregion
 
@@ -672,6 +724,22 @@ function SyntaxFactory(tokens) {
 					fontStyle: 'italic'
 				}
 			},
+			{
+				name: 'Imba events',
+				scope: ['meta.tag.attributes entity.other.event-name.imba'],
+				settings: {
+					foreground: tokens.function,
+					fontStyle: 'italic',
+				},
+			},
+			{
+				name: 'Imba event modifier',
+				scope: ['meta.tag.attributes entity.other.event-modifier.imba'],
+				settings: {
+					foreground: tokens.property,
+					fontStyle: 'italic',
+				},
+			},
 			// #endregion
 
 			// #region CSS/HTML
@@ -747,6 +815,21 @@ function SyntaxFactory(tokens) {
 				scope: ['string.js.taggedTemplate meta.embedded.block.html'],
 				settings: {
 					foreground: tokens.foreground,
+				},
+			},
+			{
+				name: 'Imba selectors',
+				scope: ['meta.style.imba meta.selector.css'],
+				settings: {
+					foreground: tokens.class,
+				},
+			},
+			{
+				name: 'Imba style modifier',
+				scope: ['meta.style.imba support.type.property-name.modifier'],
+				settings: {
+					foreground: tokens.type,
+					fontStyle: 'italic',
 				},
 			},
 			// #endregion
@@ -891,9 +974,15 @@ function SyntaxFactory(tokens) {
 			// #endregion
 		],
 		semanticTokenColors: {
+			// #region General
 			'comment.documentation': {
 				foreground: tokens.docComment,
 				italic: false,
+			},
+			annotation: {
+				foreground: tokens.attribute,
+				italic: false,
+				bold: true,
 			},
 			field: {
 				foreground: tokens.property,
@@ -903,13 +992,16 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.property,
 				italic: false,
 			},
+			'property.static': {
+				foreground: tokens.type,
+				italic: true,
+			},
 			parameter: {
 				foreground: tokens.variable,
 				italic: true,
 			},
 			brace:       { foreground: tokens.foreground },
 			bracket:     { foreground: tokens.foreground },
-			parenthesis: { foreground: tokens.foreground },
 			comma:       { foreground: tokens.punctuation },
 			semicolon:   { foreground: tokens.punctuation },
 			colon:       { foreground: tokens.punctuation },
@@ -921,7 +1013,16 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.constant,
 				italic: true,
 			},
-			// Zig
+			'keywordLiteral': {
+				foreground: tokens.constant,
+				italic: true,
+			},
+			type: {
+				foreground: tokens.type,
+				italic: true,
+			},
+			// #endregion
+			// #region Zig
 			'type:zig': {
 				foreground: tokens.keyword,
 				italic: true,
@@ -950,18 +1051,15 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.function,
 				italic: true,
 			},
-			'keywordLiteral': {
-				foreground: tokens.constant,
-				italic: true,
-			},
-			type: {
-				foreground: tokens.type,
-				italic: true,
-			},
-			// Rust
+			// #endregion
+			// #region Rust
 			'struct:rust': {
 				foreground: tokens.class,
 				italic: false,
+			},
+			'interface:rust': {
+				foreground: tokens.type,
+				italic: true,
 			},
 			'selfKeyword:rust': {
 				foreground: tokens.this,
@@ -969,6 +1067,10 @@ function SyntaxFactory(tokens) {
 			},
 			'builtinType:rust': {
 				foreground: tokens.keyword,
+				italic: true,
+			},
+			'type.defaultLibrary:rust': {
+				foreground: tokens.type,
 				italic: true,
 			},
 			'enum:rust': {
@@ -983,6 +1085,21 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.attribute,
 				italic: false,
 				bold: true,
+			},
+			'builtinAttribute:rust': {
+				foreground: tokens.attribute,
+				italic: false,
+				bold: true,
+			},
+			'generic.attribute:rust': {
+				foreground: tokens.attribute,
+				italic: false,
+				bold: true,
+			},
+			'keyword.unsafe:rust': {
+				foreground: tokens.error,
+				bold: true,
+				italic: true,
 			},
 			'function.attribute:rust': {
 				foreground: tokens.attribute,
@@ -1002,6 +1119,42 @@ function SyntaxFactory(tokens) {
 				italic: false,
 				bold: false,
 			},
+			'variable.constant.static:rust': {
+				foreground: tokens.type,
+				italic: true,
+			},
+			'*.callable:rust': {
+				foreground: tokens.function,
+			},
+			'operator.attribute:rust': {
+				foreground: tokens.punctuation,
+				bold: false,
+			},
+			'*.mutable:rust': {
+				bold: true,
+			},
+			// #endregion
+			// #region C++
+			'type:cpp': {
+				foreground: tokens.class,
+				italic: false,
+			},
+			'variable.global:cpp': {
+				foreground: tokens.type,
+				italic: true,
+			},
+			'memberOperatorOverload:cpp': {
+				foreground: desaturate(lighten(tokens.function, 5), 40),
+			},
+			// #endregion
+			// #region wgsl
+			'variable:wgsl': {
+				bold: true,
+			},
+			'variable.readonly:wgsl': {
+				bold: false,
+			}
+			// #endregion
 		},
 	}
 }

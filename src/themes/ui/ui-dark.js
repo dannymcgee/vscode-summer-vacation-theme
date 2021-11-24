@@ -142,6 +142,7 @@ const uiColors = {
 	'editorRuler.foreground': neutrals.gray600,
 	'editorCodeLens.foreground': neutrals.gray300,
 	'rust_analyzer.inlayHint': neutrals.gray400,
+	'dart.closingLabels': neutrals.gray300,
 	'editorBracketMatch.background': neutrals.gray500,
 	'editorBracketMatch.border': fade(neutrals.gray500, 0.3),
 	// -- Overvuew ruler
@@ -159,10 +160,10 @@ const uiColors = {
 	'editorOverviewRuler.infoForeground': colors.blueDark,
 	'editorOverviewRuler.bracketMatchForeground': fade(neutrals.gray500, 0.333),
 	// -- Errors and warnings
-	'editorError.foreground': colors.red,
-	'editorWarning.foreground': colors.yellow,
-	'editorInfo.foreground': colors.blueDark,
-	'editorHint.foreground': colors.green,
+	'editorError.foreground': fade(colors.red, 0.5),
+	'editorWarning.foreground': fade(colors.yellow, 0.5),
+	'editorInfo.foreground': fade(colors.blueDark, 0.5),
+	'editorHint.foreground': fade(colors.green, 0.5),
 	// -- Unused source code
 	'editorUnnecessaryCode.opacity': fade('#000000', 0.6),
 	// -- Gutter
@@ -380,6 +381,13 @@ const uiColors = {
 	'symbolIcon.typeParameterForeground': tokens.type,
 	'symbolIcon.unitForeground': tokens.constant,
 	'symbolIcon.variableForeground': tokens.variable,
+
+	// Third-party
+	'errorLens.errorBackground': fade(tokens.error, 0.1),
+	'errorLens.errorForeground': fade(tokens.error, 0.6),
+	'errorLens.warningBackground': fade(colors.yellow, 0.05),
+	'errorLens.warningForeground': fade(colors.yellow, 0.6),
+	'errorLens.hintBackground': '#0000',
 }
 
 module.exports = uiColors
