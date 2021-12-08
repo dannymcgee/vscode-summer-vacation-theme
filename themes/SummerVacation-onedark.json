@@ -1440,6 +1440,8 @@
 		"symbolIcon.typeParameterForeground": "#FFAB3F",
 		"symbolIcon.unitForeground": "#0FDEBD",
 		"symbolIcon.variableForeground": "#FF9EB2",
+		"editorInlayHint.background": "#2B3649",
+		"editorInlayHint.foreground": "#79858D",
 		"errorLens.errorBackground": "#FA5E5B1a",
 		"errorLens.errorForeground": "#FA5E5B99",
 		"errorLens.warningBackground": "#FBCD5B0d",

@@ -382,6 +382,10 @@ const uiColors = {
 	'symbolIcon.unitForeground': tokens.constant,
 	'symbolIcon.variableForeground': tokens.variable,
 
+	// Inlay hints
+	'editorInlayHint.background': neutrals.gray600,
+	'editorInlayHint.foreground': neutrals.gray300,
+
 	// Third-party
 	'errorLens.errorBackground': fade(tokens.error, 0.1),
 	'errorLens.errorForeground': fade(tokens.error, 0.6),
