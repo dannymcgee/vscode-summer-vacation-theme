@@ -58,7 +58,6 @@
 		"publish:major": "vsce publish major"
 	},
 	"devDependencies": {
-		"shelljs": "^0.8.4",
-		"vsce": "^1.85.0"
+		"vsce": "^1.103.1"
 	}
 }
