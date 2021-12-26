@@ -1090,6 +1090,16 @@
 			"bold": true,
 			"italic": false
 		},
+		"attribute:rust": {
+			"foreground": "#8C77C5",
+			"bold": true,
+			"italic": false
+		},
+		"derive:rust": {
+			"foreground": "#FFAB3F",
+			"bold": false,
+			"italic": true
+		},
 		"lifetime:rust": {
 			"foreground": "#0FDEBD",
 			"italic": true

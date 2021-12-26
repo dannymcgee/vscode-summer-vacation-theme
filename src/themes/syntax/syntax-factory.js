@@ -1109,6 +1109,16 @@ function SyntaxFactory(tokens) {
 				bold: true,
 				italic: false,
 			},
+			'attribute:rust': {
+				foreground: tokens.attribute,
+				bold: true,
+				italic: false,
+			},
+			'derive:rust': {
+				foreground: tokens.type,
+				bold: false,
+				italic: true,
+			},
 			'lifetime:rust': {
 				foreground: tokens.constant,
 				italic: true,
