@@ -664,7 +664,8 @@
 		{
 			"name": "HTML Attribute",
 			"scope": [
-				"entity.other.attribute-name"
+				"entity.other.attribute-name",
+				"invalid.deprecated.entity.other.attribute-name"
 			],
 			"settings": {
 				"foreground": "#FF809A",

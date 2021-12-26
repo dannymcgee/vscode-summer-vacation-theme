@@ -706,7 +706,10 @@ function SyntaxFactory(tokens) {
 			// #region HTML Attribute
 			{
 				name: 'HTML Attribute',
-				scope: [ 'entity.other.attribute-name' ],
+				scope: [
+					'entity.other.attribute-name',
+					'invalid.deprecated.entity.other.attribute-name',
+				],
 				settings: {
 					foreground: tokens.property,
 					fontStyle: 'italic'
