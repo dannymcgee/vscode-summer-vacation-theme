@@ -803,7 +803,9 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'meta.attribute.id.html entity.other.attribute-name.html',
 					'entity.other.attribute-name.id.css',
-					'entity.other.attribute-name.id.css punctuation.definition.entity.css'
+					'entity.other.attribute-name.id.scss',
+					'entity.other.attribute-name.id.css punctuation.definition.entity.css',
+					'entity.other.attribute-name.id.scss punctuation.definition.entity.scss'
 				],
 				settings: {
 					foreground: tokens.function,
