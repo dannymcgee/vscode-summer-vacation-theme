@@ -285,6 +285,7 @@ function SyntaxFactory(tokens) {
 					'entity.name.annotation',
 					'punctuation.annotation',
 					'punctuation.decorator.ts',
+					'punctuation.decorator.tsx',
 				],
 				settings: {
 					foreground: tokens.attribute,
@@ -933,6 +934,7 @@ function SyntaxFactory(tokens) {
 				name: 'Markdown list item bullet (comment block)',
 				scope: [
 					'comment.block.documentation.ts markup.list.unnumbered.markdown punctuation.definition.list.begin.markdown',
+					'comment.block.documentation.tsx markup.list.unnumbered.markdown punctuation.definition.list.begin.markdown',
 					'comment.block.documentation.js markup.list.unnumbered.markdown punctuation.definition.list.begin.markdown',
 				],
 				settings: {
