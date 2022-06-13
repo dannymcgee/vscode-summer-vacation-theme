@@ -5,7 +5,7 @@
 	"categories": [
 		"Themes"
 	],
-	"version": "2.1.1",
+	"version": "2.2.0",
 	"publisher": "dannymcgee",
 	"license": "MIT",
 	"author": "Danny McGee",
@@ -53,6 +53,7 @@
 		"package": "vsce package",
 		"install": "node ./src/install-package.js",
 		"test-run": "npm run generate && npm run package && npm run install",
+		"publish": "vsce publish",
 		"publish:patch": "vsce publish patch",
 		"publish:minor": "vsce publish minor",
 		"publish:major": "vsce publish major"

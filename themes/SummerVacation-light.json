@@ -218,7 +218,8 @@
 				"keyword.operator.logical.css",
 				"constant.character.entity.named",
 				"support.variable.property.prototype",
-				"support.function.construct.php"
+				"support.function.construct.php",
+				"keyword.operator.logical.python"
 			],
 			"settings": {
 				"foreground": "#8E62FF",
@@ -252,15 +253,16 @@
 		{
 			"name": "Decorator / Attribute / Macro",
 			"scope": [
-				"punctuation.definition.decorator.python",
 				"meta.function.decorator.python support.type.python",
+				"entity.name.function.decorator",
 				"support.other.attribute.cpp",
 				"annotation",
 				"support.annotation",
 				"entity.name.pragma",
 				"entity.name.annotation",
 				"punctuation.annotation",
-				"punctuation.decorator.ts"
+				"punctuation.decorator.ts",
+				"punctuation.decorator.tsx"
 			],
 			"settings": {
 				"foreground": "#FF2070",
@@ -275,7 +277,8 @@
 				"meta.attribute punctuation.brackets.round",
 				"meta.attribute punctuation.brackets",
 				"meta.attribute punctuation.brace",
-				"punctuation.brackets.attribute.rust"
+				"punctuation.brackets.attribute.rust",
+				"punctuation.definition.decorator.python"
 			],
 			"settings": {
 				"foreground": "#7B909E",
@@ -327,7 +330,8 @@
 			"name": "Doc Comment",
 			"scope": [
 				"comment.line.documentation",
-				"comment.block.documentation"
+				"comment.block.documentation",
+				"string.quoted.docstring.multi.python"
 			],
 			"settings": {
 				"foreground": "#7B909E",
@@ -338,7 +342,8 @@
 			"name": "Doc comment delimiters",
 			"scope": [
 				"comment.line.documentation punctuation.definition.comment",
-				"comment.block.documentation punctuation.definition.comment"
+				"comment.block.documentation punctuation.definition.comment",
+				"string.quoted.docstring.multi.python punctuation.definition.string"
 			],
 			"settings": {
 				"foreground": "#96C5E9",
@@ -394,7 +399,8 @@
 				"entity.name.function.operator",
 				"punctuation.builtin-function.zig",
 				"meta.interpolation.go",
-				"punctuation.definition.pragma"
+				"punctuation.definition.pragma",
+				"source.python punctuation.section"
 			],
 			"settings": {
 				"foreground": "#7B909E",
@@ -498,7 +504,9 @@
 				"support.type.property-name",
 				"entity.name.variable.field",
 				"meta.control.substitute",
-				"string.key.json5"
+				"string.key.json5",
+				"meta.attribute.python",
+				"meta.member.access meta.indexed-name.python"
 			],
 			"settings": {
 				"foreground": "#FF2070"
@@ -552,7 +560,8 @@
 				"entity.name.variable.enum-member",
 				"constant.other.class.php",
 				"constant.other.php",
-				"support.other.namespace"
+				"support.other.namespace",
+				"constant.other.caps.python"
 			],
 			"settings": {
 				"foreground": "#FF8C00",
@@ -759,7 +768,9 @@
 			"scope": [
 				"meta.attribute.id.html entity.other.attribute-name.html",
 				"entity.other.attribute-name.id.css",
-				"entity.other.attribute-name.id.css punctuation.definition.entity.css"
+				"entity.other.attribute-name.id.scss",
+				"entity.other.attribute-name.id.css punctuation.definition.entity.css",
+				"entity.other.attribute-name.id.scss punctuation.definition.entity.scss"
 			],
 			"settings": {
 				"foreground": "#008AF5",
@@ -901,6 +912,7 @@
 			"name": "Markdown list item bullet (comment block)",
 			"scope": [
 				"comment.block.documentation.ts markup.list.unnumbered.markdown punctuation.definition.list.begin.markdown",
+				"comment.block.documentation.tsx markup.list.unnumbered.markdown punctuation.definition.list.begin.markdown",
 				"comment.block.documentation.js markup.list.unnumbered.markdown punctuation.definition.list.begin.markdown"
 			],
 			"settings": {
@@ -1143,6 +1155,32 @@
 		},
 		"variable.readonly:wgsl": {
 			"bold": false
+		},
+		"builtinConstant:python": {
+			"foreground": "#00A3B2",
+			"italic": true
+		},
+		"class.builtin:python": {
+			"foreground": "#FF8C00",
+			"italic": true
+		},
+		"class.decorator:python": {
+			"foreground": "#FF2070",
+			"bold": true,
+			"italic": false
+		},
+		"*.decorator:python": {
+			"foreground": "#FF2070",
+			"bold": true,
+			"italic": false
+		},
+		"selfParameter:python": {
+			"foreground": "#FF8C00",
+			"italic": true
+		},
+		"clsParameter:python": {
+			"foreground": "#FF8C00",
+			"italic": true
 		}
 	},
 	"colors": {
