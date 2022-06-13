@@ -241,6 +241,7 @@ function SyntaxFactory(tokens) {
 					'constant.character.entity.named',
 					'support.variable.property.prototype',
 					'support.function.construct.php',
+					'keyword.operator.logical.python',
 				],
 				settings: {
 					foreground: tokens.keyword,
@@ -275,8 +276,8 @@ function SyntaxFactory(tokens) {
 			{
 				name: 'Decorator / Attribute / Macro',
 				scope: [
-					'punctuation.definition.decorator.python',
 					'meta.function.decorator.python support.type.python',
+					'entity.name.function.decorator',
 					'support.other.attribute.cpp',
 					'annotation',
 					'support.annotation',
@@ -299,6 +300,7 @@ function SyntaxFactory(tokens) {
 					'meta.attribute punctuation.brackets',
 					'meta.attribute punctuation.brace',
 					'punctuation.brackets.attribute.rust',
+					'punctuation.definition.decorator.python',
 				],
 				settings: {
 					foreground: tokens.punctuation,
@@ -352,6 +354,7 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'comment.line.documentation',
 					'comment.block.documentation',
+					'string.quoted.docstring.multi.python',
 				],
 				settings: {
 					foreground: tokens.docComment,
@@ -363,6 +366,7 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'comment.line.documentation punctuation.definition.comment',
 					'comment.block.documentation punctuation.definition.comment',
+					'string.quoted.docstring.multi.python punctuation.definition.string',
 				],
 				settings: {
 					foreground: tokens.comment,
@@ -422,6 +426,7 @@ function SyntaxFactory(tokens) {
 					'punctuation.builtin-function.zig',
 					'meta.interpolation.go',
 					'punctuation.definition.pragma',
+					'source.python punctuation.section',
 				],
 				settings: {
 					foreground: tokens.punctuation,
@@ -527,6 +532,8 @@ function SyntaxFactory(tokens) {
 					'entity.name.variable.field',
 					'meta.control.substitute',
 					'string.key.json5',
+					'meta.attribute.python',
+					'meta.member.access meta.indexed-name.python',
 				],
 				settings: {
 					foreground: tokens.property
@@ -588,6 +595,7 @@ function SyntaxFactory(tokens) {
 					'constant.other.class.php',
 					'constant.other.php',
 					'support.other.namespace',
+					'constant.other.caps.python',
 				],
 				settings: {
 					foreground: tokens.type,
@@ -1166,7 +1174,35 @@ function SyntaxFactory(tokens) {
 			},
 			'variable.readonly:wgsl': {
 				bold: false,
-			}
+			},
+			// #endregion
+			// #region Python
+			'builtinConstant:python': {
+				foreground: tokens.constant,
+				italic: true,
+			},
+			'class.builtin:python': {
+				foreground: tokens.type,
+				italic: true,
+			},
+			'class.decorator:python': {
+				foreground: tokens.attribute,
+				bold: true,
+				italic: false,
+			},
+			'*.decorator:python': {
+				foreground: tokens.attribute,
+				bold: true,
+				italic: false,
+			},
+			'selfParameter:python': {
+				foreground: tokens.type,
+				italic: true,
+			},
+			'clsParameter:python': {
+				foreground: tokens.type,
+				italic: true,
+			},
 			// #endregion
 		},
 	}
