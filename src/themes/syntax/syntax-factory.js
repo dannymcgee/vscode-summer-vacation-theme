@@ -69,6 +69,15 @@ function SyntaxFactory(tokens) {
 					foreground: tokens.constant,
 				}
 			},
+			{
+				name: 'String format specifiers',
+				scope: [
+					'string constant.other.placeholder',
+				],
+				settings: {
+					foreground: tokens.variable,
+				},
+			},
 			// #endregion
 
 			// #region RegExp
@@ -233,16 +242,9 @@ function SyntaxFactory(tokens) {
 					'support.type.function',
 					'support.type.primitive',
 					'constant.language',
-					'keyword.operator.expression',
-					'keyword.operator.wordlike.cpp',
-					'keyword.operator.cast',
-					'keyword.operator.new',
-					'keyword.operator.logical.scss',
-					'keyword.operator.logical.css',
 					'constant.character.entity.named',
 					'support.variable.property.prototype',
 					'support.function.construct.php',
-					'keyword.operator.logical.python',
 				],
 				settings: {
 					foreground: tokens.keyword,
@@ -334,6 +336,9 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'entity.name.function.preprocessor',
 					'preprocessor.directive',
+					'source.cpp keyword.control.directive',
+					'entity.name.tag.antlr',
+					'source.antlr entity.other.rule.option',
 				],
 				settings: {
 					foreground: tokens.attribute,
@@ -379,7 +384,7 @@ function SyntaxFactory(tokens) {
 
 			// #region Punctuation
 			{
-				name: 'Punctuation (general)',
+				name: 'Braces',
 				scope: [
 					'meta.tag',
 					'meta.brace',
@@ -398,7 +403,7 @@ function SyntaxFactory(tokens) {
 				}
 			},
 			{
-				name: 'Punctuation (special)',
+				name: 'Separators, terminators, operators',
 				scope: [
 					'punctuation.definition.tag',
 					'punctuation.section.tag',
@@ -429,11 +434,31 @@ function SyntaxFactory(tokens) {
 					'meta.interpolation.go',
 					'punctuation.definition.pragma',
 					'source.python punctuation.section',
+					'punctuation.definition.function.return-type.cpp',
+					'punctuation.definition.lambda.return-type.cpp',
+					'string.regexp.antlr',
 				],
 				settings: {
 					foreground: tokens.punctuation,
 					fontStyle: ''
 				}
+			},
+			{
+				name: 'Word-like operator keyword overrides',
+				scope: [
+					'keyword.operator.expression',
+					'keyword.operator.wordlike',
+					'keyword.operator.delete.array.cpp',
+					'keyword.operator.cast',
+					'keyword.operator.new',
+					'keyword.operator.logical.scss',
+					'keyword.operator.logical.css',
+					'keyword.operator.logical.python',
+				],
+				settings: {
+					foreground: tokens.keyword,
+					fontStyle: 'italic',
+				},
 			},
 			{
 				name: 'Whitespace',
@@ -536,6 +561,7 @@ function SyntaxFactory(tokens) {
 					'string.key.json5',
 					'meta.attribute.python',
 					'meta.member.access meta.indexed-name.python',
+					'variable.zig',
 				],
 				settings: {
 					foreground: tokens.property
@@ -598,6 +624,7 @@ function SyntaxFactory(tokens) {
 					'constant.other.php',
 					'support.other.namespace',
 					'constant.other.caps.python',
+					'support.other.token.lexer.antlr',
 				],
 				settings: {
 					foreground: tokens.type,
@@ -1093,6 +1120,11 @@ function SyntaxFactory(tokens) {
 				italic: false,
 				bold: true,
 			},
+			decorator: {
+				foreground: tokens.attribute,
+				italic: false,
+				bold: true,
+			},
 			field: {
 				foreground: tokens.property,
 				italic: false,
@@ -1157,8 +1189,9 @@ function SyntaxFactory(tokens) {
 				italic: true,
 			},
 			'builtin:zig': {
-				foreground: tokens.function,
-				italic: true,
+				foreground: tokens.attribute,
+				bold: true,
+				italic: false,
 			},
 			// #endregion
 			// #region Rust
@@ -1254,9 +1287,22 @@ function SyntaxFactory(tokens) {
 			},
 			// #endregion
 			// #region C++
+
+			// for clangd:
+			// 'type:cpp': {
+			// 	foreground: tokens.type,
+			// 	italic: true,
+			// },
+
+			// for MS C/C++:
 			'type:cpp': {
 				foreground: tokens.class,
 				italic: false,
+			},
+
+			'class.deduced:cpp': {
+				foreground: tokens.keyword,
+				italic: true,
 			},
 			'variable.global:cpp': {
 				foreground: tokens.type,
@@ -1264,6 +1310,12 @@ function SyntaxFactory(tokens) {
 			},
 			'memberOperatorOverload:cpp': {
 				foreground: desaturate(lighten(tokens.function, 5), 40),
+			},
+			// #endregion
+			// #region CMake
+			'function:cmake': {
+				foreground: tokens.function,
+				italic: false,
 			},
 			// #endregion
 			// #region wgsl
