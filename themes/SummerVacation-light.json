@@ -40,6 +40,15 @@
 			}
 		},
 		{
+			"name": "String format specifiers",
+			"scope": [
+				"string constant.other.placeholder"
+			],
+			"settings": {
+				"foreground": "#FA5F71"
+			}
+		},
+		{
 			"name": "RegExp Group punctuation",
 			"scope": [
 				"punctuation.definition.group.regexp"
@@ -210,16 +219,9 @@
 				"support.type.function",
 				"support.type.primitive",
 				"constant.language",
-				"keyword.operator.expression",
-				"keyword.operator.wordlike.cpp",
-				"keyword.operator.cast",
-				"keyword.operator.new",
-				"keyword.operator.logical.scss",
-				"keyword.operator.logical.css",
 				"constant.character.entity.named",
 				"support.variable.property.prototype",
-				"support.function.construct.php",
-				"keyword.operator.logical.python"
+				"support.function.construct.php"
 			],
 			"settings": {
 				"foreground": "#8E62FF",
@@ -309,7 +311,10 @@
 			"name": "Preprocessor function / directive",
 			"scope": [
 				"entity.name.function.preprocessor",
-				"preprocessor.directive"
+				"preprocessor.directive",
+				"source.cpp keyword.control.directive",
+				"entity.name.tag.antlr",
+				"source.antlr entity.other.rule.option"
 			],
 			"settings": {
 				"foreground": "#FF2070",
@@ -351,7 +356,7 @@
 			}
 		},
 		{
-			"name": "Punctuation (general)",
+			"name": "Braces",
 			"scope": [
 				"meta.tag",
 				"meta.brace",
@@ -370,7 +375,7 @@
 			}
 		},
 		{
-			"name": "Punctuation (special)",
+			"name": "Separators, terminators, operators",
 			"scope": [
 				"punctuation.definition.tag",
 				"punctuation.section.tag",
@@ -400,11 +405,31 @@
 				"punctuation.builtin-function.zig",
 				"meta.interpolation.go",
 				"punctuation.definition.pragma",
-				"source.python punctuation.section"
+				"source.python punctuation.section",
+				"punctuation.definition.function.return-type.cpp",
+				"punctuation.definition.lambda.return-type.cpp",
+				"string.regexp.antlr"
 			],
 			"settings": {
 				"foreground": "#7B909E",
 				"fontStyle": ""
+			}
+		},
+		{
+			"name": "Word-like operator keyword overrides",
+			"scope": [
+				"keyword.operator.expression",
+				"keyword.operator.wordlike",
+				"keyword.operator.delete.array.cpp",
+				"keyword.operator.cast",
+				"keyword.operator.new",
+				"keyword.operator.logical.scss",
+				"keyword.operator.logical.css",
+				"keyword.operator.logical.python"
+			],
+			"settings": {
+				"foreground": "#8E62FF",
+				"fontStyle": "italic"
 			}
 		},
 		{
@@ -506,7 +531,8 @@
 				"meta.control.substitute",
 				"string.key.json5",
 				"meta.attribute.python",
-				"meta.member.access meta.indexed-name.python"
+				"meta.member.access meta.indexed-name.python",
+				"variable.zig"
 			],
 			"settings": {
 				"foreground": "#FF2070"
@@ -561,7 +587,8 @@
 				"constant.other.class.php",
 				"constant.other.php",
 				"support.other.namespace",
-				"constant.other.caps.python"
+				"constant.other.caps.python",
+				"support.other.token.lexer.antlr"
 			],
 			"settings": {
 				"foreground": "#FF8C00",
@@ -962,6 +989,98 @@
 			"settings": {
 				"foreground": "#7B909E"
 			}
+		},
+		{
+			"name": "GCode comments",
+			"scope": [
+				"source.gcode punctuation.definition.tag"
+			],
+			"settings": {
+				"foreground": "#96C5E9",
+				"fontStyle": "italic"
+			}
+		},
+		{
+			"name": "GCode commands",
+			"scope": [
+				"word.g.gcode",
+				"word.m.gcode"
+			],
+			"settings": {
+				"foreground": "#008AF5"
+			}
+		},
+		{
+			"name": "GCode X coordinate param",
+			"scope": [
+				"constant.numeric.X.klipper-gcode meta.parameter-specifier",
+				"word.x.gcode",
+				"word.x.gcode string"
+			],
+			"settings": {
+				"foreground": "#FA5E5B",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "GCode Y coordinate param",
+			"scope": [
+				"constant.numeric.Y.klipper-gcode meta.parameter-specifier",
+				"word.y.gcode",
+				"word.y.gcode comment"
+			],
+			"settings": {
+				"foreground": "#16C98D",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "GCode Z coordinate param",
+			"scope": [
+				"constant.numeric.Z.klipper-gcode meta.parameter-specifier",
+				"word.z.gcode",
+				"word.z.gcode constant.language"
+			],
+			"settings": {
+				"foreground": "#2C98EC",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "GCode E coordinate param",
+			"scope": [
+				"constant.numeric.E.klipper-gcode meta.parameter-specifier",
+				"word.e.gcode"
+			],
+			"settings": {
+				"foreground": "#FBCD5B",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "GCode feedrate param",
+			"scope": [
+				"constant.numeric.F.klipper-gcode meta.parameter-specifier",
+				"word.f.gcode",
+				"word.f.gcode string"
+			],
+			"settings": {
+				"foreground": "#FFAB3F",
+				"fontStyle": "bold"
+			}
+		},
+		{
+			"name": "GCode other numeric param",
+			"scope": [
+				"word.s.gcode",
+				"word.s.gcode string",
+				"word.p.gcode",
+				"word.r.gcode"
+			],
+			"settings": {
+				"foreground": "#00A3B2",
+				"fontStyle": ""
+			}
 		}
 	],
 	"semanticTokenColors": {
@@ -970,6 +1089,11 @@
 			"italic": false
 		},
 		"annotation": {
+			"foreground": "#FF2070",
+			"italic": false,
+			"bold": true
+		},
+		"decorator": {
 			"foreground": "#FF2070",
 			"italic": false,
 			"bold": true
@@ -1046,8 +1170,9 @@
 			"italic": true
 		},
 		"builtin:zig": {
-			"foreground": "#008AF5",
-			"italic": true
+			"foreground": "#FF2070",
+			"bold": true,
+			"italic": false
 		},
 		"struct:rust": {
 			"foreground": "#FF5C00",
@@ -1143,12 +1268,20 @@
 			"foreground": "#FF5C00",
 			"italic": false
 		},
+		"class.deduced:cpp": {
+			"foreground": "#8E62FF",
+			"italic": true
+		},
 		"variable.global:cpp": {
 			"foreground": "#FF8C00",
 			"italic": true
 		},
 		"memberOperatorOverload:cpp": {
 			"foreground": "#3F91CF"
+		},
+		"function:cmake": {
+			"foreground": "#008AF5",
+			"italic": false
 		},
 		"variable:wgsl": {
 			"bold": true
