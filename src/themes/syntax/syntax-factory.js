@@ -1,4 +1,5 @@
 const { darken, desaturate, fade, lighten } = require('../../colors/utils')
+const palette = require('../../colors/dark-palette')
 
 /**
  * @param {{
@@ -985,6 +986,99 @@ function SyntaxFactory(tokens) {
 				settings: {
 					foreground: tokens.punctuation
 				}
+			},
+			// #endregion
+
+			// #region GCode
+			{
+				name: 'GCode comments',
+				scope: ['source.gcode punctuation.definition.tag'],
+				settings: {
+					foreground: tokens.comment,
+					fontStyle: 'italic',
+				}
+			},
+			{
+				name: 'GCode commands',
+				scope: [
+					'word.g.gcode',
+					'word.m.gcode',
+				],
+				settings: {
+					foreground: tokens.function,
+				}
+			},
+			{
+				name: 'GCode X coordinate param',
+				scope: [
+					'constant.numeric.X.klipper-gcode meta.parameter-specifier',
+					'word.x.gcode',
+					'word.x.gcode string',
+				],
+				settings: {
+					foreground: palette.red,
+					fontStyle: 'bold',
+				},
+			},
+			{
+				name: 'GCode Y coordinate param',
+				scope: [
+					'constant.numeric.Y.klipper-gcode meta.parameter-specifier',
+					'word.y.gcode',
+					'word.y.gcode comment',
+				],
+				settings: {
+					foreground: palette.green,
+					fontStyle: 'bold',
+				},
+			},
+			{
+				name: 'GCode Z coordinate param',
+				scope: [
+					'constant.numeric.Z.klipper-gcode meta.parameter-specifier',
+					'word.z.gcode',
+					'word.z.gcode constant.language',
+				],
+				settings: {
+					foreground: palette.blueDark,
+					fontStyle: 'bold',
+				},
+			},
+			{
+				name: 'GCode E coordinate param',
+				scope: [
+					'constant.numeric.E.klipper-gcode meta.parameter-specifier',
+					'word.e.gcode',
+				],
+				settings: {
+					foreground: palette.yellow,
+					fontStyle: 'bold',
+				},
+			},
+			{
+				name: 'GCode feedrate param',
+				scope: [
+					'constant.numeric.F.klipper-gcode meta.parameter-specifier',
+					'word.f.gcode',
+					'word.f.gcode string',
+				],
+				settings: {
+					foreground: palette.orange,
+					fontStyle: 'bold',
+				},
+			},
+			{
+				name: 'GCode other numeric param',
+				scope: [
+					'word.s.gcode',
+					'word.s.gcode string',
+					'word.p.gcode',
+					'word.r.gcode',
+				],
+				settings: {
+					foreground: tokens.numeric,
+					fontStyle: '',
+				},
 			},
 			// #endregion
 		],
