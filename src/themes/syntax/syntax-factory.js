@@ -777,6 +777,8 @@ function SyntaxFactory(tokens) {
 				name: 'HTML Attribute (class)',
 				scope: [
 					'meta.attribute.class.html entity.other.attribute-name.html',
+					'meta.attribute.class.astro entity.other.attribute-name.astro',
+					'meta.attribute.class:list.astro entity.other.attribute-name.astro',
 					'entity.other.ng-binding-name.ngClass',
 					'entity.other.ng-binding-name.class',
 				],
@@ -852,6 +854,7 @@ function SyntaxFactory(tokens) {
 				name: 'HTML/CSS ID',
 				scope: [
 					'meta.attribute.id.html entity.other.attribute-name.html',
+					'meta.attribute.id.astro entity.other.attribute-name.astro',
 					'entity.other.attribute-name.id.css',
 					'entity.other.attribute-name.id.scss',
 					'entity.other.attribute-name.id.css punctuation.definition.entity.css',
