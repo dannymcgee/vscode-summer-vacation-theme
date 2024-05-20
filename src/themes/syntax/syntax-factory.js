@@ -1252,15 +1252,25 @@ function SyntaxFactory(tokens) {
 				italic: false,
 				bold: true,
 			},
+			'procMacro:rust': {
+				foreground: tokens.attribute,
+				italic: false,
+				bold: true,
+			},
 			'builtinAttribute:rust': {
 				foreground: tokens.attribute,
 				italic: false,
 				bold: true,
 			},
-			'generic.attribute:rust': {
+			'*.attribute:rust': {
 				foreground: tokens.attribute,
 				italic: false,
 				bold: true,
+			},
+			'attributeBracket.attribute:rust': {
+				foreground: tokens.punctuation,
+				italic: false,
+				bold: false,
 			},
 			'keyword.unsafe:rust': {
 				foreground: tokens.error,
@@ -1308,6 +1318,11 @@ function SyntaxFactory(tokens) {
 			},
 			'*.mutable:rust': {
 				bold: true,
+			},
+			'constParameter:rust': {
+				foreground: tokens.type,
+				bold: false,
+				italic: true,
 			},
 			// #endregion
 			// #region C++
