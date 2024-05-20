@@ -58,7 +58,7 @@
 		"publish:minor": "vsce publish minor",
 		"publish:major": "vsce publish major"
 	},
-	"devDependencies": {
-		"vsce": "^2.5.1"
+	"dependencies": {
+		"@vscode/vsce": "^2.26.1"
 	}
 }
