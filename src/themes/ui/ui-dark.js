@@ -173,10 +173,12 @@ const uiColors = {
 	'editorGutter.deletedBackground': colors.red,
 
 	// Diff editor colors
-	'diffEditor.insertedTextBackground': fade(colors.teal, 0.05),
+	'diffEditor.insertedTextBackground': fade(colors.teal, 0.1),
 	// 'diffEditor.insertedTextBorder': colors.teal,
-	'diffEditor.removedTextBackground': fade(colors.red, 0.075),
+	'diffEditor.insertedLineBackground': fade(colors.teal, 0.05),
+	'diffEditor.removedTextBackground': fade(colors.red, 0.1),
 	// 'diffEditor.removedTextBorder': colors.red,
+	'diffEditor.removedLineBackground': fade(colors.red, 0.05),
 
 	// Editor widget colors
 	'editorWidget.background': neutrals.gray600,
