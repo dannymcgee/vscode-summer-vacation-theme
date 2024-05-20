@@ -282,6 +282,7 @@ function SyntaxFactory(tokens) {
 					'meta.function.decorator.python support.type.python',
 					'entity.name.function.decorator',
 					'support.other.attribute.cpp',
+					'entity.other.attribute.nodiscard.cpp',
 					'annotation',
 					'support.annotation',
 					'entity.name.pragma',
@@ -360,6 +361,7 @@ function SyntaxFactory(tokens) {
 				name: 'Doc Comment',
 				scope: [
 					'comment.line.documentation',
+					'comment.line.double-slash.documentation',
 					'comment.block.documentation',
 					'string.quoted.docstring.multi.python',
 				],
@@ -372,6 +374,7 @@ function SyntaxFactory(tokens) {
 				name: 'Doc comment delimiters',
 				scope: [
 					'comment.line.documentation punctuation.definition.comment',
+					'comment.line.double-slash.documentation punctuation.definition.comment',
 					'comment.block.documentation punctuation.definition.comment',
 					'string.quoted.docstring.multi.python punctuation.definition.string',
 				],
@@ -448,6 +451,12 @@ function SyntaxFactory(tokens) {
 				scope: [
 					'keyword.operator.expression',
 					'keyword.operator.wordlike',
+					'keyword.operator.functionlike',
+					'keyword.operator.alignof.cpp',
+					'keyword.operator.delete.cpp',
+					'keyword.operator.noexcept.cpp',
+					'keyword.operator.sizeof.cpp',
+					'keyword.operator.sizeof.variadic.cpp',
 					'keyword.operator.delete.array.cpp',
 					'keyword.operator.cast',
 					'keyword.operator.new',
@@ -462,7 +471,10 @@ function SyntaxFactory(tokens) {
 			},
 			{
 				name: 'Whitespace',
-				scope: ['punctuation.whitespace'],
+				scope: [
+					'punctuation.whitespace',
+					'constant.character.escape.line-continuation',
+				],
 				settings: {
 					foreground: tokens.whitespace,
 				},
@@ -705,6 +717,15 @@ function SyntaxFactory(tokens) {
 				],
 				settings: {
 					foreground: fade(tokens.function, 0.5)
+				},
+			},
+			{
+				name: 'C++ operator overload (clangd)',
+				scope: [
+					'meta.head.function.definition.special.operator-overload entity.name.operator',
+				],
+				settings: {
+					foreground: desaturate(lighten(tokens.function, 5), 40),
 				},
 			},
 			// #endregion
@@ -1287,19 +1308,15 @@ function SyntaxFactory(tokens) {
 			},
 			// #endregion
 			// #region C++
-
 			// for clangd:
-			// 'type:cpp': {
-			// 	foreground: tokens.type,
-			// 	italic: true,
-			// },
-
-			// for MS C/C++:
 			'type:cpp': {
-				foreground: tokens.class,
-				italic: false,
+				foreground: tokens.type,
+				italic: true,
 			},
-
+			'concept:cpp': {
+				foreground: tokens.type,
+				italic: true,
+			},
 			'class.deduced:cpp': {
 				foreground: tokens.keyword,
 				italic: true,
@@ -1308,8 +1325,32 @@ function SyntaxFactory(tokens) {
 				foreground: tokens.type,
 				italic: true,
 			},
+			'variable.globalScope:cpp': {
+				foreground: tokens.type,
+				italic: true,
+			},
+			'variable.defaultLibrary.globalScope:cpp': {
+				foreground: tokens.type,
+				italic: true,
+			},
+			'variable.fileScope:cpp': {
+				foreground: tokens.type,
+				italic: true,
+			},
 			'memberOperatorOverload:cpp': {
 				foreground: desaturate(lighten(tokens.function, 5), 40),
+			},
+			'type.deduced:cpp': {
+				foreground: tokens.keyword,
+				italic: true,
+			},
+			'enum.deduced:cpp': {
+				foreground: tokens.keyword,
+				italic: true,
+			},
+			'variable.static.classScope:cpp': {
+				foreground: tokens.type,
+				italic: true,
 			},
 			// #endregion
 			// #region CMake
