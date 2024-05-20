@@ -258,6 +258,7 @@
 				"meta.function.decorator.python support.type.python",
 				"entity.name.function.decorator",
 				"support.other.attribute.cpp",
+				"entity.other.attribute.nodiscard.cpp",
 				"annotation",
 				"support.annotation",
 				"entity.name.pragma",
@@ -335,6 +336,7 @@
 			"name": "Doc Comment",
 			"scope": [
 				"comment.line.documentation",
+				"comment.line.double-slash.documentation",
 				"comment.block.documentation",
 				"string.quoted.docstring.multi.python"
 			],
@@ -347,6 +349,7 @@
 			"name": "Doc comment delimiters",
 			"scope": [
 				"comment.line.documentation punctuation.definition.comment",
+				"comment.line.double-slash.documentation punctuation.definition.comment",
 				"comment.block.documentation punctuation.definition.comment",
 				"string.quoted.docstring.multi.python punctuation.definition.string"
 			],
@@ -420,6 +423,12 @@
 			"scope": [
 				"keyword.operator.expression",
 				"keyword.operator.wordlike",
+				"keyword.operator.functionlike",
+				"keyword.operator.alignof.cpp",
+				"keyword.operator.delete.cpp",
+				"keyword.operator.noexcept.cpp",
+				"keyword.operator.sizeof.cpp",
+				"keyword.operator.sizeof.variadic.cpp",
 				"keyword.operator.delete.array.cpp",
 				"keyword.operator.cast",
 				"keyword.operator.new",
@@ -435,7 +444,8 @@
 		{
 			"name": "Whitespace",
 			"scope": [
-				"punctuation.whitespace"
+				"punctuation.whitespace",
+				"constant.character.escape.line-continuation"
 			],
 			"settings": {
 				"foreground": "#4E596C"
@@ -668,6 +678,15 @@
 			}
 		},
 		{
+			"name": "C++ operator overload (clangd)",
+			"scope": [
+				"meta.head.function.definition.special.operator-overload entity.name.operator"
+			],
+			"settings": {
+				"foreground": "#A2C9E8"
+			}
+		},
+		{
 			"name": "Tag name",
 			"scope": [
 				"entity.name.tag",
@@ -712,6 +731,8 @@
 			"name": "HTML Attribute (class)",
 			"scope": [
 				"meta.attribute.class.html entity.other.attribute-name.html",
+				"meta.attribute.class.astro entity.other.attribute-name.astro",
+				"meta.attribute.class:list.astro entity.other.attribute-name.astro",
 				"entity.other.ng-binding-name.ngClass",
 				"entity.other.ng-binding-name.class"
 			],
@@ -794,6 +815,7 @@
 			"name": "HTML/CSS ID",
 			"scope": [
 				"meta.attribute.id.html entity.other.attribute-name.html",
+				"meta.attribute.id.astro entity.other.attribute-name.astro",
 				"entity.other.attribute-name.id.css",
 				"entity.other.attribute-name.id.scss",
 				"entity.other.attribute-name.id.css punctuation.definition.entity.css",
@@ -1207,15 +1229,25 @@
 			"italic": false,
 			"bold": true
 		},
+		"procMacro:rust": {
+			"foreground": "#8C77C5",
+			"italic": false,
+			"bold": true
+		},
 		"builtinAttribute:rust": {
 			"foreground": "#8C77C5",
 			"italic": false,
 			"bold": true
 		},
-		"generic.attribute:rust": {
+		"*.attribute:rust": {
 			"foreground": "#8C77C5",
 			"italic": false,
 			"bold": true
+		},
+		"attributeBracket.attribute:rust": {
+			"foreground": "#AEC1CC",
+			"italic": false,
+			"bold": false
 		},
 		"keyword.unsafe:rust": {
 			"foreground": "#FA5E5B",
@@ -1264,9 +1296,18 @@
 		"*.mutable:rust": {
 			"bold": true
 		},
+		"constParameter:rust": {
+			"foreground": "#FFAB3F",
+			"bold": false,
+			"italic": true
+		},
 		"type:cpp": {
-			"foreground": "#FBCD5B",
-			"italic": false
+			"foreground": "#FFAB3F",
+			"italic": true
+		},
+		"concept:cpp": {
+			"foreground": "#FFAB3F",
+			"italic": true
 		},
 		"class.deduced:cpp": {
 			"foreground": "#B89FF7",
@@ -1276,8 +1317,32 @@
 			"foreground": "#FFAB3F",
 			"italic": true
 		},
+		"variable.globalScope:cpp": {
+			"foreground": "#FFAB3F",
+			"italic": true
+		},
+		"variable.defaultLibrary.globalScope:cpp": {
+			"foreground": "#FFAB3F",
+			"italic": true
+		},
+		"variable.fileScope:cpp": {
+			"foreground": "#FFAB3F",
+			"italic": true
+		},
 		"memberOperatorOverload:cpp": {
 			"foreground": "#A2C9E8"
+		},
+		"type.deduced:cpp": {
+			"foreground": "#B89FF7",
+			"italic": true
+		},
+		"enum.deduced:cpp": {
+			"foreground": "#B89FF7",
+			"italic": true
+		},
+		"variable.static.classScope:cpp": {
+			"foreground": "#FFAB3F",
+			"italic": true
 		},
 		"function:cmake": {
 			"foreground": "#70C2FF",
@@ -1449,8 +1514,10 @@
 		"editorGutter.modifiedBackground": "#16C98D",
 		"editorGutter.addedBackground": "#0FDEBD",
 		"editorGutter.deletedBackground": "#FA5E5B",
-		"diffEditor.insertedTextBackground": "#0FDEBD0d",
-		"diffEditor.removedTextBackground": "#FA5E5B13",
+		"diffEditor.insertedTextBackground": "#0FDEBD1a",
+		"diffEditor.insertedLineBackground": "#0FDEBD0d",
+		"diffEditor.removedTextBackground": "#FA5E5B1a",
+		"diffEditor.removedLineBackground": "#FA5E5B0d",
 		"editorWidget.background": "#2B3649",
 		"editorWidget.border": "#0000",
 		"editorWidget.resizeBorder": "#0000",
