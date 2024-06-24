@@ -978,7 +978,7 @@ function SyntaxFactory(tokens) {
 				name: 'Markdown list item bullet',
 				scope: [ 'punctuation.definition.list.begin.markdown' ],
 				settings: {
-					foreground: '#FFF',
+					foreground: '#222526',
 					// fontStyle: 'bold'
 				}
 			},

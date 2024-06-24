@@ -188,7 +188,7 @@ const uiColors = {
 	'editorSuggestWidget.border': neutrals.gray500,
 	'editorSuggestWidget.foreground': neutrals.gray100,
 	'editorSuggestWidget.highlightForeground': colors.blueDark,
-	'editorSuggestWidget.selectedBackground': neutrals.gray700,
+	'editorSuggestWidget.selectedBackground': neutrals.gray500,
 	'editorHoverWidget.background': neutrals.gray800,
 	'editorHoverWidget.border': neutrals.gray500,
 	'debugExceptionWidget.background': fade(colors.red, 0.25),
